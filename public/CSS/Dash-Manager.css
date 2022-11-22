@@ -1,0 +1,107 @@
+.nav-link{
+    width: 180% !important;
+}
+.flex-container {
+    display: flex !important;
+    background-color: rgb(255, 255, 255) !important;
+    
+  }
+  .form-group-manager{
+    padding:7px !important;
+  }
+  .flex-container > div {
+    background-color: #fffefe !important;
+    margin: 10px !important;
+    padding: 10px !important;
+    font-size: 20px !important;
+  }
+  .Menu{
+    width:72% !important;
+    align-items: left !important;
+    float: left !important;
+  }
+
+  .card-text{
+    font-weight: bold !important;
+    font-size: 50px !important;
+    color:black !important;
+  }
+
+
+  .Menu a{
+    text-decoration: none !important;
+  }
+  
+  .Content{
+    width:75% !important;
+    margin-right: 5px !important;
+  }  
+  
+  
+  .bg-light{
+    height: 60px !important;
+  }
+  #v-pills-home-tab,#v-pills-profile-tab,#v-pills-disabled-tab,
+  #v-pills-profile-tab,#v-pills-messages-tab,#v-pills-settings-tab{
+    text-align: left !important;
+  }
+  .card{
+    margin: 10px 2px !important;
+    border-radius: 15px !important;
+  }
+.card-body{
+  height:fit-content !important;
+  text-align: center !important;
+  border-radius: 15px !important;
+}
+.card-title{
+  font-weight: 700 !important;
+  font-size: 30px !important;
+  font-family: "poppins",sans-serif !important;
+}
+
+#total-clients{
+  background-image: linear-gradient(180deg,#bae1eb,#62bfd3);
+}
+#new-clients{
+  background-image: linear-gradient(180deg,#f7c0d1,#de9cf0);
+}
+#products{
+  background-image: linear-gradient(180deg,#ffdde1,#ee9ca7);
+}
+#reservations{
+  background-image: linear-gradient(180deg,#d9edfb,#8f9faa);
+}
+#orders{
+  background-image: linear-gradient(180deg,#de6262,#ffb88c);
+}
+#messages{
+  background-image: linear-gradient(180deg,#dd5e89,#f7bb97);
+}
+
+h5,p{
+  font-family: "poppins", sans-serif !important;
+  line-height: 1.625 !important;
+  font-weight: 700 !important;
+  color: #ffffff;
+}
+.row{
+  margin-left: 10% !important;
+}
+
+#message{
+  height:max-content !important;
+  margin-right:20px !important;
+  margin-top:10px !important;
+}
+
+
+#search{
+  color:rgb(72, 71, 71) !important;
+  border-color: #c76b32 !important;
+}
+
+#search:hover{
+  color:white !important;
+  background-color: #c76b32 !important;
+}

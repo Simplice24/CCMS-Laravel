@@ -1,0 +1,17 @@
+select{
+    width: 210px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+ #modal-btn{
+     margin-left: 20px;
+     height: 45px;
+     margin-top: -5px;
+ }
+ #modal-btn2{
+     margin-top: 5px;
+     margin-left: 20px;
+     height: 45px;
+     
+ }

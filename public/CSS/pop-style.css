@@ -1,0 +1,31 @@
+.full{
+    display: none !important;
+    width: 60% !important;
+    margin-right: 22%;
+    height: 100% !important;
+    position: fixed !important;
+    justify-content: center;
+}
+.card-body{
+    height: 100% !important;
+    background-color: rgba(0,0,0,0.1);
+    
+}
+.card-body h5, p{
+    color: white;
+}
+.close-btn{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+.card{
+    background-color: rgba(0,0,0,0.5) !important;
+    color: white;
+    height: 100% !important;
+    margin-top: -12.5% !important;
+    margin-left: 5% !important;
+}
