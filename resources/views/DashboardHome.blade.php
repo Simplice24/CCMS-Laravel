@@ -25,7 +25,7 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button type="button" class="btn btn-danger"><i class="fa fa-user"></i>&nbsp; Logout</button>
+          <a href="<?=url('logout');?>"><button type="button" class="btn btn-dark"><i class="fa fa-user"></i>&nbsp; Logout</button></a>
           </div>
           
             <form class="d-flex" role="search">
@@ -52,41 +52,41 @@
     <div class="Content">
               <h3>Overview</h3>          
         <div class="row">
-            <div class="col-sm-6">
+        <a href="<?=url('viewsystemuser');?>"><div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="total-clients">
                   <h5 class="card-title">System Users</h5>
                   <p class="card-text">{{$rows}}</p>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6">
+            </div></a>
+            <a href="<?=url('viewfarmers');?>"><div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="new-clients">
                     <h5 class="card-title">Farmers</h5>
                     <p class="card-text">{{$farmer}}</p>
                 </div>
               </div>
-            </div>
+            </div></a>
           </div>
 
           <div class="row">
-            <div class="col-sm-6">
+          <a href="<?=url('viewdiseases');?>"><div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="products">
                   <h5 class="card-title">Diseases</h5>
                   <p class="card-text">{{$disease}}</p>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6">
+            </div></a>
+            <a href="<?=url('viewcooperatives');?>"><div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="reservations">
                     <h5 class="card-title">Cooperatives</h5>
                     <p class="card-text">{{$cooperative}}</p>
                 </div>
               </div>
-            </div>
+            </div></a>
           </div>
           </div>
     </div>

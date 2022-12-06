@@ -36,7 +36,15 @@
     width:75% !important;
     margin-right: 5px !important;
   }  
-  
+
+  .Content a{
+    text-decoration: none !important;
+    
+  }
+
+.col-sm-6{
+  display: inline !important;
+}
   
   .bg-light{
     height: 60px !important;
@@ -86,7 +94,9 @@ h5,p{
   color: #ffffff;
 }
 .row{
-  margin-left: 10% !important;
+  margin-left: 5% !important;
+  display: inline-block !important;
+  width: 45% !important;
 }
 
 #message{

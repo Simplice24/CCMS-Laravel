@@ -7,7 +7,10 @@ use App\Models\Cooperative;
 use App\Models\Disease;
 use App\Models\Member;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use session;
 
 class AdministrationController extends Controller
 {
@@ -123,7 +126,7 @@ class AdministrationController extends Controller
                 $user->gender=$req->gender;
                 $user->role=$req->role;
                 $user->username=$req->username;
-                $user->password=$req->password;
+                $user->password=Hash::make($req->password);
                 $user->email=$req->email;
                 $user->phone=$req->phone;
                 $user->province=$req->province;
@@ -271,5 +274,38 @@ class AdministrationController extends Controller
                  public function Managerviewfarmer(){
                   return view('Manager/ViewMembers');
                  }
+
+
+
+                 public function login(Request $request)
+                 {
+                     $credentials = $request->validate([
+                         'email' => ['required', 'email'],
+                         'password' => ['required'],
+                     ]);
+              
+                     if (Auth::attempt($credentials)) {
+                         $request->session()->regenerate();
+                         return redirect()->intended('/');
+                     }
+                     // else if(Auth::attempt($credentials))
+                     //   {
+                     //     return redirect()->intended('management/dashboard');
+                     //     }
+                   else{
+                     return back()->withErrors([
+                         'email' => 'The provided credentials do not match our records.',
+                     ])->onlyInput('email');
+                 
+                 }
+             }
+
+             public function logout(Request $request)
+{
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/');
+}
 
 }

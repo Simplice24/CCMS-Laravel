@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Models\Car;
 use App\Http\Controllers\AdministrationController;
+use App\Http\Controllers\LoginConnection;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,7 @@ Route::get("FarmerView/{id}",[AdministrationController::class,'ViewFarmer']);
 Route::get('Home',[AdministrationController::class,'homedashboard']);
 Route::get('ManagerHome',[AdministrationController::class,'managerhome']);
 Route::get('Managerviewfarmers',[AdministrationController::class,'Managerviewfarmer']);
+
+Route::get('login',[LoginConnection::class,'loginpage']);
+Route::post('login',[LoginConnection::class,'login']);
+Route::get('logout',[LoginConnection::class,'logout']);

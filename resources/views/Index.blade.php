@@ -62,7 +62,7 @@
               
               
             </ul>
-            <button type="button" class="btn btn-outline-primary" id="login" onclick="pop()">Login</button>
+            <a href="<?=url('login');?>"><button type="button" class="btn btn-outline-primary" id="login">Login</button></a>
             <!--<form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
@@ -166,12 +166,12 @@
               <div class="col-sm-4 text-center mb-3">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <h4 class="font-weight-bold">Address</h4>
-                  <p>123 Street, New York, USA</p>
+                  <p>KN 67, KIGALI, RWANDA</p>
               </div>
               <div class="col-sm-4 text-center mb-3">
                  <i class="fa fa-phone" aria-hidden="true"></i>
                   <h4 class="font-weight-bold">Phone</h4>
-                  <p>+012 345 6789</p>
+                  <p>+25078565656</p>
               </div>
               <div class="col-sm-4 text-center mb-3">
                  <i class="fa fa-envelope-o" aria-hidden="true"></i>

@@ -27,7 +27,7 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button type="button" class="btn btn-danger"><i class="fa fa-user"></i>&nbsp; Logout</button>
+            <button type="button" class="btn btn-dark"><i class="fa fa-user"></i>&nbsp; Logout</button>
           </div>
           
             <form class="d-flex" role="search">
