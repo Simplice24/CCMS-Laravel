@@ -47,6 +47,16 @@ Route::get('Home',[AdministrationController::class,'homedashboard']);
 Route::get('ManagerHome',[AdministrationController::class,'managerhome']);
 Route::get('Managerviewfarmers',[AdministrationController::class,'Managerviewfarmer']);
 
-Route::get('login',[LoginConnection::class,'loginpage']);
-Route::post('login',[LoginConnection::class,'login']);
-Route::get('logout',[LoginConnection::class,'logout']);
+Route::get('login',function(){
+    if(session()->has('user')){
+        return redirect('Home');
+    }
+    return View('Login');
+});
+Route::post('login',[LoginConnection::class,'login'])->middleware('AdminAuth');
+Route::get('logout',function (){
+    if(session()->has('user')){
+        session()->pull('user');
+    }
+    return redirect('/');
+});

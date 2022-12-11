@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class LoginConnection extends Controller
 {
 
-  public function loginpage(){
-    return view('login');
-  }
-
   public function login(Request $request)
   {
     $credentials = $request->validate([
@@ -22,7 +18,8 @@ class LoginConnection extends Controller
       ]);
 
       if (Auth::attempt($credentials)) {
-        $request->session()->put('user',$credentials);
+        $request->session()->put('user',$credentials['email']);
+        
         return redirect()->intended('Home');
     }
 
@@ -31,15 +28,5 @@ class LoginConnection extends Controller
     ])->onlyInput('email');
   }
 
-  public function logout(Request $request)
-{
-    Auth::logout();
- 
-    $request->session()->invalidate();
- 
-    $request->session()->regenerateToken();
- 
-    return redirect('/');
-}
 
 }

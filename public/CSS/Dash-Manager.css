@@ -115,3 +115,9 @@ h5,p{
   color:white !important;
   background-color: #c76b32 !important;
 }
+
+.navbar-brand{
+  color:#ecb191 !important;
+  font-weight: 500;
+  font-size: 30px !important;
+}

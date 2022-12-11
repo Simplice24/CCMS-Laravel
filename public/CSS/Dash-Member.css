@@ -94,6 +94,12 @@ h5,p{
   margin-top:10px !important;
 }
 
+.navbar-brand{
+  color:#ecb191 !important;
+  font-weight: 500;
+  font-size: 30px !important;
+}
+
 
 #search{
   color:rgb(72, 71, 71) !important;
