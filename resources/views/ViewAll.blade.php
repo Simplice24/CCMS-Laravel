@@ -27,13 +27,15 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="position-absolute top-0 end-0" id="logout">
           <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
   {{session('user')}}
   </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Logout</a></li>
+    <li><a class="dropdown-item" href="{{url('logout')}}">Logout</a></li>
   </ul>
+</div>
 </div>
           </div>
         </div>

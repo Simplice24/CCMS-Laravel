@@ -190,5 +190,10 @@ h5,p{
   opacity:1
 }
 
+#logout{
+  background-color: transparent !important;
+  margin:10px !important;
+}
+
 
 

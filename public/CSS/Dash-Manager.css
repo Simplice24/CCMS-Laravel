@@ -121,3 +121,8 @@ h5,p{
   font-weight: 500;
   font-size: 30px !important;
 }
+
+#logout{
+  background-color: transparent !important;
+  margin:10px !important;
+}

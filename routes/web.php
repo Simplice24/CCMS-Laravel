@@ -17,9 +17,11 @@ use App\Http\Controllers\LoginConnection;
 |
 */
 
+Route::group(['middleware'=>"web"],function(){
+
 Route::get('/', function () {
-    return view('Index');
-});
+        return view('Index');
+    });
 
 Route::post('Dashboard', [AdministrationController::class, 'adduser']);
 Route::get('viewsystemuser',[AdministrationController::class,'viewusers']);
@@ -53,7 +55,10 @@ Route::get('login',function(){
     }
     return View('Login');
 });
-Route::post('login',[LoginConnection::class,'login'])->middleware('AdminAuth');
+Route::post('login',[LoginConnection::class,'login']);
+
+});
+
 Route::get('logout',function (){
     if(session()->has('user')){
         session()->pull('user');
