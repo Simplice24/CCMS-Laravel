@@ -17,6 +17,8 @@ class RoleAndPermissionSeeder extends Seeder
     public function run()
     {
 
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
         $Admin_role= Role::create(['name' => 'Admin']);
         $Naeb_role = Role::create(['name' => 'Naeb']);
         $Rab_role = Role::create(['name' => 'Rab']);
