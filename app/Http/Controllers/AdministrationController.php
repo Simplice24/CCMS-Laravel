@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Administration;
@@ -117,8 +116,43 @@ class AdministrationController extends Controller
 
                 public function viewusers(){
                   $data=Administration::all();
-                  return view('Dashboard',['data'=>$data]);
+                  return view('Customized/All-system-user',['data'=>$data]);
               }
+
+              public function addinguserpage(){
+                  return view('Customized/Register-new-user');
+              }
+              public function addingcooperativepage(){
+                return view('Customized/Register-cooperative');
+              }
+              public function addingfarmerpage(){
+                return view('Customized/Register-new-farmer');
+              }
+              public function addingdiseasepage(){
+                return view('Customized/Register-new-disease');
+              }
+              public function farmerupdatepage($id){
+                $farmerinfo=Member::find($id);
+                return view('Customized/Farmer-update',['farmerinfo'=>$farmerinfo]);
+              }
+               public function updateFarmer(Request $req,$id){
+                $farmerupdate=Member::find($id);
+                $farmerupdate->name=$req->input('name');
+                $farmerupdate->idn=$req->input('idn');
+                $farmerupdate->cooperative_name=$req->input('cooperative_name');
+                $farmerupdate->cooperative_id=$req->input('cooperative_id');
+                $farmerupdate->category=$req->input('category');
+                $farmerupdate->gender=$req->input('gender');
+                $farmerupdate->number_of_trees=$req->input('number_of_trees');
+                $farmerupdate->fertilizer=$req->input('fertilizer');
+                $farmerupdate->phone=$req->input('phone');
+                $farmerupdate->province=$req->input('province');
+                $farmerupdate->district=$req->input('district');
+                $farmerupdate->sector=$req->input('sector');
+                $farmerupdate->cell=$req->input('cell');
+                $farmerupdate->update();
+                return redirect('viewfarmers');
+               }
 
               public function adduser(Request $req){
                 $user=new Administration;
@@ -154,12 +188,12 @@ class AdministrationController extends Controller
 
                 public function viewfarmers(){
                   $info=Member::all();
-                  return view('Farmer',['info'=>$info]);
+                  return view('Customized/All-farmers',['info'=>$info]);
                 }
 
                 public function viewdiseases(){
                   $disease=Disease::all();
-                  return view('Disease',['disease'=>$disease]);
+                  return view('Customized/All-diseases',['disease'=>$disease]);
                 }
                 public function addDisease(Request $req){
                      $Disease=new Disease;
@@ -167,10 +201,21 @@ class AdministrationController extends Controller
                      $Disease->save();
                      return redirect('viewdiseases');
                 }
+
                 
                 public function viewcooperatives(){
                   $data=Cooperative::all();
-                  return view('Cooperative',['data'=>$data]);
+                  return view('Customized/All-cooperatives',['data'=>$data]);
+                }
+
+                public function userprofilepage($id){
+                  $details=Administration::find($id);
+                  return view('Customized/User-details',['details'=>$details]);
+                }
+
+                public function profileupdatepage($id){
+                  $fulldetails=Administration::find($id);
+                  return view('Customized/Update-details',['fulldetails'=>$fulldetails]);
                 }
 
                 public function deleteuser($id){
@@ -201,6 +246,10 @@ class AdministrationController extends Controller
                  return redirect('viewdiseases');
                 }
 
+                public function forgetpasswordpage(){
+                  return view('Passwords/email');
+                }
+
                 public function updateuser($id){
                   $userinfo=Administration::find($id);
                   return view('UpdateAll',['userinfo'=> $userinfo]);
@@ -208,8 +257,18 @@ class AdministrationController extends Controller
 
                 public function updateCoop($id){
                   $cooperativeinfo=Cooperative::find($id);
-                  return view('UpdateCooperative',['cooperativeinfo'=> $cooperativeinfo]);
+                  return view('Customized/Cooperative-details',['cooperativeinfo'=> $cooperativeinfo]);
                 }
+                public function Cooperativeupdatepage($id){
+                  $cooperativeinfo=Cooperative::find($id);
+                  return view('Customized/Cooperative-update',['cooperativeinfo'=> $cooperativeinfo]);
+                }
+
+                public function farmerprofilepage($id){
+                  $farmerinfo=Member::find($id);
+                  return view('Customized/Farmer-details',['farmerinfo'=>$farmerinfo]);
+                }
+
 
                 public function updateSystemUser(Request $req,$id){
                   $input=Administration::find($id);
@@ -217,7 +276,6 @@ class AdministrationController extends Controller
                   $input->gender=$req->input('gender');
                   $input->role=$req->input('role');
                   $input->username=$req->input('username');
-                  $input->password=$req->input('password');
                   $input->email=$req->input('email');
                   $input->phone=$req->input('phone');
                   $input->province=$req->input('province');
@@ -242,9 +300,28 @@ class AdministrationController extends Controller
                   return redirect('viewcooperatives');
                 }
 
+                public function addfarmer(Request $req){
+                  $input=new Member;
+                  $input->name=$req->input('name');
+                  $input->idn=$req->input('idn');
+                  $input->cooperative_name=$req->input('cooperative_name');
+                  $input->cooperative_id=$req->input('cooperative_id');
+                  $input->category=$req->input('category');
+                  $input->gender=$req->input('gender');
+                  $input->number_of_trees=$req->input('number_of_trees');
+                  $input->fertilizer=$req->input('fertilizer');
+                  $input->phone=$req->input('phone');
+                  $input->province=$req->input('province');
+                  $input->district=$req->input('district');
+                  $input->sector=$req->input('sector');
+                  $input->cell=$req->input('cell');
+                  $input->save();
+                  return redirect('viewfarmers');
+                }
+
                 public function diseaseupdate($id){
                   $diseaseinfo=Disease::find($id);
-                  return view('UpdateDisease',['diseaseinfo'=> $diseaseinfo]);
+                  return view('Customized/Disease-update',['diseaseinfo'=> $diseaseinfo]);
                 }
 
                 public function DisUpdate(Request $req,$id){
@@ -264,7 +341,7 @@ class AdministrationController extends Controller
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();
                   $disease=Disease::count();
-                  return view('DashboardHome',['rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
+                  return view('Customized/Dashboard',['rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
                 }
 
                  public function managerhome(){
@@ -306,6 +383,7 @@ class AdministrationController extends Controller
     $request->session()->invalidate();
     $request->session()->regenerateToken();
     return redirect('/');
+
 }
 
 }
