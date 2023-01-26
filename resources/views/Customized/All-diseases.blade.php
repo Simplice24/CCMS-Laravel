@@ -42,7 +42,23 @@
                 <button type="button" class="btn btn-info font-weight-bold">+ Create New</button>
             </li> -->
           <li class="nav-item dropdown d-flex">
-           
+          <div class="dropdown">
+  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{ __('msg.languages') }}
+  </a>
+
+  <ul class="dropdown-menu">
+    <a class="dropdown-item preview-item" href="<?=url('locale/en');?>">               
+    {{ __('msg.english') }}
+    </a>
+    <a class="dropdown-item preview-item" href="<?=url('locale/fr');?>">               
+    {{ __('msg.francais') }}
+    </a>
+    <a class="dropdown-item " href="<?=url('locale/kiny');?>">               
+         Ikinyarwanda
+    </a>
+  </ul>
+</div>
           </li>
           <li class="nav-item dropdown d-flex mr-4 ">
             <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
@@ -77,52 +93,52 @@
           {{session('user')}}
           </div>
           <div class="user-designation">
-              
+             
           </div>
         </div>
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?=url('Home');?>">
+            <a class="nav-link" href={{"Home"}}>
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-disc menu-icon"></i>
-              <span class="menu-title">System users</span>
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">{{ __('msg.system users') }}</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewUser');?>"> + new user </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> All system users</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?=url('registerNewUser');?>"> + {{ __('msg.new user') }}</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> {{ __('msg.all system users') }}</a></li>
               </ul>
             </div>
           </li>
            <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Cooperatives</span>
+              <i class="icon-disc menu-icon"></i>
+              <span class="menu-title">{{ __('msg.cooperatives') }}</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + new cooperative </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> All cooperatives </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + {{ __('msg.new cooperative') }} </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> {{ __('msg.all cooperatives') }} </a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
               <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">Farmers</span>
+              <span class="menu-title">{{ __('msg.farmers') }}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewdiseases');?>">
               <i class="icon-command menu-icon"></i>
-              <span class="menu-title">Diseases</span>
+              <span class="menu-title">{{ __('msg.diseases') }}</span>
             </a>
           </li>
         </ul>

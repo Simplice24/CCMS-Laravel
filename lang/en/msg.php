@@ -25,5 +25,6 @@
          "full information"=>"Full information",
          "view"=>"View",
          "delete"=>"Delete",
+  ]
  
 ?>

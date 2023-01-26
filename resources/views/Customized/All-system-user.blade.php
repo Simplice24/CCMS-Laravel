@@ -156,16 +156,16 @@
                       <thead>
                         <tr>
                           <th>
-                            Full name
+                            {{ __('msg.full name')}}
                           </th>
                           <th>
-                            User name
+                          {{ __('msg.user name')}}
                           </th>
                           <th>
-                            Role
+                            {{ __('msg.role')}}
                           </th>
                           <th>
-                            Full information
+                          {{ __('msg.full information')}}
                           </th>
                         </tr>
                       </thead>
@@ -182,10 +182,10 @@
                           {{$i->role}}
                           </td>
                           <td>
-                          <a href={{"profile/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; View</button></a>
+                          <a href={{"profile/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{ __('msg.view')}}</button></a>
                           </td>
                           <td>
-                          <a href={{"deleteuser/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Delete</button></a>
+                          <a href={{"deleteuser/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; {{ __('msg.delete')}}</button></a>
                           </td>
                          </tr>
                          @endforeach
