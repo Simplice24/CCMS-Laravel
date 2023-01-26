@@ -151,17 +151,17 @@
             <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Fill out all fields to update system user</h4>
+                    <h4 class="card-title">{{__('msg.Fill Out All Fields To Update System User')}}</h4>
                     <form class="form-sample" action="{{url('updateUser/'.$fulldetails->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                       <p class="card-description">
-                        Personal info
+                        {{__('msg.personal info')}}
                       </p>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Full name</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.full name')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="name" value={{$fulldetails->name}} required />
                             </div>
@@ -169,7 +169,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Email</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.email')}}</label>
                             <div class="col-sm-9">
                               <input type="email" class="form-control" name="email" value={{$fulldetails->email}} required/>
                             </div>
@@ -179,7 +179,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Gender</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.gender')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="gender" value={{$fulldetails->gender}} required>
                                 <option>Male</option>
@@ -190,7 +190,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Phone</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.phone')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="phone" value={{$fulldetails->phone}} required/>
                             </div>
@@ -200,7 +200,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Role</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.role')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="role" required>
                                 <option>{{$fulldetails->role}}</option>
@@ -217,7 +217,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Province</label>
+                              <label class="col-sm-3 col-form-label">{{__('msg.province')}}</label>
                               <div class="col-sm-9">
                                 <input type="text" class="form-control" name="province" value={{$fulldetails->province}} required />
                               </div>
@@ -228,7 +228,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">User name</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.user name')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="username" value={{$fulldetails->username}} required />
                             </div>
@@ -236,7 +236,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">District</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.district')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="district" value={{$fulldetails->district}} required />
                             </div>
@@ -246,7 +246,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Sector</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.sector')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="sector" value={{$fulldetails->sector}} required />
                             </div>
@@ -254,22 +254,20 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Cell</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.cell')}}</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="cell" value={{$fulldetails->cell}} required />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-info font-weight-bold">Save changes</button>
+                      <button type="submit" class="btn btn-info font-weight-bold">{{__('msg.save changes')}}</button>
                     <!-- <button class="btn btn-light">Cancel</button> -->
                     </form>
                   </div>
                 </div>
               </div>
-              
-              
-
+ 
            </div>
         </div>
         <!-- content-wrapper ends -->

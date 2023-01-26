@@ -149,7 +149,7 @@
           <div class="row">
             <div class="col-sm-12 mb-4 mb-xl-0">
             <li class="nav-item dropdown d-lg-flex d-none">
-            <a href="<?=url('registerNewDisease');?>"><button type="button" class="btn btn-info font-weight-bold">+ New disease</button></a>
+            <a href="<?=url('registerNewDisease');?>"><button type="button" class="btn btn-info font-weight-bold">+ {{__('msg.new disease')}}</button></a>
             </li>
             </div>
           </div>
@@ -159,13 +159,13 @@
            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Coffee diseases</h4>
+                  <h4 class="card-title">{{__('msg.coffee diseases')}}</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th>
-                            Disease name
+                            {{__('msg.disease name')}}
                           </th>
                         </tr>
                       </thead>
@@ -176,8 +176,8 @@
                             {{$i->disease_name}}
                           </td>
                           <td>
-                          <a href={{"deletedisease/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Delete</button></a>
-                          <a href={{"updateDisease/".$i->id}}><button type="button" class="btn btn-success" ><i class="fa fa-edit" aria-hidden="true"></i>&nbsp; Edit</button></a>
+                          <a href={{"deletedisease/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; {{__('msg.delete')}}</button></a>
+                          <a href={{"updateDisease/".$i->id}}><button type="button" class="btn btn-success" ><i class="fa fa-edit" aria-hidden="true"></i>&nbsp; {{__('msg.edit')}}</button></a>
                           </td>
                          </tr>
                          @endforeach

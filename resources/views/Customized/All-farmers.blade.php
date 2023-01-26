@@ -149,7 +149,7 @@
           <div class="row">
             <div class="col-sm-12 mb-4 mb-xl-0">
             <li class="nav-item dropdown d-lg-flex d-none">
-                <a href="<?=url('registerNewFarmer');?>"><button type="button" class="btn btn-info font-weight-bold">+ New farmer</button></a>
+                <a href="<?=url('registerNewFarmer');?>"><button type="button" class="btn btn-info font-weight-bold">+{{__('msg.new farmer')}}</button></a>
             </li>
             </div>
           </div>
@@ -159,25 +159,25 @@
            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Coffee farmers</h4>
+                  <h4 class="card-title">{{__('msg.coffee farmers')}}</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th>
-                            Full name
+                            {{__('msg.full name')}}
                           </th>
                           <th>
-                            Cooperative 
+                          {{__('msg.cooperative')}}
                           </th>
                           <th>
-                            Number of trees
+                          {{__('msg.number of trees')}}
                           </th>
                           <th>
-                            Fertilizer
+                          {{__('msg.fertilizer')}}
                           </th>
                           <th>
-                            Full information
+                          {{__('msg.full information')}}
                           </th>
                         </tr>
                       </thead>
@@ -197,7 +197,7 @@
                           {{$i->fertilizer}}
                           </td>
                           <td>
-                          <a href={{"Farmerprofile/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; View</button></a>
+                          <a href={{"Farmerprofile/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{__('msg.view')}}</button></a>
                           </td>
                          </tr>
                          @endforeach
@@ -207,9 +207,6 @@
                 </div>
               </div>
             </div>
-              
-              
-
            </div>
         </div>
         <!-- content-wrapper ends -->

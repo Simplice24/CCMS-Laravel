@@ -150,17 +150,17 @@
             <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Fill out all fields to register new farmer</h4>
+                    <h4 class="card-title">{{__('msg.Fill Out All Fields To Register New Farmer')}}</h4>
                     <form class="form-sample" action="{{url('updateFarmer/'.$farmerinfo->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                       <p class="card-description">
-                        Farmer's info
+                        {{__('msg.farmer info')}}
                       </p>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Full name</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.full name')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="name" value={{$farmerinfo->name}} required />
                             </div>
@@ -178,7 +178,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Cooperative name</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.cooperative name')}}</label>
                             <div class="col-sm-9">
                             <input type="text" class="form-control" name="cooperative_name" value={{$farmerinfo->cooperative_name}} required/>
                             </div>
@@ -186,7 +186,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Category</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.category')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="category" value={{$farmerinfo->category}} required/>
                             </div>
@@ -196,7 +196,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Gender</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.gender')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="gender" value={{$farmerinfo->gender}} required>
                                 <option>Male</option>
@@ -207,7 +207,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Cooperative ID</label>
+                              <label class="col-sm-3 col-form-label">{{__('msg.cooperative ID')}}</label>
                               <div class="col-sm-9">
                                 <input type="number" class="form-control" name="cooperative_id" value={{$farmerinfo->cooperative_id}} required />
                               </div>
@@ -218,7 +218,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Number of trees</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.number of trees')}}</label>
                             <div class="col-sm-9">
                               <input type="number" class="form-control" name="number_of_trees" value={{$farmerinfo->number_of_trees}} required />
                             </div>
@@ -226,7 +226,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Fertilizer</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.fertilizer')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="fertilizer" value={{$farmerinfo->fertilizer}} required />
                             </div>
@@ -236,7 +236,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Phone</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.phone')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="phone" value={{$farmerinfo->phone}} required />
                             </div>
@@ -244,7 +244,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Province</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.province')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="province" value={{$farmerinfo->province}} required />
                             </div>
@@ -254,7 +254,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">District</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.district')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="district" value={{$farmerinfo->district}} required />
                             </div>
@@ -262,7 +262,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Sector</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.sector')}}</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="sector" value={{$farmerinfo->sector}} required />
                             </div>
@@ -272,15 +272,15 @@
                       <div class="row">
                       <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Cell</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.cell')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="cell" value={{$farmerinfo->cell}} required />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-info font-weight-bold">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                      <button type="submit" class="btn btn-info font-weight-bold">{{__('msg.save changes')}}</button>
+                    <!-- <button class="btn btn-light">Cancel</button> -->
                     </form>
                   </div>
                 </div>
