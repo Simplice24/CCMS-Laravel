@@ -150,16 +150,16 @@
             <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Fill out all fields to register new cooperative</h4>
+                    <h4 class="card-title">{{ __('msg.Fill Out All Fields To Register New Cooperative')}}</h4>
                     <form class="form-sample" action="registerNewCooperative" method="POST">
                     @csrf
                       <p class="card-description">
-                        Cooperative info
+                        {{ __('msg.cooperative info')}}
                       </p>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Cooperative name</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.cooperative name')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="name" required />
                             </div>
@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Manager</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.manager')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="manager_name" required/>
                             </div>
@@ -177,7 +177,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Category</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.category')}}</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="category" required/>
                             </div>
@@ -185,7 +185,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Email</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.email')}}</label>
                             <div class="col-sm-9">
                               <input type="email" class="form-control" name="email" required/>
                             </div>
@@ -195,7 +195,7 @@
                       <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Province</label>
+                              <label class="col-sm-3 col-form-label">{{__('msg.province')}}</label>
                               <div class="col-sm-9">
                                 <input type="text" class="form-control" name="province" required />
                               </div>
@@ -203,7 +203,7 @@
                           </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">District</label>
+                              <label class="col-sm-3 col-form-label">{{__('msg.district')}}</label>
                               <div class="col-sm-9">
                                 <input type="text" class="form-control" name="district" required />
                               </div>
@@ -215,7 +215,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Sector</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.sector')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="sector" required />
                             </div>
@@ -223,15 +223,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Cell</label>
+                              <label class="col-sm-3 col-form-label">{{__('msg.cell')}}</label>
                               <div class="col-sm-9">
                                   <input type="text" class="form-control" name="cell" required />
                               </div>
                             </div>
                           </div>
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                      <button type="submit" class="btn btn-primary mr-2">{{ __('msg.submit')}}</button>
+                    <!-- <button class="btn btn-light">Cancel</button> -->
                     </form>
                   </div>
                 </div>

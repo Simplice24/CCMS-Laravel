@@ -151,25 +151,25 @@
            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">All cooperatives</h4>
+                  <h4 class="card-title">{{ __('msg.all cooperatives')}}</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th>
-                            Cooperative name
+                            {{ __('msg.cooperative name')}}
                           </th>
                           <th>
-                            Manager
+                            {{ __('msg.manager')}}
                           </th>
                           <th>
-                            Category
+                          {{ __('msg.category')}}
                           </th>
                           <th>
-                            Email
+                          {{ __('msg.email')}}
                           </th>
                           <th>
-                            Full information
+                          {{ __('msg.full information')}}
                           </th>
                         </tr>
                       </thead>
@@ -189,10 +189,10 @@
                           {{  $i->email }}
                           </td>
                           <td>
-                          <a href={{"updateCooperative/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; View</button></a>
+                          <a href={{"updateCooperative/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{ __('msg.view')}}</button></a>
                           </td>
                           <td>
-                          <a href={{"deletecooperative/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Delete</button></a>
+                          <a href={{"deletecooperative/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; {{ __('msg.delete')}}</button></a>
                           </td>
                         </tr>
                         @endforeach

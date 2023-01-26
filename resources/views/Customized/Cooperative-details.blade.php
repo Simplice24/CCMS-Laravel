@@ -171,7 +171,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Cooperative name</h6>
+                      <h6 class="mb-0">{{__('msg.cooperative name')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                       {{$cooperativeinfo->name}}
@@ -180,7 +180,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Manager</h6>
+                      <h6 class="mb-0">{{__('msg.manager')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$cooperativeinfo->manager_name}}
@@ -189,7 +189,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Category</h6>
+                      <h6 class="mb-0">{{__('msg.category')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$cooperativeinfo->category}}
@@ -198,7 +198,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
+                      <h6 class="mb-0">{{__('msg.email')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$cooperativeinfo->email}}
@@ -207,7 +207,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Province</h6>
+                      <h6 class="mb-0">{{__('msg.province')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$cooperativeinfo->province}}
@@ -216,7 +216,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">District</h6>
+                      <h6 class="mb-0">{{__('msg.district')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$cooperativeinfo->district}}
@@ -225,7 +225,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Sector</h6>
+                      <h6 class="mb-0">{{__('msg.sector')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$cooperativeinfo->sector}}
@@ -234,7 +234,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Cell</h6>
+                      <h6 class="mb-0">{{__('msg.cell')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$cooperativeinfo->cell}}
@@ -243,7 +243,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-success" href={{"CooperativeUpdate/".$cooperativeinfo->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;Edit</a>
+                      <a class="btn btn-success" href={{"CooperativeUpdate/".$cooperativeinfo->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{{__('msg.edit')}}</a>
                     </div>
                   </div>
       

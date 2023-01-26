@@ -171,7 +171,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Full Name</h6>
+                      <h6 class="mb-0">{{ __('msg.full name')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                       {{$details->name}}
@@ -180,7 +180,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Username</h6>
+                      <h6 class="mb-0">{{ __('msg.user name')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->username}}
@@ -189,7 +189,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Gender</h6>
+                      <h6 class="mb-0">{{ __('msg.gender')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->gender}}
@@ -198,7 +198,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Role</h6>
+                      <h6 class="mb-0">{{ __('msg.role')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->role}}
@@ -207,7 +207,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
+                      <h6 class="mb-0">{{ __('msg.email')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->email}}
@@ -216,7 +216,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
+                      <h6 class="mb-0">{{ __('msg.phone')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->phone}}
@@ -225,7 +225,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Province</h6>
+                      <h6 class="mb-0">{{ __('msg.province')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->province}}
@@ -234,7 +234,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">District</h6>
+                      <h6 class="mb-0">{{ __('msg.district')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->district}}
@@ -243,7 +243,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Sector</h6>
+                      <h6 class="mb-0">{{ __('msg.sector')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->sector}}
@@ -252,7 +252,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Cell</h6>
+                      <h6 class="mb-0">{{ __('msg.cell')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$details->cell}}
@@ -261,7 +261,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-success" href={{"profileUpdate/".$details->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;Edit</a>
+                      <a class="btn btn-success" href={{"profileUpdate/".$details->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{{ __('msg.edit')}}</a>
                     </div>
                   </div>
       
