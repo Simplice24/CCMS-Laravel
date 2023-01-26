@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
   <!-- Required meta tags --> 
@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CCMS</title>
   <!-- base:css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="Customized/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="Customized/vendors/feather/feather.css">
   <link rel="stylesheet" href="Customized/vendors/base/vendor.bundle.base.css">
@@ -39,19 +42,35 @@
                 <button type="button" class="btn btn-info font-weight-bold">+ Create New</button>
             </li> -->
           <li class="nav-item dropdown d-flex">
-           
+          <div class="dropdown">
+  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{ __('msg.languages') }}
+  </a>
+
+  <ul class="dropdown-menu">
+    <a class="dropdown-item preview-item" href="<?=url('locale/en');?>">               
+    {{ __('msg.english') }}
+    </a>
+    <a class="dropdown-item preview-item" href="<?=url('locale/fr');?>">               
+    {{ __('msg.francais') }}
+    </a>
+    <a class="dropdown-item " href="<?=url('locale/kiny');?>">               
+         Ikinyarwanda
+    </a>
+  </ul>
+</div>
           </li>
           <li class="nav-item dropdown d-flex mr-4 ">
             <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
               <i class="icon-cog"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
+              <p class="mb-0 font-weight-normal float-left dropdown-header">{{ __('msg.settings')}}</p>
               <a class="dropdown-item preview-item">               
-                  <i class="icon-head"></i> Profile
+                  <i class="icon-head"></i> {{ __('msg.profile')}}
               </a>
               <a class="dropdown-item preview-item" href="<?=url('logout');?>">
-                  <i class="icon-inbox"></i> Logout
+                  <i class="icon-inbox"></i> {{ __('msg.logout')}}
               </a>
             </div>
           </li>
@@ -81,45 +100,45 @@
           <li class="nav-item">
             <a class="nav-link" href="<?=url('Home');?>">
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">{{ __('msg.dashboard')}}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-disc menu-icon"></i>
-              <span class="menu-title">System users</span>
+              <span class="menu-title">{{ __('msg.system users')}}</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewUser');?>"> + new user </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> All system users</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewUser');?>"> + {{ __('msg.new user')}} </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> {{ __('msg.all system users')}}</a></li>
               </ul>
             </div>
           </li>
            <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Cooperatives</span>
+              <span class="menu-title">{{ __('msg.cooperatives')}}</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + new cooperative </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> All cooperatives </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + {{ __('msg.new cooperative')}} </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> {{ __('msg.all cooperatives')}} </a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
               <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">Farmers</span>
+              <span class="menu-title">{{ __('msg.farmers')}}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewdiseases');?>">
               <i class="icon-command menu-icon"></i>
-              <span class="menu-title">Diseases</span>
+              <span class="menu-title">{{ __('msg.diseases')}}</span>
             </a>
           </li>
         </ul>
@@ -131,7 +150,7 @@
            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">System users</h4>
+                  <h4 class="card-title">{{ __('msg.system users')}}</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
   <!-- Required meta tags --> 
@@ -33,12 +33,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-lg-flex d-none">
-                <a href="<?=url('login');?>"><button type="button" class="btn btn-info font-weight-bold"> Login </button></a>
+                <a href="<?=url('login');?>"><button type="button" class="btn btn-info font-weight-bold">{{ __('msg.login')}}</button></a>
             </li> 
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
         </button>
+        
       </div>
     </nav>
 

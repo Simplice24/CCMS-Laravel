@@ -19,6 +19,11 @@ use App\Http\Controllers\LoginConnection;
 
 //Route::group(['middleware'=>"web"],function(){
 
+Route::get('locale/{locale}',function($locale){
+      Session::put('locale',$locale);
+      return redirect()->back();
+});    
+
 Route::get('/', function () {
         return view('Customized/index');
     });

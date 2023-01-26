@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
   <!-- Required meta tags --> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CCMS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
   <!-- base:css -->
   <link rel="stylesheet" href="Customized/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="Customized/vendors/feather/feather.css">
   <link rel="stylesheet" href="Customized/vendors/base/vendor.bundle.base.css">
   <!-- endinject -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="Customized/vendors/flag-icon-css/css/flag-icon.min.css"/>
   <link rel="stylesheet" href="Customized/vendors/font-awesome/css/font-awesome.min.css">
@@ -39,19 +43,42 @@
                 <button type="button" class="btn btn-info font-weight-bold">+ Create New</button>
             </li> -->
           <li class="nav-item dropdown d-flex">
-           
+          <div class="dropdown">
+  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{ __('msg.languages') }}
+  </a>
+
+  <ul class="dropdown-menu">
+    <a class="dropdown-item preview-item" href="<?=url('locale/en');?>">               
+    {{ __('msg.english') }}
+    </a>
+    <a class="dropdown-item preview-item" href="<?=url('locale/fr');?>">               
+    {{ __('msg.francais') }}
+    </a>
+    <a class="dropdown-item " href="<?=url('locale/kiny');?>">               
+         Ikinyarwanda
+    </a>
+  </ul>
+</div>
           </li>
           <li class="nav-item dropdown d-flex mr-4 ">
             <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
               <i class="icon-cog"></i>
             </a>
+            
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
+              <p class="mb-0 font-weight-normal float-left dropdown-header">{{ __('msg.settings') }}</p>
               <a class="dropdown-item preview-item" href="#">               
-                  <i class="icon-head"></i> Profile
+                  <i class="icon-head"></i> {{ __('msg.profile') }}
               </a>
+              <!-- <a class="dropdown-item preview-item" href="">               
+                  <i class="icon-head"></i> French
+              </a>
+              <a class="dropdown-item preview-item" href="">               
+                  <i class="icon-head"></i> English
+              </a> -->
               <a class="dropdown-item preview-item" href="<?=url('logout');?>">
-                  <i class="icon-inbox"></i> Logout
+                  <i class="icon-inbox"></i> {{ __('msg.logout') }}
               </a>
             </div>
           </li>
@@ -81,45 +108,45 @@
           <li class="nav-item">
             <a class="nav-link" href={{"Home"}}>
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">System users</span>
+              <span class="menu-title">{{ __('msg.system users') }}</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="<?=url('registerNewUser');?>"> + new user </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> All system users</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?=url('registerNewUser');?>"> + {{ __('msg.new user') }}</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> {{ __('msg.all system users') }}</a></li>
               </ul>
             </div>
           </li>
            <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-disc menu-icon"></i>
-              <span class="menu-title">Cooperatives</span>
+              <span class="menu-title">{{ __('msg.cooperatives') }}</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + new cooperative </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> All cooperatives </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + {{ __('msg.new cooperative') }} </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> {{ __('msg.all cooperatives') }} </a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
               <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">Farmers</span>
+              <span class="menu-title">{{ __('msg.farmers') }}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewdiseases');?>">
               <i class="icon-command menu-icon"></i>
-              <span class="menu-title">Diseases</span>
+              <span class="menu-title">{{ __('msg.diseases') }}</span>
             </a>
           </li>
         </ul>
@@ -129,7 +156,7 @@
         <div class="content-wrapper">
           <div class="row">
             <div class="col-sm-12 mb-4 mb-xl-0">
-              <h4 class="font-weight-bold text-dark">Hi, welcome back!</h4>
+              <h4 class="font-weight-bold text-dark">{{ __('msg.hi, welcome back!')}}</h4>
               <!-- <p class="font-weight-normal mb-2 text-muted">APRIL 1, 2019</p> -->
             </div>
           </div>
@@ -138,7 +165,7 @@
               <div class="col-md-3 stretch-card grid-margin">
                 <div class="card bg-gradient-info card-img-holder text-white">
                   <div class="card-body">
-                    <h4 class="font-weight-normal mb-3"> System users <i class="fa fa-users fa-24px float-right"></i>
+                    <h4 class="font-weight-normal mb-3">{{ __('msg.system users')}}<i class="fa fa-users fa-24px float-right"></i>
                     </h4>
                     <h1 class="mb-5">{{$rows}}</h1>
                   </div>
@@ -148,7 +175,7 @@
                 <div class="card bg-gradient-success card-img-holder text-white">
                   <div class="card-body">
                     <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3"> Farmers <i class="fa fa-users fa-24px float-right"></i>
+                    <h4 class="font-weight-normal mb-3">{{ __('msg.farmers')}}<i class="fa fa-users fa-24px float-right"></i>
                     </h4>
                     <h1 class="mb-5">{{$farmer}}</h1>
                   </div>
@@ -158,7 +185,7 @@
                 <div class="card bg-gradient-primary card-img-holder text-white">
                   <div class="card-body">
                     <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3"> Cooperatives <i class="mdi mdi-chart-line-variant mdi-24px float-right"></i>
+                    <h4 class="font-weight-normal mb-3"> {{ __('msg.cooperatives')}} <i class="mdi mdi-chart-line-variant mdi-24px float-right"></i>
                     </h4>
                     <h1 class="mb-5">{{$cooperative}}</h1>
                   </div>
@@ -168,7 +195,7 @@
                 <div class="card bg-gradient-danger card-img-holder text-white">
                   <div class="card-body">
                     <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3"> Diseases <i class="fas fa-biohazard "></i>
+                    <h4 class="font-weight-normal mb-3"> {{ __('msg.diseases')}} <i class="fas fa-biohazard "></i>
                     </h4>
                     <h1 class="mb-5">{{$disease}}</h1>
                   </div>
@@ -177,6 +204,24 @@
               
 
            </div>
+            <div class="row">
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.cooperatives, farmers, and system users')}}</h4>
+                    <canvas id="cooperativeChart" style="height:230px"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.diseases')}}</h4>
+                    <canvas id="diseaseChart" style="height:250px"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
@@ -192,7 +237,66 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+  <script>
+var CoopxValues =@json($months);
+var MemxValues =@json($Memmonths);
+var UserxValues =@json($Usermonths);
+var DiseasexValues =@json($Diseasemonths);
+var CoopyValues =@json($monthCount);
+var MembyValues =@json($MemMonthCount);
+var useryvalues =@json($UserMonthCount);
+var diseaseyvalues =@json($DiseaseMonthCount);
 
+new Chart("cooperativeChart", {
+  type: "bar",
+  data: {
+    labels: CoopxValues,
+    datasets: [{
+      label:'number of cooperatives',
+      backgroundColor: "rgb(122, 73, 165)",
+      data: CoopyValues
+    },{
+      label:'number of farmers',
+      backgroundColor: "rgb(173, 231, 146)",
+      data: MembyValues
+    },{
+      label:'number of System users',
+      backgroundColor: "rgb(50, 107, 183)",
+      data: useryvalues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
+
+new Chart("diseaseChart", {
+  type: "bar",
+  data: {
+    labels: DiseasexValues,
+    datasets: [{
+      label:'number of Diseases',
+      backgroundColor: "rgba(237,114,105)",
+      data: diseaseyvalues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
+</script>
   <!-- base:js -->
   <script src="Customized/vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -210,6 +314,7 @@
   <!-- Custom js for this page-->
   <script src="Customized/js/dashboard.js"></script>
   <!-- End custom js for this page-->
+
 </body>
 
 </html>

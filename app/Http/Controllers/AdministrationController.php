@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-
 use App\Models\Administration;
 use App\Models\Cooperative;
 use App\Models\Disease;
@@ -11,109 +10,110 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Carbon\Carbon;
 use session;
 
 class AdministrationController extends Controller
 {
-    public function insertAdministration(Request $request){
-        $input=$request->all();
-        $administration=Administration::create($input);
-        return $administration;
-       }
-       public function viewAdministration(Request $request){
-       return Administration::all();
-       }
-       public function updateAdministration(Request $request,$id){
-        $input=Administration::find($id);
-        $input->update($request->all());
-        return $input;
-        }
-        public function deleteAdministration($id){
-          return Administration::destroy($id);
+    // public function insertAdministration(Request $request){
+    //     $input=$request->all();
+    //     $administration=Administration::create($input);
+    //     return $administration;
+    //    }
+      //  public function viewAdministration(Request $request){
+      //  return Administration::all();
+      //  }
+      //  public function updateAdministration(Request $request,$id){
+      //   $input=Administration::find($id);
+      //   $input->update($request->all());
+      //   return $input;
+      //   }
+        // public function deleteAdministration($id){
+        //   return Administration::destroy($id);
 
-            }
-       public function insertcooperative(Request $request){
-        $input=$request->all();
-        $cooperative=Cooperative::create($input);
-        return $cooperative;
-       }
+        //     }
+      //  public function insertcooperative(Request $request){
+      //   $input=$request->all();
+      //   $cooperative=Cooperative::create($input);
+      //   return $cooperative;
+      //  }
       
-       public function getCooperativeByID($id=null){
-        return $id?Cooperative::find($id):Cooperative::all();
-           }
-           public function updatecooperative(Request $request,$id){
-            $input=Cooperative::find($id);
-            $input->update($request->all());
-            return $input;
-            }
+      //  public function getCooperativeByID($id=null){
+      //   return $id?Cooperative::find($id):Cooperative::all();
+      //      }
+          //  public function updatecooperative(Request $request,$id){
+          //   $input=Cooperative::find($id);
+          //   $input->update($request->all());
+          //   return $input;
+          //   }
             public function deletecooperative($id){
               Cooperative::destroy($id);
                return redirect('viewcooperatives');
                 }
-           public function insertmember(Request $request){
-            $input=$request->all();
-        $member=Member::create($input);
-        return $member;
-        }
-        public function getAllMembers($id=null){
-            return $id?Member::find($id):Member::all();
-               }
-        public function updatemember(Request $request,$id){
-            $input=Member::find($id);
-            $input->update($request->all());
-            return $input;
-            }
-            public function deletemember($id){
-              return Member::destroy($id);
+        //    public function insertmember(Request $request){
+        //     $input=$request->all();
+        // $member=Member::create($input);
+        // return $member;
+        // }
+        // public function getAllMembers($id=null){
+        //     return $id?Member::find($id):Member::all();
+        //        }
+        // public function updatemember(Request $request,$id){
+        //     $input=Member::find($id);
+        //     $input->update($request->all());
+        //     return $input;
+        //     }
+            // public function deletemember($id){
+            //   return Member::destroy($id);
 
-                }
-        public function insertdisease(Request $request){
-            $input=$request->all();
-            $disease=Disease::create($input);
-            return $disease;
-           }
-           public function getAllDisease(){
-            return Disease::all();
-               }
-           public function updatedisease(Request $request,$id){
-            $input=Disease::find($id);
-            $input->update($request->all());
-            return $input;
-            }
-            public function deletedisease($id){
-              return Disease::destroy($id);
+            //     }
+        // public function insertdisease(Request $request){
+        //     $input=$request->all();
+        //     $disease=Disease::create($input);
+        //     return $disease;
+        //    }
+          //  public function getAllDisease(){
+          //   return Disease::all();
+          //      }
+          //  public function updatedisease(Request $request,$id){
+          //   $input=Disease::find($id);
+          //   $input->update($request->all());
+          //   return $input;
+          //   }
+            // public function deletedisease($id){
+            //   return Disease::destroy($id);
 
-                }
+            //     }
 
                 
-                function managers(){
-                  $users=DB::table('administrations')->where('role','Manager')->get();
-                  return $users;
-                }
-                function admins(){
-                  $users=DB::table('administrations')->where('role','Admin')->get();
-                  return $users;
-                }
-                function rab(){
-                  $users=DB::table('administrations')->where('role','Rab')->get();
-                  return $users;
-                }
-                function naeb(){
-                  $users=DB::table('administrations')->where('role','Naeb')->get();
-                  return $users;
-                }
-                function sector_agro(){
-                  $users=DB::table('administrations')->where('role','Sector_agro')->get();
-                  return $users;
-                }
-                function district_agro(){
-                  $users=DB::table('administrations')->where('role','District_agro')->get();
-                  return $users;
-                }
-                function sedo(){
-                  $users=DB::table('administrations')->where('role','Sedo')->get();
-                  return $users;
-                }
+                // function managers(){
+                //   $users=DB::table('administrations')->where('role','Manager')->get();
+                //   return $users;
+                // }
+                // function admins(){
+                //   $users=DB::table('administrations')->where('role','Admin')->get();
+                //   return $users;
+                // }
+                // function rab(){
+                //   $users=DB::table('administrations')->where('role','Rab')->get();
+                //   return $users;
+                // }
+                // function naeb(){
+                //   $users=DB::table('administrations')->where('role','Naeb')->get();
+                //   return $users;
+                // }
+                // function sector_agro(){
+                //   $users=DB::table('administrations')->where('role','Sector_agro')->get();
+                //   return $users;
+                // }
+                // function district_agro(){
+                //   $users=DB::table('administrations')->where('role','District_agro')->get();
+                //   return $users;
+                // }
+                // function sedo(){
+                //   $users=DB::table('administrations')->where('role','Sedo')->get();
+                //   return $users;
+                // }
 
 
                 public function viewusers(){
@@ -188,86 +188,86 @@ class AdministrationController extends Controller
                 }
 
 
-                public function role(){
-        $Admin_role= Role::create(['name' => 'Admin']);
-        $Naeb_role = Role::create(['name' => 'Naeb']);
-        $Rab_role = Role::create(['name' => 'Rab']);
-        $District_agro_role = Role::create(['name' => 'District_agro']);
-        $Sector_agro_role = Role::create(['name' => 'Sector_agro']);
-        $Sedo_role = Role::create(['name' => 'Sedo']);
-        $Manager_role = Role::create(['name' => 'Manager']);
+//                 public function role(){
+//         $Admin_role= Role::create(['name' => 'Admin']);
+//         $Naeb_role = Role::create(['name' => 'Naeb']);
+//         $Rab_role = Role::create(['name' => 'Rab']);
+//         $District_agro_role = Role::create(['name' => 'District_agro']);
+//         $Sector_agro_role = Role::create(['name' => 'Sector_agro']);
+//         $Sedo_role = Role::create(['name' => 'Sedo']);
+//         $Manager_role = Role::create(['name' => 'Manager']);
 
-        Permission::create(['name' => 'create-cooperative']);
-        Permission::create(['name' => 'create-administration']);
-        Permission::create(['name' => 'create-member']);
-        Permission::create(['name' => 'create-disease']);
-        Permission::create(['name' => 'delete-cooperative']);
-        Permission::create(['name' => 'delete-administration']);
-        Permission::create(['name' => 'delete-member']);
-        Permission::create(['name' => 'delete-disease']);
-       Permission::create(['name' => 'update-disease']);
-       Permission::create(['name' => 'update-administration']);
-       Permission::create(['name' => 'update-cooperative']);
-       Permission::create(['name' => 'update-member']);
-       Permission::create(['name' => 'view-cooperative']);
-       Permission::create(['name' => 'view-administration']);
-       Permission::create(['name' => 'view-member']);
-       Permission::create(['name' => 'view-disease']);
+//         Permission::create(['name' => 'create-cooperative']);
+//         Permission::create(['name' => 'create-administration']);
+//         Permission::create(['name' => 'create-member']);
+//         Permission::create(['name' => 'create-disease']);
+//         Permission::create(['name' => 'delete-cooperative']);
+//         Permission::create(['name' => 'delete-administration']);
+//         Permission::create(['name' => 'delete-member']);
+//         Permission::create(['name' => 'delete-disease']);
+//        Permission::create(['name' => 'update-disease']);
+//        Permission::create(['name' => 'update-administration']);
+//        Permission::create(['name' => 'update-cooperative']);
+//        Permission::create(['name' => 'update-member']);
+//        Permission::create(['name' => 'view-cooperative']);
+//        Permission::create(['name' => 'view-administration']);
+//        Permission::create(['name' => 'view-member']);
+//        Permission::create(['name' => 'view-disease']);
 
-        $Admin_role->givePermissionTo([
-            'create-cooperative',
-            'create-administration',
-            'create-disease',
-            'delete-cooperative',
-            'delete-administration',
-            'delete-disease',
-            'update-cooperative',
-            'update-administration',
-            'update-disease',
-            'view-cooperative',
-            'view-administration',
-            'view-disease',
-            'view-member'
-        ]);
+//         $Admin_role->givePermissionTo([
+//             'create-cooperative',
+//             'create-administration',
+//             'create-disease',
+//             'delete-cooperative',
+//             'delete-administration',
+//             'delete-disease',
+//             'update-cooperative',
+//             'update-administration',
+//             'update-disease',
+//             'view-cooperative',
+//             'view-administration',
+//             'view-disease',
+//             'view-member'
+//         ]);
 
-        $Naeb_role->givePermissionTo([
-            'view-cooperative',
-            'view-administration',
-            'view-disease',
-            'view-member'
-        ]);
-        $Rab_role->givePermissionTo([
-            'view-cooperative',
-            'view-administration',
-            'view-disease',
-            'view-member'
-        ]);
-        $District_agro_role->givePermissionTo([
-            'view-cooperative',
-            'view-administration',
-            'view-disease',
-            'view-member'
-        ]);
-        $Sector_agro_role->givePermissionTo([
-            'view-cooperative',
-            'view-administration',
-            'view-disease',
-            'view-member'
-        ]);
-        $Sedo_role->givePermissionTo([
-            'view-cooperative',
-            'view-disease',
-            'view-member'
-        ]);
-        $Manager_role->givePermissionTo([
-            'create-member',
-            'update-member',
-            'delete-member',
-            'view-member',
-            'view-disease'
-        ]);
+//         $Naeb_role->givePermissionTo([
+//             'view-cooperative',
+//             'view-administration',
+//             'view-disease',
+//             'view-member'
+//         ]);
+//         $Rab_role->givePermissionTo([
+//             'view-cooperative',
+//             'view-administration',
+//             'view-disease',
+//             'view-member'
+//         ]);
+//         $District_agro_role->givePermissionTo([
+//             'view-cooperative',
+//             'view-administration',
+//             'view-disease',
+//             'view-member'
+//         ]);
+//         $Sector_agro_role->givePermissionTo([
+//             'view-cooperative',
+//             'view-administration',
+//             'view-disease',
+//             'view-member'
+//         ]);
+//         $Sedo_role->givePermissionTo([
+//             'view-cooperative',
+//             'view-disease',
+//             'view-member'
+//         ]);
+//         $Manager_role->givePermissionTo([
+//             'create-member',
+//             'update-member',
+//             'delete-member',
+//             'view-member',
+//             'view-disease'
+//         ]);
   
-}
+// }
 
 
                 public function viewfarmers(){
@@ -425,7 +425,43 @@ class AdministrationController extends Controller
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();
                   $disease=Disease::count();
-                  return view('Customized/Dashboard',['rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
+                  $Coopdata=Cooperative::select('id','created_at')->get()->groupBy(function($Coopdata){
+                    return Carbon::parse($Coopdata->created_at)->format('Y-M');
+                  });
+                  $Memdata=Member::select('id','created_at')->get()->groupBy(function($Memdata){
+                    return Carbon::parse($Memdata->created_at)->format('Y-M');
+                  });
+                  $Userdata=Administration::select('id','created_at')->get()->groupBy(function($Userdata){
+                    return Carbon::parse($Userdata->created_at)->format('Y-M');
+                  });
+                  $Diseasedata=Disease::select('id','created_at')->get()->groupBy(function($Diseasedata){
+                    return Carbon::parse($Diseasedata->created_at)->format('Y-M');
+                  });
+                  $months=[];
+                  $monthCount=[];
+                  $Memmonths=[];
+                  $MemMonthCount=[];
+                  $Usermonths=[];
+                  $UserMonthCount=[];
+                  $Diseasemonths=[];
+                  $DiseaseMonthCount=[];
+                  foreach($Coopdata as $coopmonth => $values){
+                    $months[]=$coopmonth;
+                    $monthCount[]=count($values);
+                  }
+                  foreach($Memdata as $memmonth => $values){
+                    $Memmonths[]=$memmonth;
+                    $MemMonthCount[]=count($values);
+                  }
+                  foreach($Userdata as $usermonth => $values){
+                    $Usermonths[]=$usermonth;
+                    $UserMonthCount[]=count($values);
+                  }
+                  foreach($Diseasedata as $dismonth => $values){
+                    $Diseasemonths[]=$dismonth;
+                    $DiseaseMonthCount[]=count($values);
+                  }
+                  return view('Customized/Dashboard',['Diseasemonths'=>$Diseasemonths,'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths,'UserMonthCount'=>$UserMonthCount,'Coopdata'=>$Coopdata,'months'=>$months,'monthCount'=>$monthCount,'Memdata'=>$Memdata,'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
                 }
 
                  public function managerhome(){
@@ -449,10 +485,6 @@ class AdministrationController extends Controller
                          $request->session()->regenerate();
                          return redirect()->intended('/');
                      }
-                     // else if(Auth::attempt($credentials))
-                     //   {
-                     //     return redirect()->intended('management/dashboard');
-                     //     }
                    else{
                      return back()->withErrors([
                          'email' => 'The provided credentials do not match our records.',
