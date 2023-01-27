@@ -164,41 +164,50 @@
            <div class="row">
               <div class="col-md-3 stretch-card grid-margin">
                 <div class="card bg-gradient-info card-img-holder text-white">
+                  <a href="<?=url('viewsystemuser');?>" style="text-decoration:none; color:white;">
                   <div class="card-body">
+                  <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">{{ __('msg.system users')}}<i class="fa fa-users fa-24px float-right"></i>
                     </h4>
                     <h1 class="mb-5">{{$rows}}</h1>
                   </div>
+                  </a>
                 </div>
               </div>
               <div class="col-md-3 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">
+                <a href="<?=url('viewfarmers');?>" style="text-decoration:none; color:white;">
                   <div class="card-body">
                     <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">{{ __('msg.farmers')}}<i class="fa fa-users fa-24px float-right"></i>
                     </h4>
                     <h1 class="mb-5">{{$farmer}}</h1>
                   </div>
+                </a>
                 </div>
               </div>
               <div class="col-md-3 stretch-card grid-margin">
                 <div class="card bg-gradient-primary card-img-holder text-white">
+                <a href="<?=url('viewcooperatives');?>" style="text-decoration:none; color:white;">
                   <div class="card-body">
                     <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3"> {{ __('msg.cooperatives')}} <i class="mdi mdi-chart-line-variant mdi-24px float-right"></i>
                     </h4>
                     <h1 class="mb-5">{{$cooperative}}</h1>
                   </div>
+                  </a>
                 </div>
               </div>
                <div class="col-md-3 stretch-card grid-margin">
                 <div class="card bg-gradient-danger card-img-holder text-white">
+                <a href="<?=url('viewdiseases');?>" style="text-decoration:none; color:white;">
                   <div class="card-body">
                     <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3"> {{ __('msg.diseases')}} <i class="fas fa-biohazard "></i>
                     </h4>
                     <h1 class="mb-5">{{$disease}}</h1>
                   </div>
+                 </a> 
                 </div>
               </div>
               
