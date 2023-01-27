@@ -421,6 +421,7 @@ class AdministrationController extends Controller
                 }
 
                 public function homedashboard(){
+
                   $rows=Administration::count();
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();

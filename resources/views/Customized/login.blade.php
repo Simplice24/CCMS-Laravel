@@ -47,7 +47,7 @@
               <form action="login" method="POST">
                 @csrf
                 <div class="form-group first" >
-                  <label for="username">username</label>
+                  <label for="username">Email address</label>
                   <input type="email" class="form-control" name="email" placeholder="your-email@gmail.com" id="username">
                 </div>
                 <div class="form-group last mb-3">
