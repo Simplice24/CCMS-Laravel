@@ -35,14 +35,14 @@ class RoleAndPermissionSeeder extends Seeder
         Permission::create(['name' => 'delete-administration']);
         Permission::create(['name' => 'delete-member']);
         Permission::create(['name' => 'delete-disease']);
-       Permission::create(['name' => 'update-disease']);
-       Permission::create(['name' => 'update-administration']);
-       Permission::create(['name' => 'update-cooperative']);
-       Permission::create(['name' => 'update-member']);
-       Permission::create(['name' => 'view-cooperative']);
-       Permission::create(['name' => 'view-administration']);
-       Permission::create(['name' => 'view-member']);
-       Permission::create(['name' => 'view-disease']);
+        Permission::create(['name' => 'update-disease']);
+        Permission::create(['name' => 'update-administration']);
+        Permission::create(['name' => 'update-cooperative']);
+        Permission::create(['name' => 'update-member']);
+        Permission::create(['name' => 'view-cooperative']);
+        Permission::create(['name' => 'view-administration']);
+        Permission::create(['name' => 'view-member']);
+        Permission::create(['name' => 'view-disease']);
 
         $Admin_role->givePermissionTo([
             'create-cooperative',
