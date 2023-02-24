@@ -65,12 +65,12 @@
               <i class="icon-cog"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
+              <p class="mb-0 font-weight-normal float-left dropdown-header">{{ __('msg.settings') }}</p>
               <a class="dropdown-item preview-item">               
-                  <i class="icon-head"></i> Profile
+                  <i class="icon-head"></i> {{ __('msg.profile') }}
               </a>
               <a class="dropdown-item preview-item">
-                  <i class="icon-inbox"></i> Logout
+                  <i class="icon-inbox"></i> {{ __('msg.logout') }}
               </a>
             </div>
           </li>
