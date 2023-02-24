@@ -122,7 +122,8 @@ class AdministrationController extends Controller
               }
 
               public function addinguserpage(){
-                  return view('Customized/Register-new-user');
+                  $roles=Role::all();
+                  return view('Customized/Register-new-user',['roles'=>$roles]);
               }
               public function addingcooperativepage(){
                 return view('Customized/Register-cooperative');
@@ -169,7 +170,9 @@ class AdministrationController extends Controller
                 $user->district=$req->district;
                 $user->sector=$req->sector;
                 $user->cell=$req->cell;
-                $user->save();
+                if($user->save()){
+                  $user->assignRole($user->role);
+                };
                   return redirect('viewsystemuser');
                 }
 
@@ -299,7 +302,8 @@ class AdministrationController extends Controller
 
                 public function profileupdatepage($id){
                   $fulldetails=Administration::find($id);
-                  return view('Customized/Update-details',['fulldetails'=>$fulldetails]);
+                  $roles=Role::all();
+                  return view('Customized/Update-details',['fulldetails'=>$fulldetails,'roles'=>$roles]);
                 }
 
                 public function deleteuser($id){
@@ -366,7 +370,10 @@ class AdministrationController extends Controller
                   $input->district=$req->input('district');
                   $input->sector=$req->input('sector');
                   $input->cell=$req->input('cell');
-                  $input->update();
+                  if($input->update()){
+                    DB::table('model_has_roles')->where('model_id',$id)->delete();
+                    $input->assignRole($req->role);
+                  };
                   return redirect('viewsystemuser');
                 }
 
@@ -494,13 +501,15 @@ class AdministrationController extends Controller
                  }
              }
 
-             public function logout(Request $request)
-{
-    Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect('/');
 
-}
+
+             public function logout(Request $request)
+                  {
+                      Auth::logout();
+                      $request->session()->invalidate();
+                      $request->session()->regenerateToken();
+                      return redirect('/');
+
+                  }
 
 }

@@ -202,14 +202,11 @@
                             <label class="col-sm-3 col-form-label">{{ __('msg.role')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="role" required>
-                                <option>Select user's role</option>
-                                <option>ADMIN</option>
-                                <option>NAEB</option>
-                                <option>RAB</option>
-                                <option>DISTRICT AGRONOMIST</option>
-                                <option>SECTOR AGRONOMIST</option>
-                                <option>SEDO</option>
-                                <option>MANAGER</option>
+                                        <option disable selected>--select role--</option>
+                                        @foreach($roles as $role)
+                                        <option value="{{ $role->name }}">{{ $role->name}}</option>
+                                        @endforeach
+                                    </select>
                               </select>
                             </div>
                           </div>
