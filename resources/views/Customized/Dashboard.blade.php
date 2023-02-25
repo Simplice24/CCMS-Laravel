@@ -231,6 +231,25 @@
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.cooperatives, farmers, and system users')}}</h4>
+                    <canvas id="cooperativeChart" style="height:230px"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.diseases')}}</h4>
+                    <canvas id="diseaseChart" style="height:250px"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->

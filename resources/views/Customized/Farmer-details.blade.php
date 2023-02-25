@@ -171,7 +171,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Full Name</h6>
+                      <h6 class="mb-0">{{ __('msg.full name') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                       {{$farmerinfo->name}}
@@ -189,7 +189,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Cooperative name</h6>
+                      <h6 class="mb-0">{{ __('msg.cooperative name') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->cooperative_name}}
@@ -198,7 +198,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Category</h6>
+                      <h6 class="mb-0">{{ __('msg.category') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->category}}
@@ -207,7 +207,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Gender</h6>
+                      <h6 class="mb-0">{{ __('msg.gender') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->gender}}
@@ -216,7 +216,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Number of trees</h6>
+                      <h6 class="mb-0">{{ __('msg.number of trees') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->number_of_trees}}
@@ -225,7 +225,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Fertilizer</h6>
+                      <h6 class="mb-0">{{ __('msg.fertilizer') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->fertilizer}}
@@ -234,7 +234,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
+                      <h6 class="mb-0">{{ __('msg.phone') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->phone}}
@@ -243,7 +243,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Province</h6>
+                      <h6 class="mb-0">{{ __('msg.province') }}/h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->province}}
@@ -252,7 +252,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">District</h6>
+                      <h6 class="mb-0">{{ __('msg.district') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->district}}
@@ -261,7 +261,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Sector</h6>
+                      <h6 class="mb-0">{{ __('msg.sector') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->sector}}
@@ -270,7 +270,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Cell</h6>
+                      <h6 class="mb-0">{{ __('msg.cell') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$farmerinfo->cell}}
@@ -279,10 +279,9 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-success" href={{"farmerUpdate/".$farmerinfo->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;Edit</a>
+                      <a class="btn btn-success" href={{"farmerUpdate/".$farmerinfo->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{{ __('msg.edit') }}</a>
                     </div>
                   </div>
-      
                 </div>
               </div>
               </div>

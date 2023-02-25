@@ -35,6 +35,7 @@
          "cell"=>"Cell",
          "submit"=>"Submit",
          "phone"=>"Phone",
+         "coffee farmers"=>"coffee farmers",
          "personal info"=>"Personal info",
          "cooperative info"=>"Cooperative info",
          "edit"=>"Edit",

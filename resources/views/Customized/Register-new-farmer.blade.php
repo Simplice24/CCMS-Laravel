@@ -154,12 +154,12 @@
                     <form class="form-sample" action="registerNewFarmer" method="POST">
                     @csrf
                       <p class="card-description">
-                        Farmer's info
+                        {{ __('msg.farmer info') }}
                       </p>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Full name</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.full name') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="name" required />
                             </div>
@@ -177,7 +177,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Cooperative name</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.cooperative name') }}</label>
                             <div class="col-sm-9">
                             <input type="text" class="form-control" name="cooperative_name" required/>
                             </div>
@@ -185,7 +185,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Category</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.category') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="category" required/>
                             </div>
@@ -195,7 +195,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Gender</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.gender') }}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="gender" required>
                                 <option>Male</option>
@@ -206,7 +206,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Cooperative ID</label>
+                              <label class="col-sm-3 col-form-label">{{ __('msg.cooperative ID') }}</label>
                               <div class="col-sm-9">
                                 <input type="number" class="form-control" name="cooperative_id" required />
                               </div>
@@ -217,7 +217,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Number of trees</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.number of trees')}}</label>
                             <div class="col-sm-9">
                               <input type="number" class="form-control" name="number_of_trees" required />
                             </div>
@@ -225,7 +225,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Fertilizer</label>
+                            <label class="col-sm-3 col-form-label">{{ __('fertilizer') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="fertilizer" required />
                             </div>
@@ -235,7 +235,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Phone</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.phone')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="phone" required />
                             </div>
@@ -243,7 +243,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Province</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.province') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="province" required />
                             </div>
@@ -253,7 +253,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">District</label>
+                            <label class="col-sm-3 col-form-label">{{ __('district') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="district" required />
                             </div>
@@ -261,7 +261,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Sector</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.sector') }}</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="sector" required />
                             </div>
@@ -271,15 +271,15 @@
                       <div class="row">
                       <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Cell</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.cell') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="cell" required />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                      <button type="submit" class="btn btn-primary mr-2">{{ __('msg.submit')}}</button>
+                    <!-- <button class="btn btn-light">Cancel</button> -->
                     </form>
                   </div>
                 </div>
