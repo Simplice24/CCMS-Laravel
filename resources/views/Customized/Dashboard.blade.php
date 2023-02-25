@@ -217,7 +217,7 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{ __('msg.cooperatives, farmers, and system users')}}</h4>
+                    <h4 class="card-title">{{ __('msg.cooperatives')}}</h4>
                     <canvas id="cooperativeChart" style="height:230px"></canvas>
                   </div>
                 </div>
@@ -236,16 +236,16 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{ __('msg.cooperatives, farmers, and system users')}}</h4>
-                    <canvas id="cooperativeChart" style="height:230px"></canvas>
+                    <h4 class="card-title">{{ __('msg.system users')}}</h4>
+                    <canvas id="SystemUsersChart" style="height:230px"></canvas>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{ __('msg.diseases')}}</h4>
-                    <canvas id="diseaseChart" style="height:250px"></canvas>
+                    <h4 class="card-title">{{ __('msg.farmers')}}</h4>
+                    <canvas id="farmersChart" style="height:250px"></canvas>
                   </div>
                 </div>
               </div>
@@ -283,14 +283,49 @@ new Chart("cooperativeChart", {
       label:'number of cooperatives',
       backgroundColor: "rgb(122, 73, 165)",
       data: CoopyValues
-    },{
-      label:'number of farmers',
-      backgroundColor: "rgb(173, 231, 146)",
-      data: MembyValues
-    },{
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
+
+new Chart("SystemUsersChart", {
+  type: "bar",
+  data: {
+    labels: CoopxValues,
+    datasets: [
+      {
       label:'number of System users',
       backgroundColor: "rgb(50, 107, 183)",
       data: useryvalues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
+
+new Chart("farmersChart", {
+  type: "bar",
+  data: {
+    labels: CoopxValues,
+    datasets: [{
+      label:'number of farmers',
+      backgroundColor: "rgb(173, 231, 146)",
+      data: MembyValues
     }]
   },
   options: {
