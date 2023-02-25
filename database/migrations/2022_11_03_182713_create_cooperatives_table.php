@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('manager_name');
             $table->string('category');
             $table->string('email');
+            $table->string('status');
+            $table->string('starting_date');
             $table->string('province');
             $table->string('district');
             $table->string('sector');

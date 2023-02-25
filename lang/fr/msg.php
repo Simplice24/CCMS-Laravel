@@ -65,5 +65,7 @@ nouvel agriculteur",
 "cooperative ID"=>"Cooperative ID",
 "Fill Out All Fields To Update Disease"=>"Remplissez tous les champs obligatoires",
 "disease info"=>"info sur la maladie",
+"status"=>"statut",
+"starting date"=>"date de début",
 ]
 ?>

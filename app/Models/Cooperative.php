@@ -13,6 +13,8 @@ class Cooperative extends Model
         'manager_name',
         'category',
         'email',
+        'status',
+        'starting_date',
         'province',
         'district',
         'sector',

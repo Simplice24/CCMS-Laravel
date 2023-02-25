@@ -59,6 +59,8 @@
          "cooperative ID"=>"Cooperative ID",
          "disease info"=>"Disease info",
          "disease name"=>"Disease name",
+         "status"=>"status",
+         "starting date"=>"starting date",
   ]
  
 ?>

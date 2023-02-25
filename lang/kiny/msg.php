@@ -58,5 +58,7 @@ return[
 "cooperative ID"=>"Umubare uranga koperative",
 "Fill Out All Fields To Update Disease"=>"Uzuza imyanya yose uhindure amakuru y'indwara",
 "disease info"=>"Amakuru ajyanye n'indwara",
+"status"=>"Imikorere",
+"starting date"=>"Igihe yatangiriye",
 ]
 ?>

@@ -126,7 +126,8 @@ class AdministrationController extends Controller
                   return view('Customized/Register-new-user',['roles'=>$roles]);
               }
               public function addingcooperativepage(){
-                return view('Customized/Register-cooperative');
+                $manager_names=Administration::all()->where('role', 'manager');
+                return view('Customized/Register-cooperative',['manager_names'=>$manager_names]);
               }
               public function addingfarmerpage(){
                 return view('Customized/Register-new-farmer');
@@ -182,6 +183,8 @@ class AdministrationController extends Controller
                   $cooperative->manager_name=$req->manager_name;
                   $cooperative->category=$req->category;
                   $cooperative->email=$req->email;
+                  $cooperative->status=$req->status;
+                  $cooperative->starting_date=$req->starting_date;
                   $cooperative->province=$req->province;
                   $cooperative->district=$req->district;
                   $cooperative->sector=$req->sector;

@@ -169,7 +169,12 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.manager')}}</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" name="manager_name" required/>
+                            <select class="form-control" name="manager_name" required>
+                            <option disable selected>--select cooperative manager--</option>
+                            @foreach($manager_names as $names)
+                            <option value="{{ $names->name }}">{{ $names->name}}</option>
+                            @endforeach
+                            </select> 
                             </div>
                           </div>
                         </div>
@@ -188,6 +193,28 @@
                             <label class="col-sm-3 col-form-label">{{__('msg.email')}}</label>
                             <div class="col-sm-9">
                               <input type="email" class="form-control" name="email" required/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">{{__('msg.status')}}</label>
+                            <div class="col-sm-9">
+                            <select class="form-control" name="status" required>
+                            <option disable selected>--select status--</option>
+                            <option value="Operating">Operating</option>
+                            <option value="Not operating">Not operating</option>
+                            </select>  
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">{{__('msg.starting date')}}</label>
+                            <div class="col-sm-9">
+                              <input type="date" class="form-control" name="starting_date" required/>
                             </div>
                           </div>
                         </div>
