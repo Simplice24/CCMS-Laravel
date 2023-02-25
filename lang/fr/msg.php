@@ -67,5 +67,6 @@ nouvel agriculteur",
 "disease info"=>"info sur la maladie",
 "status"=>"statut",
 "starting date"=>"date de début",
+"Registration date"=>"Date d'inscription",
 ]
 ?>

@@ -60,5 +60,6 @@ return[
 "disease info"=>"Amakuru ajyanye n'indwara",
 "status"=>"Imikorere",
 "starting date"=>"Igihe yatangiriye",
+"Registration date"=>"Itariki yabaruriweho",
 ]
 ?>

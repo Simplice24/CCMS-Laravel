@@ -207,6 +207,33 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
+                      <h6 class="mb-0">{{__('msg.status')}}</h6>
+                    </div>
+                    <div class="col-sm-9 text-dark">
+                    {{$cooperativeinfo->status}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">{{__('msg.starting date')}}</h6>
+                    </div>
+                    <div class="col-sm-9 text-dark">
+                    {{$cooperativeinfo->starting_date}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">{{__('msg.Registration date')}}</h6>
+                    </div>
+                    <div class="col-sm-9 text-dark">
+                    {{$cooperativeinfo->created_at}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
                       <h6 class="mb-0">{{__('msg.province')}}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">

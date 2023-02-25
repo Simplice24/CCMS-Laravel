@@ -61,6 +61,7 @@
          "disease name"=>"Disease name",
          "status"=>"status",
          "starting date"=>"starting date",
+         "Registration date"=>"Registration date"
   ]
  
 ?>

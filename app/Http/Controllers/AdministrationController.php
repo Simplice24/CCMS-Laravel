@@ -352,7 +352,8 @@ class AdministrationController extends Controller
                 }
                 public function Cooperativeupdatepage($id){
                   $cooperativeinfo=Cooperative::find($id);
-                  return view('Customized/Cooperative-update',['cooperativeinfo'=> $cooperativeinfo]);
+                  $manager_names=Administration::all()->where('role','manager');
+                  return view('Customized/Cooperative-update',['cooperativeinfo'=> $cooperativeinfo,'manager_names'=>$manager_names]);
                 }
 
                 public function farmerprofilepage($id){
@@ -386,6 +387,8 @@ class AdministrationController extends Controller
                   $input->manager_name=$req->input('manager_name');
                   $input->category=$req->input('category');
                   $input->email=$req->input('email');
+                  $input->status=$req->input('status');
+                  $input->starting_date=$req->input('starting_date');
                   $input->province=$req->input('province');
                   $input->district=$req->input('district');
                   $input->sector=$req->input('sector');
