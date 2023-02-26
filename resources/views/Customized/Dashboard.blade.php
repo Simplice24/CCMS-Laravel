@@ -329,31 +329,31 @@ new Chart("SystemUsersChart", {
       data: maleyValues
     },{
       label:'Female users',
-      backgroundColor: "rgb(248, 131, 121)",
+      backgroundColor: "rgb(227, 11, 92)",
       data: femaleyValues
     },{
       label:'Managers',
-      backgroundColor: "rgb(248, 131, 121)",
+      backgroundColor: "rgb(165, 42, 42)",
       data: manageryValues
     },{
       label:'SEDO',
-      backgroundColor: "rgb(248, 131, 121)",
+      backgroundColor: "rgb(227, 83, 53)",
       data: sedoyValues
     },{
       label:'Sector agronomists',
-      backgroundColor: "rgb(248, 131, 121)",
+      backgroundColor: "rgb(236, 88, 0)",
       data: sectoryValues
     },{
       label:'District agronomists',
-      backgroundColor: "rgb(248, 131, 121)",
+      backgroundColor: "rgb(250, 95, 85)",
       data: districtyValues
     },{
       label:'Rab employees',
-      backgroundColor: "rgb(248, 131, 121)",
+      backgroundColor: "rgb(74, 4, 4)",
       data: rabyValues
     },{
       label:'Naeb employees',
-      backgroundColor: "rgb(248, 131, 121)",
+      backgroundColor: "rgb(227, 115, 94)",
       data: naebyValues
     },{
       label:'Admins',
