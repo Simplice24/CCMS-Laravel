@@ -275,7 +275,6 @@ var activeyValues =@json($ActiveMonthCount);
 var inactiveyValues =@json($InactiveMonthCount);
 var maleyValues =@json($MaleCount);
 var femaleyValues =@json($FemaleCount);
-
 var manageryValues =@json($ManagerCount);
 var sedoyValues =@json($SedoCount);
 var sectoryValues =@json($SectorCount);
@@ -284,6 +283,8 @@ var rabyValues =@json($RabCount);
 var naebyValues =@json($NaebCount);
 var adminyValues =@json($AdminCount);
 var superyValues =@json($SuperAdminCount);
+var femalefarmers =@json($FemaleFarmersCount);
+var malefarmers =@json($MaleFarmersCount);
 
 new Chart("cooperativeChart", {
   type: "bar",
@@ -384,6 +385,14 @@ new Chart("farmersChart", {
       label:'number of farmers',
       backgroundColor: "rgb(173, 231, 146)",
       data: MembyValues
+    },{
+      label:'Male famers',
+      backgroundColor: "rgb(50, 107, 183)",
+      data: malefarmers
+    },{
+      label:'Female farmers',
+      backgroundColor: "rgb(227, 11, 92)",
+      data: femalefarmers
     }]
   },
   options: {

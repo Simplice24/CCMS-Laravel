@@ -439,6 +439,13 @@ class AdministrationController extends Controller
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();
                   $disease=Disease::count();
+
+                  $FemaleFarmers=Member::where('gender','Female')->get()->groupBy(function($FemaleFarmer){
+                    return Carbon::parse($FemaleFarmer->created_at)->format('Y-M');
+                  });
+                  $MaleFarmers=Member::where('gender','Male')->get()->groupBy(function($MaleFarmer){
+                    return Carbon::parse($MaleFarmer->created_at)->format('Y-M');
+                  });
                   $Manager=Administration::where('role','manager')->get()->groupBy(function($ManagerUser){
                     return Carbon::parse($ManagerUser->created_at)->format('Y-M');
                   });
@@ -497,7 +504,6 @@ class AdministrationController extends Controller
                   $InactiveMonthCount=[];
                   $MaleCount=[];
                   $FemaleCount=[];
-
                   $ManagerCount=[];
                   $SedoCount=[];
                   $SectorCount=[];
@@ -506,8 +512,15 @@ class AdministrationController extends Controller
                   $NaebCount=[];
                   $AdminCount=[];
                   $SuperAdminCount=[];
+                  $FemaleFarmersCount=[];
+                  $MaleFarmersCount=[];
 
-
+                  foreach($FemaleFarmers as $femalefarmermonth => $values){
+                    $FemaleFarmerCount[]=count($values);
+                  }
+                  foreach($MaleFarmers as $malefarmermonth => $values){
+                    $MaleFarmersCount[]=count($values);
+                  }
                   foreach($Manager as $managermonth => $values){
                     $ManagerCount[]=count($values);
                   }
@@ -532,9 +545,6 @@ class AdministrationController extends Controller
                   foreach($SuperAdmin as $supermonth => $values){
                     $SuperAdminCount[]=count($values);
                   }
-
-
-
                   foreach($Male as $malemonth => $values){
                     $MaleCount[]=count($values);
                   }
@@ -565,7 +575,13 @@ class AdministrationController extends Controller
                     $DiseaseMonthCount[]=count($values);
                   }
                   
-                  return view('Customized/Dashboard',['ManagerCount'=>$ManagerCount,'SedoCount'=>$SedoCount,'SectorCount'=>$SectorCount,'DistrictCount'=>$DistrictCount,'RabCount'=>$RabCount,'NaebCount'=>$NaebCount,'AdminCount'=>$AdminCount,'SuperAdminCount'=>$SuperAdminCount,'MaleCount'=>$MaleCount,'FemaleCount'=>$FemaleCount,'InactiveMonthCount'=>$InactiveMonthCount,'ActiveMonthCount'=>$ActiveMonthCount,'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths,'UserMonthCount'=>$UserMonthCount,'Coopdata'=>$Coopdata,'months'=>$months,'monthCount'=>$monthCount,'Memdata'=>$Memdata,'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
+                  return view('Customized/Dashboard',['ManagerCount'=>$ManagerCount,'SedoCount'=>$SedoCount,'SectorCount'=>$SectorCount,
+                  'DistrictCount'=>$DistrictCount,'RabCount'=>$RabCount,'NaebCount'=>$NaebCount,'AdminCount'=>$AdminCount,
+                  'SuperAdminCount'=>$SuperAdminCount,'MaleCount'=>$MaleCount,'FemaleCount'=>$FemaleCount,'InactiveMonthCount'=>$InactiveMonthCount,
+                  'ActiveMonthCount'=>$ActiveMonthCount,'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths,
+                  'UserMonthCount'=>$UserMonthCount,'Coopdata'=>$Coopdata,'months'=>$months,'monthCount'=>$monthCount,'Memdata'=>$Memdata,
+                  'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease,
+                  'FemaleFarmersCount'=>$FemaleFarmersCount,'MaleFarmersCount'=>$MaleFarmersCount]);
                 }
 
                  public function managerhome(){
