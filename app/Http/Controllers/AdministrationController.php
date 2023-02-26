@@ -514,7 +514,6 @@ class AdministrationController extends Controller
                   foreach($Sedo as $sedomonth => $values){
                     $SedoCount[]=count($values);
                   }
-
                   foreach($Sector_agro as $sectormonth => $values){
                     $SectorCount[]=count($values);
                   }

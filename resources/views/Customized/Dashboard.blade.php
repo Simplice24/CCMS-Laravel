@@ -278,8 +278,8 @@ var femaleyValues =@json($FemaleCount);
 
 var manageryValues =@json($ManagerCount);
 var sedoyValues =@json($SedoCount);
-var sectoryvalues =@json($SectorCount);
-var districtyvalues =@json($DistrictCount);
+var sectoryValues =@json($SectorCount);
+var districtyValues =@json($DistrictCount);
 var rabyValues =@json($RabCount);
 var naebyValues =@json($NaebCount);
 var adminyValues =@json($AdminCount);
@@ -331,6 +331,38 @@ new Chart("SystemUsersChart", {
       label:'Female users',
       backgroundColor: "rgb(248, 131, 121)",
       data: femaleyValues
+    },{
+      label:'Managers',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: manageryValues
+    },{
+      label:'SEDO',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: sedoyValues
+    },{
+      label:'Sector agronomists',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: sectoryValues
+    },{
+      label:'District agronomists',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: districtyValues
+    },{
+      label:'Rab employees',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: rabyValues
+    },{
+      label:'Naeb employees',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: naebyValues
+    },{
+      label:'Admins',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: adminyValues
+    },{
+      label:'Super admins',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: superyValues
     }]
   },
   options: {
