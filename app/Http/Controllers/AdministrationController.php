@@ -439,8 +439,19 @@ class AdministrationController extends Controller
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();
                   $disease=Disease::count();
-                  $ActiveCooperatives=Cooperative::all()->where('status','Operating');
-                  $InactiveCooperatives=Cooperative::all()->where('status','Not operating');
+                  $Female=Administration::where('gender','Operating')->get()->groupBy(function($ActiveCoop){
+                    return Carbon::parse($ActiveCoop->created_at)->format('Y-M');
+                  });
+                  $Male=Administration::where('gender','Not operating')->get()->groupBy(function($InactiveCoop){
+                    return Carbon::parse($InactiveCoop->created_at)->format('Y-M');
+                  });
+
+                  $Active=Cooperative::where('status','Operating')->get()->groupBy(function($ActiveCoop){
+                    return Carbon::parse($ActiveCoop->created_at)->format('Y-M');
+                  });
+                  $Inactive=Cooperative::where('status','Not operating')->get()->groupBy(function($InactiveCoop){
+                    return Carbon::parse($InactiveCoop->created_at)->format('Y-M');
+                  });
                   $Coopdata=Cooperative::select('id','created_at')->get()->groupBy(function($Coopdata){
                     return Carbon::parse($Coopdata->created_at)->format('Y-M');
                   });
@@ -455,12 +466,19 @@ class AdministrationController extends Controller
                   });
                   $months=[];
                   $monthCount=[];
-                  $Memmonths=[];
                   $MemMonthCount=[];
-                  $Usermonths=[];
                   $UserMonthCount=[];
-                  $Diseasemonths=[];
                   $DiseaseMonthCount=[];
+                  $ActiveMonthCount=[];
+                  $InactiveMonthCount=[];
+                  
+                  foreach($Active as $activemonth => $values){
+                    $ActiveMonthCount[]=count($values);
+                  }
+                  foreach($Inactive as $inactivemonth => $values){
+                    $InactiveMonthCount[]=count($values);
+                  }
+                  
                   foreach($Coopdata as $coopmonth => $values){
                     $months[]=$coopmonth;
                     $monthCount[]=count($values);
@@ -477,7 +495,8 @@ class AdministrationController extends Controller
                     $Diseasemonths[]=$dismonth;
                     $DiseaseMonthCount[]=count($values);
                   }
-                  return view('Customized/Dashboard',['InactiveCooperatives'=>$InactiveCooperatives,'ActiveCooperatives'=>$ActiveCooperatives,'Diseasemonths'=>$Diseasemonths,'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths,'UserMonthCount'=>$UserMonthCount,'Coopdata'=>$Coopdata,'months'=>$months,'monthCount'=>$monthCount,'Memdata'=>$Memdata,'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
+                  
+                  return view('Customized/Dashboard',['InactiveMonthCount'=>$InactiveMonthCount,'ActiveMonthCount'=>$ActiveMonthCount,'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths,'UserMonthCount'=>$UserMonthCount,'Coopdata'=>$Coopdata,'months'=>$months,'monthCount'=>$monthCount,'Memdata'=>$Memdata,'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
                 }
 
                  public function managerhome(){

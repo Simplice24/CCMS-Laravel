@@ -266,29 +266,30 @@
   </div>
   <!-- container-scroller -->
   <script>
-var CoopxValues =@json($months);
-var MemxValues =@json($Memmonths);
-var UserxValues =@json($Usermonths);
-var DiseasexValues =@json($Diseasemonths);
+var month =@json($months);
 var CoopyValues =@json($monthCount);
 var MembyValues =@json($MemMonthCount);
 var useryvalues =@json($UserMonthCount);
 var diseaseyvalues =@json($DiseaseMonthCount);
-var activecoop=@json($ActiveCooperatives);
-var inactivecoop=@json($InactiveCooperatives);
+var activeyValues =@json($ActiveMonthCount);
+var inactiveyValues =@json($InactiveMonthCount);
 
 new Chart("cooperativeChart", {
   type: "bar",
   data: {
-    labels: CoopxValues,
+    labels: month,
     datasets: [{
       label:'number of cooperatives',
       backgroundColor: "rgb(122, 73, 165)",
       data: CoopyValues
     },{
-      label:'number of active cooperatives',
-      backgroundColor: "rgb(122, 37, 156)",
-      data:activecoop
+      label:'Active cooperatives',
+      backgroundColor: "rgb(80, 200, 120)",
+      data:activeyValues
+    },{
+      label:'Inactive cooperatives',
+      backgroundColor: "rgb(255, 191, 0)",
+      data:inactiveyValues
     }]
   },
   options: {
@@ -305,7 +306,7 @@ new Chart("cooperativeChart", {
 new Chart("SystemUsersChart", {
   type: "bar",
   data: {
-    labels: CoopxValues,
+    labels: month,
     datasets: [
       {
       label:'number of System users',
@@ -327,7 +328,7 @@ new Chart("SystemUsersChart", {
 new Chart("farmersChart", {
   type: "bar",
   data: {
-    labels: CoopxValues,
+    labels: month,
     datasets: [{
       label:'number of farmers',
       backgroundColor: "rgb(173, 231, 146)",
@@ -348,7 +349,7 @@ new Chart("farmersChart", {
 new Chart("diseaseChart", {
   type: "bar",
   data: {
-    labels: DiseasexValues,
+    labels:month,
     datasets: [{
       label:'number of Diseases',
       backgroundColor: "rgba(237,114,105)",
