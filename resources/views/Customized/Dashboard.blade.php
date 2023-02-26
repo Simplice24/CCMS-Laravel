@@ -274,6 +274,8 @@ var CoopyValues =@json($monthCount);
 var MembyValues =@json($MemMonthCount);
 var useryvalues =@json($UserMonthCount);
 var diseaseyvalues =@json($DiseaseMonthCount);
+var activecoop=@json($ActiveCooperatives);
+var inactivecoop=@json($InactiveCooperatives);
 
 new Chart("cooperativeChart", {
   type: "bar",
@@ -283,6 +285,10 @@ new Chart("cooperativeChart", {
       label:'number of cooperatives',
       backgroundColor: "rgb(122, 73, 165)",
       data: CoopyValues
+    },{
+      label:'number of active cooperatives',
+      backgroundColor: "rgb(122, 37, 156)",
+      data:activecoop
     }]
   },
   options: {
