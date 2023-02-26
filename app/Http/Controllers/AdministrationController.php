@@ -439,13 +439,37 @@ class AdministrationController extends Controller
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();
                   $disease=Disease::count();
-                  $Female=Administration::where('gender','Operating')->get()->groupBy(function($ActiveCoop){
-                    return Carbon::parse($ActiveCoop->created_at)->format('Y-M');
+                  $Manager=Administration::where('role','manager')->get()->groupBy(function($ManagerUser){
+                    return Carbon::parse($ManagerUser->created_at)->format('Y-M');
                   });
-                  $Male=Administration::where('gender','Not operating')->get()->groupBy(function($InactiveCoop){
-                    return Carbon::parse($InactiveCoop->created_at)->format('Y-M');
+                  $Sedo=Administration::where('role','sedo')->get()->groupBy(function($SedoUser){
+                    return Carbon::parse($SedoUser->created_at)->format('Y-M');
                   });
-
+                  $Sector_agro=Administration::where('role','sector_agro')->get()->groupBy(function($SectorAgroUser){
+                    return Carbon::parse($SectorAgroUser->created_at)->format('Y-M');
+                  });
+                  $District_agro=Administration::where('role','district_agro')->get()->groupBy(function($DistrictAgroUser){
+                    return Carbon::parse($DistrictAgroUser->created_at)->format('Y-M');
+                  });
+                  $Rab=Administration::where('role','rab')->get()->groupBy(function($RabUser){
+                    return Carbon::parse($RabUser->created_at)->format('Y-M');
+                  });
+                  $Naeb=Administration::where('role','naeb')->get()->groupBy(function($NaebUser){
+                    return Carbon::parse($NaebUser->created_at)->format('Y-M');
+                  });
+                  $Admin=Administration::where('role','admin')->get()->groupBy(function($AdminUser){
+                    return Carbon::parse($AdminUser->created_at)->format('Y-M');
+                  });
+                  $SuperAdmin=Administration::where('role','SuperAdmin')->get()->groupBy(function($SuperAdminUser){
+                    return Carbon::parse($SuperAdminUser->created_at)->format('Y-M');
+                  });
+                 
+                  $Female=Administration::where('gender','Female')->get()->groupBy(function($FemaleUser){
+                    return Carbon::parse($FemaleUser->created_at)->format('Y-M');
+                  });
+                  $Male=Administration::where('gender','Male')->get()->groupBy(function($MaleUser){
+                    return Carbon::parse($MaleUser->created_at)->format('Y-M');
+                  });
                   $Active=Cooperative::where('status','Operating')->get()->groupBy(function($ActiveCoop){
                     return Carbon::parse($ActiveCoop->created_at)->format('Y-M');
                   });
@@ -471,14 +495,60 @@ class AdministrationController extends Controller
                   $DiseaseMonthCount=[];
                   $ActiveMonthCount=[];
                   $InactiveMonthCount=[];
-                  
+                  $MaleCount=[];
+                  $FemaleCount=[];
+
+                  $ManagerCount=[];
+                  $SedoCount=[];
+                  $SectorCount=[];
+                  $DistrictCount=[];
+                  $RabCount=[];
+                  $NaebCount=[];
+                  $AdminCount=[];
+                  $SuperAdminCount=[];
+
+
+                  foreach($Manager as $managermonth => $values){
+                    $ManagerCount[]=count($values);
+                  }
+                  foreach($Sedo as $sedomonth => $values){
+                    $SedoCount[]=count($values);
+                  }
+
+                  foreach($Sector_agro as $sectormonth => $values){
+                    $SectorCount[]=count($values);
+                  }
+                  foreach($District_agro as $districtmonth => $values){
+                    $DistrictCount[]=count($values);
+                  }               
+                  foreach($Rab as $rabmonth => $values){
+                    $RabCount[]=count($values);
+                  }
+                  foreach($Naeb as $naebmonth => $values){
+                    $NaebCount[]=count($values);
+                  }
+                  foreach($Admin as $adminmonth => $values){
+                    $AdminCount[]=count($values);
+                  }
+                  foreach($SuperAdmin as $supermonth => $values){
+                    $SuperAdminCount[]=count($values);
+                  }
+
+
+
+                  foreach($Male as $malemonth => $values){
+                    $MaleCount[]=count($values);
+                  }
+                  foreach($Female as $femalemonth => $values){
+                    $FemaleCount[]=count($values);
+                  }
+
                   foreach($Active as $activemonth => $values){
                     $ActiveMonthCount[]=count($values);
                   }
                   foreach($Inactive as $inactivemonth => $values){
                     $InactiveMonthCount[]=count($values);
-                  }
-                  
+                  }               
                   foreach($Coopdata as $coopmonth => $values){
                     $months[]=$coopmonth;
                     $monthCount[]=count($values);
@@ -496,7 +566,7 @@ class AdministrationController extends Controller
                     $DiseaseMonthCount[]=count($values);
                   }
                   
-                  return view('Customized/Dashboard',['InactiveMonthCount'=>$InactiveMonthCount,'ActiveMonthCount'=>$ActiveMonthCount,'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths,'UserMonthCount'=>$UserMonthCount,'Coopdata'=>$Coopdata,'months'=>$months,'monthCount'=>$monthCount,'Memdata'=>$Memdata,'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
+                  return view('Customized/Dashboard',['ManagerCount'=>$ManagerCount,'SedoCount'=>$SedoCount,'SectorCount'=>$SectorCount,'DistrictCount'=>$DistrictCount,'RabCount'=>$RabCount,'NaebCount'=>$NaebCount,'AdminCount'=>$AdminCount,'SuperAdminCount'=>$SuperAdminCount,'MaleCount'=>$MaleCount,'FemaleCount'=>$FemaleCount,'InactiveMonthCount'=>$InactiveMonthCount,'ActiveMonthCount'=>$ActiveMonthCount,'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths,'UserMonthCount'=>$UserMonthCount,'Coopdata'=>$Coopdata,'months'=>$months,'monthCount'=>$monthCount,'Memdata'=>$Memdata,'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease]);
                 }
 
                  public function managerhome(){

@@ -273,6 +273,17 @@ var useryvalues =@json($UserMonthCount);
 var diseaseyvalues =@json($DiseaseMonthCount);
 var activeyValues =@json($ActiveMonthCount);
 var inactiveyValues =@json($InactiveMonthCount);
+var maleyValues =@json($MaleCount);
+var femaleyValues =@json($FemaleCount);
+
+var manageryValues =@json($ManagerCount);
+var sedoyValues =@json($SedoCount);
+var sectoryvalues =@json($SectorCount);
+var districtyvalues =@json($DistrictCount);
+var rabyValues =@json($RabCount);
+var naebyValues =@json($NaebCount);
+var adminyValues =@json($AdminCount);
+var superyValues =@json($SuperAdminCount);
 
 new Chart("cooperativeChart", {
   type: "bar",
@@ -310,8 +321,16 @@ new Chart("SystemUsersChart", {
     datasets: [
       {
       label:'number of System users',
-      backgroundColor: "rgb(50, 107, 183)",
+      backgroundColor: "rgb(2, 48, 32)",
       data: useryvalues
+    },{
+      label:'Male users',
+      backgroundColor: "rgb(50, 107, 183)",
+      data: maleyValues
+    },{
+      label:'Female users',
+      backgroundColor: "rgb(248, 131, 121)",
+      data: femaleyValues
     }]
   },
   options: {
