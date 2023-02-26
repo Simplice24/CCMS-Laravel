@@ -22,7 +22,7 @@ class CustomAuth
             return redirect('Home');
         }
         else if(($path=="Home" || $path=="viewsystemuser" || $path=="viewfarmers" || $path=="viewdiseases" ||  $path=="viewcooperatives") && (!Session::get('user')) ){
-            return redirect('/');
+            return redirect('login');
         }
         return $next($request);
     }

@@ -27,6 +27,8 @@ Route::get('locale/{locale}',function($locale){
 Route::get('/', function () {
         return view('Customized/index');
     });
+  
+Route::group(['middleware'=>"web"],function(){
 
 Route::get('registerNewUser',[AdministrationController::class,'addinguserpage']); 
 Route::get('registerNewCooperative',[AdministrationController::class,'addingcooperativepage']);  
@@ -66,6 +68,7 @@ Route::get("profile/profileUpdate/{id}",[AdministrationController::class,'profil
 Route::put('updateUser/{id}',[AdministrationController::class,'updateSystemUser']);
 Route::get("forgetpassword",[AdministrationController::class,'forgetpasswordpage']);
 
+});
 
 
 Route::get('login',function(){

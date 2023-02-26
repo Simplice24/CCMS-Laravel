@@ -15,6 +15,10 @@ use session;
 
 class AdministrationController extends Controller
 {
+
+  public function __construct(){
+    $this->middleware('auth');
+  }
     // public function insertAdministration(Request $request){
     //     $input=$request->all();
     //     $administration=Administration::create($input);
