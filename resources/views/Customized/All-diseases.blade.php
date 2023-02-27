@@ -165,7 +165,7 @@
                       <thead>
                         <tr>
                           <th>
-                            {{__('msg.disease name')}}
+                            {{__('msg.Disease name')}}
                           </th>
                         </tr>
                       </thead>

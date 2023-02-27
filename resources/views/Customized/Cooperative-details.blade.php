@@ -98,7 +98,7 @@
         </div>
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href={{"Home"}}>
+            <a class="nav-link" href="<?=url('Home') ;?>">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
