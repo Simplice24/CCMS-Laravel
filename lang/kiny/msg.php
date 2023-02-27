@@ -61,5 +61,6 @@ return[
 "status"=>"Imikorere",
 "starting date"=>"Igihe yatangiriye",
 "Registration date"=>"Itariki yabaruriweho",
+"ID No"=>"Nimero y'indangamuntu",
 ]
 ?>

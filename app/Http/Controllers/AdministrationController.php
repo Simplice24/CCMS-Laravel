@@ -134,7 +134,8 @@ class AdministrationController extends Controller
                 return view('Customized/Register-cooperative',['manager_names'=>$manager_names]);
               }
               public function addingfarmerpage(){
-                return view('Customized/Register-new-farmer');
+                $cooperatives=Cooperative::all();
+                return view('Customized/Register-new-farmer',['cooperatives'=>$cooperatives]);
               }
               public function addingdiseasepage(){
                 return view('Customized/Register-new-disease');

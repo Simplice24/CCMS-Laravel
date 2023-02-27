@@ -41,6 +41,7 @@
          "edit"=>"Edit",
          "Fill Out All Fields To Register New User"=>"Fill Out All Fields To Register New User",
          "Fill Out All Fields To Register New Cooperative"=>"Fill Out All Fields To Register New Cooperative",
+         "Fill Out All Fields To Register New Farmer"=>"Fill Out All Fields To Register New Farmer",
          "manager"=>"Manager",
          "cooperative name"=>"Cooperative name",
          "category"=>"Category",
@@ -53,7 +54,7 @@
          "new farmer"=>"New farmer",
          "Fill Out All Fields To Update System User"=>"Fill Out All Fields To Update System User",
          "save changes"=>"Save changes",
-         "Fill Out All Fields To Register New Farmer"=>"Fill Out All Fields To Register New Farmer",
+         "Fill out all fields to register new farmer"=>"Fill out all fields to register new farmer",
          "farmer info"=>"Farmer's info",
          "Fill Out All Fields To Update Disease"=>"Fill Out All Fields To Update Disease",
          "cooperative ID"=>"Cooperative ID",
@@ -61,7 +62,8 @@
          "disease name"=>"Disease name",
          "status"=>"status",
          "starting date"=>"starting date",
-         "Registration date"=>"Registration date"
+         "Registration date"=>"Registration date",
+         "ID No"=>"ID No",
   ]
  
 ?>

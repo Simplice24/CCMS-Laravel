@@ -150,7 +150,7 @@
             <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Fill out all fields to register new farmer</h4>
+                    <h4 class="card-title">{{ __('msg.Fill out all fields to register new farmer') }}</h4>
                     <form class="form-sample" action="registerNewFarmer" method="POST">
                     @csrf
                       <p class="card-description">
@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">ID</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.ID No')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="idn" required/>
                             </div>
@@ -179,7 +179,12 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.cooperative name') }}</label>
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" name="cooperative_name" required/>
+                            <select class="form-control" name="gender" required>
+                              <option disable selected>--Select cooperative--</option>
+                                @foreach($cooperatives as $coopname)
+                                <option value={{$coopname->name}}>{{$coopname->name}}</option>
+                                @endforeach
+                              </select>
                             </div>
                           </div>
                         </div>
@@ -198,6 +203,7 @@
                             <label class="col-sm-3 col-form-label">{{ __('msg.gender') }}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="gender" required>
+                              <option disable selected>--Select gender--</option>
                                 <option>Male</option>
                                 <option>Female</option>
                               </select>
@@ -208,7 +214,12 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">{{ __('msg.cooperative ID') }}</label>
                               <div class="col-sm-9">
-                                <input type="number" class="form-control" name="cooperative_id" required />
+                              <select class="form-control" name="cooperative_id" required>
+                              <option disable selected>--Select cooperative to get cooperative id--</option>
+                              @foreach($cooperatives as $coopid)
+                                <option value={{ $coopid->id}}>{{ $coopid->name}}</option>
+                              @endforeach  
+                              </select>
                               </div>
                             </div>
                           </div>
@@ -225,7 +236,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">{{ __('fertilizer') }}</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.fertilizer') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="fertilizer" required />
                             </div>
@@ -253,7 +264,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">{{ __('district') }}</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.district') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="district" required />
                             </div>

@@ -181,6 +181,7 @@
                             <label class="col-sm-3 col-form-label">{{ __('msg.gender')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="gender" required>
+                              <option disable selected>--select gender--</option>
                                 <option>Male</option>
                                 <option>Female</option>
                               </select>
