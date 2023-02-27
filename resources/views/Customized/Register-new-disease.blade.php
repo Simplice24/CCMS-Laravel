@@ -150,24 +150,24 @@
             <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Fill out all fields to register new disease</h4>
+                    <h4 class="card-title">{{ __('msg.Fill out all fields to register new disease')}}</h4>
                     <form class="form-sample" action="registerNewDisease" method="POST">
                     @csrf
                       <p class="card-description">
-                        Disease info
+                        {{ __('msg.Disease info') }}
                       </p>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Disease name</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.Disease name') }}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="disease" required />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                      <button type="submit" class="btn btn-primary mr-2">{{ __('msg.submit')}}</button>
+                    
                     </form>
                   </div>
                 </div>

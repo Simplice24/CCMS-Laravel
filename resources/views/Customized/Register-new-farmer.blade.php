@@ -180,7 +180,7 @@
                             <label class="col-sm-3 col-form-label">{{ __('msg.cooperative name') }}</label>
                             <div class="col-sm-9">
                             <select class="form-control" name="gender" required>
-                              <option disable selected>--Select cooperative--</option>
+                              <option disable selected>{{ __('msg.--Select cooperative--')}}</option>
                                 @foreach($cooperatives as $coopname)
                                 <option value={{$coopname->name}}>{{$coopname->name}}</option>
                                 @endforeach
@@ -203,9 +203,9 @@
                             <label class="col-sm-3 col-form-label">{{ __('msg.gender') }}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="gender" required>
-                              <option disable selected>--Select gender--</option>
-                                <option>Male</option>
-                                <option>Female</option>
+                              <option disable selected>{{ __('msg.--Select gender--')}}</option>
+                                <option>{{ __('msg.Male')}}</option>
+                                <option>{{ __('msg.Female')}}</option>
                               </select>
                             </div>
                           </div>
@@ -215,7 +215,7 @@
                               <label class="col-sm-3 col-form-label">{{ __('msg.cooperative ID') }}</label>
                               <div class="col-sm-9">
                               <select class="form-control" name="cooperative_id" required>
-                              <option disable selected>--Select cooperative to get cooperative id--</option>
+                              <option disable selected>{{ __('msg.--Select cooperative to get cooperative id--')}}--</option>
                               @foreach($cooperatives as $coopid)
                                 <option value={{ $coopid->id}}>{{ $coopid->name}}</option>
                               @endforeach  

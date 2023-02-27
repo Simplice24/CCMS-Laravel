@@ -58,12 +58,18 @@
          "farmer info"=>"Farmer's info",
          "Fill Out All Fields To Update Disease"=>"Fill Out All Fields To Update Disease",
          "cooperative ID"=>"Cooperative ID",
-         "disease info"=>"Disease info",
-         "disease name"=>"Disease name",
+         "Disease info"=>"Disease info",
+         "Disease name"=>"Disease name",
          "status"=>"status",
          "starting date"=>"starting date",
          "Registration date"=>"Registration date",
          "ID No"=>"ID No",
+         "Fill out all fields to register new disease"=>"Fill out all fields to register new disease",
+         "--Select cooperative--"=>"--Select cooperative--",
+         "--Select gender--"=>"--Select gender--",
+         "--Select cooperative to get cooperative id--"=>"--Select cooperative to get cooperative id--",
+         "Male"=>"Male",
+         "Female"=>"Female",
   ]
  
 ?>
