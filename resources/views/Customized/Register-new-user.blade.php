@@ -181,9 +181,9 @@
                             <label class="col-sm-3 col-form-label">{{ __('msg.gender')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="gender" required>
-                              <option disable selected>--select gender--</option>
-                                <option>Male</option>
-                                <option>Female</option>
+                              <option disable selected>{{ __('msg.--Select gender--')}}</option>
+                                <option>{{ __('msg.Male')}}</option>
+                                <option>{{ __('msg.Female')}}</option>
                               </select>
                             </div>
                           </div>
@@ -203,7 +203,7 @@
                             <label class="col-sm-3 col-form-label">{{ __('msg.role')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="role" required>
-                                        <option disable selected>--select role--</option>
+                                        <option disable selected>{{ __('msg.--Select role--')}}</option>
                                         @foreach($roles as $role)
                                         <option value="{{ $role->name }}">{{ $role->name}}</option>
                                         @endforeach
@@ -213,7 +213,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Province</label>
+                              <label class="col-sm-3 col-form-label">{{ __('msg.Province')}}</label>
                               <div class="col-sm-9">
                                 <input type="text" class="form-control" name="province" required />
                               </div>

@@ -34,7 +34,7 @@ Rôle",
 "password"=>"Mot de passe",
 "confirm password"=>"Confirmez le mot de passe",
 "district"=>"District",
-"province"=>"Province",
+"Province"=>"Province",
 "sector"=>"Secteur",
 "cell"=>"
 Cellule",
@@ -76,5 +76,6 @@ nouvel agriculteur",
 "--Select cooperative to get cooperative id--"=>"--Sélectionnez la coopérative pour obtenir l'identifiant--",
 "Male"=>"Mâle",
 "Female"=>"Femme",
+"--Select role--"=>"--Sélectionner un rôle--",
 ]
 ?>

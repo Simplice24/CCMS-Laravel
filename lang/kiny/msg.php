@@ -29,7 +29,7 @@ return[
 "password"=>"Ijambo ry'ibanga",
 "confirm password"=>"Emeza ijambo ry'ibanga",
 "district"=>"Akarere",
-"province"=>"Intara",
+"Province"=>"Intara",
 "sector"=>"Umurenge",
 "cell"=>"Akagari",
 "submit"=>"Tanga",
@@ -69,5 +69,6 @@ return[
 "--Select cooperative to get cooperative id--"=>"--Hitamo koperative ubone umubare uyiranga--",
 "Male"=>"Gabo",
 "Female"=>"Gore",
+"--Select role--"=>"--Hitamo inshingano--",
 ]
 ?>

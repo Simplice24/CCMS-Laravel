@@ -30,7 +30,7 @@
          "password"=>"Password",
          "confirm password"=>"Confirm password",
          "district"=>"District",
-         "province"=>"Province",
+         "Province"=>"Province",
          "sector"=>"Sector",
          "cell"=>"Cell",
          "submit"=>"Submit",
@@ -70,6 +70,8 @@
          "--Select cooperative to get cooperative id--"=>"--Select cooperative to get cooperative id--",
          "Male"=>"Male",
          "Female"=>"Female",
+         "--Select role--"=>"--Select role--",
+         
   ]
  
 ?>
