@@ -260,6 +260,9 @@ class AdministrationController extends Controller
                 public function DisUpdate(Request $req,$id){
                   $input=Disease::find($id);
                   $input->disease_name=$req->input('disease_name');
+                  $input->category=$req->input('category');
+                  $input->description=$req->input('description');
+                  $input->image=$req->input('image');
                   $input->update();
                   return redirect('viewdiseases');
                 }

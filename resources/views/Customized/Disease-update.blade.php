@@ -153,14 +153,51 @@
                     @csrf
                     @method('PUT')
                       <p class="card-description">
-                        {{__('msg.disease info')}}
+                        {{__('msg.Disease info')}}
                       </p>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">{{__('msg.disease name')}}</label>
+                            <label class="col-sm-3 col-form-label">{{__('msg.Disease name')}}</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="disease_name" value={{$diseaseinfo->disease_name}} required />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">{{ __('msg.category') }}</label>
+                            <div class="col-sm-9">
+                            <select class="form-control" style="height:46px;" name="category" required>
+                                        <option disable selected>{{$diseaseinfo->category}}</option>              
+                                        <option>{{ __('msg.Leaf diseases')}}</option>
+                                        <option>{{ __('msg.Root diseases')}}</option>
+                                        <option>{{ __('msg.Bean diseases')}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">{{ __('msg.Description') }}</label>
+                            <div class="col-sm-9">
+                            <textarea class="form-control" name="description" rows="4">{{$diseaseinfo->description}}</textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">{{ __('msg.Image') }}</label>
+                            <div class="col-sm-9">
+                            <input type="file" name="image" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder={{ __('msg.Upload Image')}}>
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-primary" type="button">{{ __('msg.Upload')}}</button>
+                        </span>
+                      </div>
                             </div>
                           </div>
                         </div>

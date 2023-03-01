@@ -165,6 +165,9 @@
                           <th>
                             {{__('msg.Disease name')}}
                           </th>
+                          <th>
+                            {{__('msg.Disease category')}}
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -172,6 +175,9 @@
                         @foreach($disease as $i)
                           <td>
                             {{$i->disease_name}}
+                          </td>
+                          <td>
+                            {{$i->category}}
                           </td>
                           <td>
                           <div class="input-group-prepend">

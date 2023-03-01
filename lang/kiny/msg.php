@@ -78,5 +78,7 @@ return[
 "Image"=>"Ishusho",
 "Upload"=>"Ohereza",
 "Upload Image"=>"Hitamo ifoto",
+"Disease category"=>"
+Icyiciro cy'indwara",
 ]
 ?>

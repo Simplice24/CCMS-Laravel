@@ -79,6 +79,7 @@
          "Image"=>"Image",
          "Upload"=>"Upload",
          "Upload Image"=>"Upload Image",
+         "Disease category"=>"Diseases category",
   ]
  
 ?>
