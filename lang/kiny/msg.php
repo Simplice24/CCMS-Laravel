@@ -80,5 +80,6 @@ return[
 "Upload Image"=>"Hitamo ifoto",
 "Disease category"=>"
 Icyiciro cy'indwara",
+"Unclassified disease"=>"Indwara itazwi",
 ]
 ?>

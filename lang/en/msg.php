@@ -80,6 +80,7 @@
          "Upload"=>"Upload",
          "Upload Image"=>"Upload Image",
          "Disease category"=>"Diseases category",
+         "Unclassified disease"=>"Unclassified disease",
   ]
  
 ?>

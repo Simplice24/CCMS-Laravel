@@ -173,6 +173,7 @@
                                         <option>{{ __('msg.Leaf diseases')}}</option>
                                         <option>{{ __('msg.Root diseases')}}</option>
                                         <option>{{ __('msg.Bean diseases')}}</option>
+                                        <option>{{ __('msg.Unclassified disease')}}</option>
                               </select>
                             </div>
                           </div>

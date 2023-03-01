@@ -86,5 +86,6 @@ nouvel agriculteur",
 "Upload"=>"Télécharger",
 "Upload Image"=>"Télécharger une image",
 "Disease category"=>"Catégorie de maladie",
+"Unclassified disease"=>"Maladie non classée",
 ]
 ?>
