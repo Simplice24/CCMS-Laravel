@@ -71,5 +71,8 @@ return[
 "Female"=>"Gore",
 "--Select role--"=>"--Hitamo inshingano--",
 "--Select disease category--"=>"--hitamo icyiciro cyindwara--",
+"Leaf diseases"=>"Indwara z'amababi",
+"Root diseases"=>"Indwara z'uruti",
+"Bean diseases"=>"Indwara z'ibitumbwe",
 ]
 ?>

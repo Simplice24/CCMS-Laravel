@@ -78,5 +78,8 @@ nouvel agriculteur",
 "Female"=>"Femme",
 "--Select role--"=>"--Sélectionner un rôle--",
 "--Select disease category--"=>"--sélectionner la catégorie de maladie--",
+"Leaf diseases"=>"Maladies des feuilles",
+"Root diseases"=>"Maladies des racines",
+"Bean diseases"=>"Maladies du haricot",
 ]
 ?>

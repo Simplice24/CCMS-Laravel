@@ -169,9 +169,9 @@
                             <div class="col-sm-9">
                             <select class="form-control" style="height:46px;" name="role" required>
                                         <option disable selected>{{ __('msg.--Select disease category--')}}</option>              
-                                        <option value="Indwara z'amababi">Indwara z'amababi</option>
-                                        <option value="Indwara z'uruti">Indwara z'uruti</option>
-                                        <option value="Indwara z'ibitumbwe">Indwara z'ibitumbwe</option>
+                                        <option>{{ __('msg.Leaf diseases')}}</option>
+                                        <option>{{ __('msg.Root diseases')}}</option>
+                                        <option>{{ __('msg.Bean diseases')}}</option>
                               </select>
                             </div>
                           </div>

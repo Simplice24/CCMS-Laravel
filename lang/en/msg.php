@@ -72,7 +72,9 @@
          "Female"=>"Female",
          "--Select role--"=>"--Select role--",
          "--Select disease category--"=>"--Select disease category--",
-         
+         "Leaf diseases"=>"Leaf diseases",
+         "Root diseases"=>"Root diseases",
+         "Bean diseases"=>"Bean diseases",
   ]
  
 ?>
