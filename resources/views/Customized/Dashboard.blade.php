@@ -111,30 +111,28 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">{{ __('msg.system users') }}</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <!-- <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="<?=url('registerNewUser');?>"> + {{ __('msg.new user') }}</a></li>
                 <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> {{ __('msg.all system users') }}</a></li>
               </ul>
-            </div>
+            </div> -->
           </li>
            <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>
               <span class="menu-title">{{ __('msg.cooperatives') }}</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <!-- <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + {{ __('msg.new cooperative') }} </a></li>
                 <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> {{ __('msg.all cooperatives') }} </a></li>
               </ul>
-            </div>
+            </div> -->
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
@@ -209,7 +207,6 @@
                  </a> 
                 </div>
               </div>
-              
 
            </div>
             <div class="row">
@@ -265,42 +262,28 @@
   </div>
   <!-- container-scroller -->
   <script>
-var month =@json($months);
+var CoopxValues =@json($months);
 var CoopyValues =@json($monthCount);
 var MembyValues =@json($MemMonthCount);
+var MembxValues =@json($Memmonths);
 var useryvalues =@json($UserMonthCount);
+var userxValues =@json($Usermonths);
 var diseaseyvalues =@json($DiseaseMonthCount);
-var activeyValues =@json($ActiveMonthCount);
-var inactiveyValues =@json($InactiveMonthCount);
-var maleyValues =@json($MaleCount);
-var femaleyValues =@json($FemaleCount);
-var manageryValues =@json($ManagerCount);
-var sedoyValues =@json($SedoCount);
-var sectoryValues =@json($SectorCount);
-var districtyValues =@json($DistrictCount);
-var rabyValues =@json($RabCount);
-var naebyValues =@json($NaebCount);
-var adminyValues =@json($AdminCount);
-var superyValues =@json($SuperAdminCount);
-var femalefarmers =@json($FemaleFarmersCount);
-var malefarmers =@json($MaleFarmersCount);
+var diseasexValues=@json($Diseasemonths);
+var activexValues =@json($Activemonths);
+var activeyValues =@json($ActivemonthCount);
+var inactivexValues =@json($Inactivemonths);
+var inactiveyValues =@json($InactivemonthCount);
+
 
 new Chart("cooperativeChart", {
   type: "bar",
   data: {
-    labels: month,
+    labels: CoopxValues,
     datasets: [{
       label:'number of cooperatives',
       backgroundColor: "rgb(122, 73, 165)",
       data: CoopyValues
-    },{
-      label:'Active cooperatives',
-      backgroundColor: "rgb(80, 200, 120)",
-      data:activeyValues
-    },{
-      label:'Inactive cooperatives',
-      backgroundColor: "rgb(255, 191, 0)",
-      data:inactiveyValues
     }]
   },
   options: {
@@ -313,56 +296,15 @@ new Chart("cooperativeChart", {
     }
   }
 });
-
 new Chart("SystemUsersChart", {
   type: "bar",
   data: {
-    labels: month,
+    labels: userxValues,
     datasets: [
       {
       label:'number of System users',
       backgroundColor: "rgb(2, 48, 32)",
       data: useryvalues
-    },{
-      label:'Male users',
-      backgroundColor: "rgb(50, 107, 183)",
-      data: maleyValues
-    },{
-      label:'Female users',
-      backgroundColor: "rgb(227, 11, 92)",
-      data: femaleyValues
-    },{
-      label:'Managers',
-      backgroundColor: "rgb(165, 42, 42)",
-      data: manageryValues
-    },{
-      label:'SEDO',
-      backgroundColor: "rgb(227, 83, 53)",
-      data: sedoyValues
-    },{
-      label:'Sector agronomists',
-      backgroundColor: "rgb(236, 88, 0)",
-      data: sectoryValues
-    },{
-      label:'District agronomists',
-      backgroundColor: "rgb(250, 95, 85)",
-      data: districtyValues
-    },{
-      label:'Rab employees',
-      backgroundColor: "rgb(74, 4, 4)",
-      data: rabyValues
-    },{
-      label:'Naeb employees',
-      backgroundColor: "rgb(227, 115, 94)",
-      data: naebyValues
-    },{
-      label:'Admins',
-      backgroundColor: "rgb(248, 131, 121)",
-      data: adminyValues
-    },{
-      label:'Super admins',
-      backgroundColor: "rgb(248, 131, 121)",
-      data: superyValues
     }]
   },
   options: {
@@ -379,19 +321,11 @@ new Chart("SystemUsersChart", {
 new Chart("farmersChart", {
   type: "bar",
   data: {
-    labels: month,
+    labels: MembxValues,
     datasets: [{
       label:'number of farmers',
       backgroundColor: "rgb(173, 231, 146)",
       data: MembyValues
-    },{
-      label:'Male famers',
-      backgroundColor: "rgb(50, 107, 183)",
-      data: malefarmers
-    },{
-      label:'Female farmers',
-      backgroundColor: "rgb(227, 11, 92)",
-      data: femalefarmers
     }]
   },
   options: {
@@ -408,7 +342,7 @@ new Chart("farmersChart", {
 new Chart("diseaseChart", {
   type: "bar",
   data: {
-    labels:month,
+    labels:diseasexValues,
     datasets: [{
       label:'number of Diseases',
       backgroundColor: "rgba(237,114,105)",

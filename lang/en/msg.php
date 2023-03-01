@@ -71,6 +71,7 @@
          "Male"=>"Male",
          "Female"=>"Female",
          "--Select role--"=>"--Select role--",
+         "--Select disease category--"=>"--Select disease category--",
          
   ]
  

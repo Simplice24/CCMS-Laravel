@@ -98,36 +98,34 @@
         </div>
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href={{"Home"}}>
+            <a class="nav-link" href="<?=url('Home');?>">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">{{ __('msg.system users') }}</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <!-- <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="<?=url('registerNewUser');?>"> + {{ __('msg.new user') }}</a></li>
                 <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> {{ __('msg.all system users') }}</a></li>
               </ul>
-            </div>
+            </div> -->
           </li>
            <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>
               <span class="menu-title">{{ __('msg.cooperatives') }}</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <!-- <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="<?=url('registerNewCooperative');?>"> + {{ __('msg.new cooperative') }} </a></li>
                 <li class="nav-item"> <a class="nav-link" href="<?=url('viewcooperatives');?>"> {{ __('msg.all cooperatives') }} </a></li>
               </ul>
-            </div>
+            </div> -->
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
@@ -179,7 +177,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.cooperative name') }}</label>
                             <div class="col-sm-9">
-                            <select class="form-control" name="gender" required>
+                            <select class="form-control" style="height:46px;" name="cooperative_name" required>
                               <option disable selected>{{ __('msg.--Select cooperative--')}}</option>
                                 @foreach($cooperatives as $coopname)
                                 <option value={{$coopname->name}}>{{$coopname->name}}</option>
@@ -202,7 +200,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.gender') }}</label>
                             <div class="col-sm-9">
-                              <select class="form-control" name="gender" required>
+                              <select class="form-control" style="height:46px;" name="gender" required>
                               <option disable selected>{{ __('msg.--Select gender--')}}</option>
                                 <option>{{ __('msg.Male')}}</option>
                                 <option>{{ __('msg.Female')}}</option>
@@ -214,7 +212,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">{{ __('msg.cooperative ID') }}</label>
                               <div class="col-sm-9">
-                              <select class="form-control" name="cooperative_id" required>
+                              <select class="form-control" style="height:46px;" name="cooperative_id" required>
                               <option disable selected>{{ __('msg.--Select cooperative to get cooperative id--')}}--</option>
                               @foreach($cooperatives as $coopid)
                                 <option value={{ $coopid->id}}>{{ $coopid->name}}</option>

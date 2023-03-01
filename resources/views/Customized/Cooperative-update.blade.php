@@ -104,23 +104,21 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">{{ __('msg.system users') }}</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <!-- <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="<?=url('registerNewUser');?>"> + {{ __('msg.new user') }}</a></li>
                 <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> {{ __('msg.all system users') }}</a></li>
               </ul>
-            </div>
+            </div> -->
           </li>
            <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>
               <span class="menu-title">{{ __('msg.cooperatives') }}</span>
-              <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
@@ -170,7 +168,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{__('msg.manager')}}</label>
                             <div class="col-sm-9">
-                            <select class="form-control" name="manager_name" required>
+                            <select class="form-control" style="height:46px;" name="manager_name" required>
                                         <option selected >{{$cooperativeinfo->manager_name}}</option>
                                         @foreach($manager_names as $names)
                                         <option value="{{ $names->name }}">{{ $names->name}}</option>
@@ -203,7 +201,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{__('msg.status')}}</label>
                             <div class="col-sm-9">
-                            <select class="form-control" name="status" required>
+                            <select class="form-control" style="height:46px;" name="status" required>
                                         <option selected>{{$cooperativeinfo->status}}</option>
                                         <option value="Operating">Operating</option>
                                         <option value="Not operating">Not operating</option>

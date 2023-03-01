@@ -70,5 +70,6 @@ return[
 "Male"=>"Gabo",
 "Female"=>"Gore",
 "--Select role--"=>"--Hitamo inshingano--",
+"--Select disease category--"=>"--hitamo icyiciro cyindwara--",
 ]
 ?>

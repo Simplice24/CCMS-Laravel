@@ -77,5 +77,6 @@ nouvel agriculteur",
 "Male"=>"Mâle",
 "Female"=>"Femme",
 "--Select role--"=>"--Sélectionner un rôle--",
+"--Select disease category--"=>"--sélectionner la catégorie de maladie--",
 ]
 ?>

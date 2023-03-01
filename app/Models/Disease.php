@@ -12,6 +12,8 @@ class Disease extends Model
     protected $table='diseases';
     protected $fillable=[
         'disease_name',
+        'category',
+        'description',
         
     ];
     public function cooperatives(){
