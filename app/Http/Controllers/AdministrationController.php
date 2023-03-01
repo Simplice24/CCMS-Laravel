@@ -123,6 +123,7 @@ class AdministrationController extends Controller
                      $Disease->disease_name=$req->disease;
                      $Disease->category=$req->category;
                      $Disease->description=$req->description;
+                     $Disease->image=$req->image;
                      $Disease->save();
                      return redirect('viewdiseases');
                 }

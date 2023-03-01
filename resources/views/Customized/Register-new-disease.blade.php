@@ -167,7 +167,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.category') }}</label>
                             <div class="col-sm-9">
-                            <select class="form-control" style="height:46px;" name="role" required>
+                            <select class="form-control" style="height:46px;" name="category" required>
                                         <option disable selected>{{ __('msg.--Select disease category--')}}</option>              
                                         <option>{{ __('msg.Leaf diseases')}}</option>
                                         <option>{{ __('msg.Root diseases')}}</option>

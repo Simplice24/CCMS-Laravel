@@ -174,9 +174,6 @@
                           <th>
                           {{__('msg.fertilizer')}}
                           </th>
-                          <th>
-                          {{__('msg.full information')}}
-                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -195,7 +192,11 @@
                           {{$i->fertilizer}}
                           </td>
                           <td>
-                          <a href={{"Farmerprofile/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{__('msg.view')}}</button></a>
+                          <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href={{"Farmerprofile/".$i->id}}><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{__('msg.view')}}</a>
+                      </div>
                           </td>
                          </tr>
                          @endforeach

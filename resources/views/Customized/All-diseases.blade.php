@@ -174,8 +174,12 @@
                             {{$i->disease_name}}
                           </td>
                           <td>
-                          <a href={{"deletedisease/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; {{__('msg.delete')}}</button></a>
-                          <a href={{"updateDisease/".$i->id}}><button type="button" class="btn btn-success" ><i class="fa fa-edit" aria-hidden="true"></i>&nbsp; {{__('msg.edit')}}</button></a>
+                          <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href={{"updateDisease/".$i->id}}><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{__('msg.edit')}}</a>
+                          <a class="dropdown-item" href={{"deletedisease/".$i->id}}><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; {{ __('msg.delete')}}</a>
+                      </div>
                           </td>
                          </tr>
                          @endforeach

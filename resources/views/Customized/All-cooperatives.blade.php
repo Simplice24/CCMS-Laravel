@@ -174,9 +174,6 @@
                           <th>
                           {{ __('msg.email')}}
                           </th>
-                          <th>
-                          {{ __('msg.full information')}}
-                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -195,10 +192,12 @@
                           {{  $i->email }}
                           </td>
                           <td>
-                          <a href={{"updateCooperative/".$i->id}}><button type="button" class="btn btn-primary" ><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{ __('msg.view')}}</button></a>
-                          </td>
-                          <td>
-                          <a href={{"deletecooperative/".$i->id}}><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; {{ __('msg.delete')}}</button></a>
+                          <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href={{"updateCooperative/".$i->id}}><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{ __('msg.view')}}</a>
+                          <a class="dropdown-item" href={{"deletecooperative/".$i->id}}><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; {{ __('msg.delete')}}</a>
+                      </div>
                           </td>
                         </tr>
                         @endforeach
