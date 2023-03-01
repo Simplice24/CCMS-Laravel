@@ -74,5 +74,9 @@ return[
 "Leaf diseases"=>"Indwara z'amababi",
 "Root diseases"=>"Indwara z'uruti",
 "Bean diseases"=>"Indwara z'ibitumbwe",
+"Description"=>"Ibisobanuro",
+"Image"=>"Ishusho",
+"Upload"=>"Ohereza",
+"Upload Image"=>"Hitamo ifoto",
 ]
 ?>

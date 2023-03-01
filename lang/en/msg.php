@@ -75,6 +75,10 @@
          "Leaf diseases"=>"Leaf diseases",
          "Root diseases"=>"Root diseases",
          "Bean diseases"=>"Bean diseases",
+         "Description"=>'Description',
+         "Image"=>"Image",
+         "Upload"=>"Upload",
+         "Upload Image"=>"Upload Image",
   ]
  
 ?>

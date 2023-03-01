@@ -80,6 +80,10 @@ nouvel agriculteur",
 "--Select disease category--"=>"--sélectionner la catégorie de maladie--",
 "Leaf diseases"=>"Maladies des feuilles",
 "Root diseases"=>"Maladies des racines",
-"Bean diseases"=>"Maladies du haricot",
+"Bean diseases"=>"Maladies du grains",
+"Description"=>"Description",
+"Image"=>"Image",
+"Upload"=>"Télécharger",
+"Upload Image"=>"Télécharger une image",
 ]
 ?>
