@@ -291,22 +291,19 @@ class AdministrationController extends Controller
                   $Diseasedata=Disease::select('id','created_at')->get()->groupBy(function($Diseasedata){
                     return Carbon::parse($Diseasedata->created_at)->format('Y-M');
                   });
-                  $ActiveData=Cooperative::select('id','created_at')->where('status','Operating')->get()->groupBy(function($data){
-                    return Carbon::parse($data->created_at)->format('Y-M');
-                  });
-                  $InactiveData=Cooperative::where('status','created_at')->get()->groupBy(function($data){
-                    return Carbon::parse($data->created_at)->format('Y-M');
-                  });
+                  $ActiveData=Cooperative::where('status','Operating')->get()->count();
+                  $InactiveData=Cooperative::where('status','Not operating')->get()->count();
+                  $LeafDiseases=Disease::where('category','Leaf diseases')->get()->count();
+                  $RootDiseases=Disease::where('category','Root diseases')->get()->count();
+                  $BeanDiseases=Disease::where('category','Bean diseases')->get()->count();
+                  $UnclassifiedDiseases=Disease::where('category','Unclassified diseases')->get()->count();
 
                   $months=[];
                   $monthCount=[];
                   $MemMonthCount=[];
                   $UserMonthCount=[];
                   $DiseaseMonthCount=[];
-                  $Activemonths=[];
-                  $ActivemonthCount=[];
-                  $Inactivemonths=[];
-                  $InactivemonthCount=[];
+                
                                
                   foreach($Coopdata as $coopmonth => $values){
                     $months[]=$coopmonth;
@@ -324,16 +321,9 @@ class AdministrationController extends Controller
                     $Diseasemonths[]=$dismonth;
                     $DiseaseMonthCount[]=count($values);
                   }
-                  foreach($ActiveData as $activemonth => $values){
-                    $Activemonths[]=$activemonth;
-                    $ActivemonthCount[]=count($values);
-                  }
-                  foreach($InactiveData as $inactivemonth => $values){
-                    $Inactivemonths[]=$inactivemonth;
-                    $InactivemonthCount[]=count($values);
-                  }
                   
-                  return view('Customized/Dashboard',['Inactivemonths'=>$Inactivemonths,'InactivemonthCount'=>$InactivemonthCount,'Activemonths'=>$Activemonths,'ActivemonthCount'=>$ActivemonthCount,'Diseasemonths'=>$Diseasemonths,
+                  
+                  return view('Customized/Dashboard',['LeafDiseases'=>$LeafDiseases,'RootDiseases'=>$RootDiseases,'BeanDiseases'=>$BeanDiseases,'UnclassifiedDiseases'=>$UnclassifiedDiseases,'ActiveData'=>$ActiveData,'InactiveData'=>$InactiveData,'Diseasemonths'=>$Diseasemonths,
                   'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths, 'UserMonthCount'=>$UserMonthCount,'months'=>$months,'monthCount'=>$monthCount,
                   'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease,]);
                 }

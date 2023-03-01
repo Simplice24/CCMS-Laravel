@@ -227,6 +227,24 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.cooperatives')}}</h4>
+                    <canvas id="coopSummaryChart" style="height:230px"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.diseases')}}</h4>
+                    <canvas id="diseaseSummaryChart" style="height:250px"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="row">
               <div class="col-lg-6 grid-margin stretch-card">
@@ -270,10 +288,10 @@ var useryvalues =@json($UserMonthCount);
 var userxValues =@json($Usermonths);
 var diseaseyvalues =@json($DiseaseMonthCount);
 var diseasexValues=@json($Diseasemonths);
-var activexValues =@json($Activemonths);
-var activeyValues =@json($ActivemonthCount);
-var inactivexValues =@json($Inactivemonths);
-var inactiveyValues =@json($InactivemonthCount);
+var xValues = ["Operating","Not operating"];
+var yValues = [@json($ActiveData),@json($InactiveData)];
+var classxValues = ["Leaf diseases","Root diseases","Bean diseases","Unclassified"];
+var classyValues=[@json($LeafDiseases),@json($RootDiseases),@json($BeanDiseases),@json($UnclassifiedDiseases)]
 
 
 new Chart("cooperativeChart", {
@@ -296,6 +314,46 @@ new Chart("cooperativeChart", {
     }
   }
 });
+new Chart("coopSummaryChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: "rgb(122, 73, 20)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
+new Chart("diseaseSummaryChart", {
+  type: "bar",
+  data: {
+    labels: classxValues,
+    datasets: [{
+      backgroundColor: "rgb(122, 73, 20)",
+      data: classyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
+
+
 new Chart("SystemUsersChart", {
   type: "bar",
   data: {
