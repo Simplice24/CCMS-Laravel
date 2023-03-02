@@ -81,6 +81,7 @@
          "Upload Image"=>"Upload Image",
          "Disease category"=>"Diseases category",
          "Unclassified diseases"=>"Unclassified diseases",
+         "Statuses of cooperatives"=>"Statuses of cooperatives",
   ]
  
 ?>

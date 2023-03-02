@@ -18,11 +18,6 @@ class AdministrationController extends Controller
 
   public function __construct(){
          $this->middleware('web');
-        //  $this->middleware('permission:create-cooperative', ['only' => ['addingcooperativepage','addcooperative','viewcooperatives','deletecooperative','updateCoop','updateSystemCooperative']]);
-        // //  $this->middleware('permission:create-administration', ['only' => ['addinguserpage','adduser','viewusers','deleteuser','updateuser','updateSystemUser','userprofilepage','homedashboard']]);
-        //  $this->middleware('permission:create-member', ['only' => ['addingfarmerpage','addfarmer','viewfarmers','farmerprofilepage','farmerupdatepage','updateFarmer']]);
-        //  $this->middleware('permission:create-disease', ['only' => ['addingdiseasepage','addDisease','deletedis','diseaseupdate','DisUpdate']]);
-
   }
     
             public function deletecooperative($id){
@@ -297,6 +292,11 @@ class AdministrationController extends Controller
                   $RootDiseases=Disease::where('category','Root diseases')->get()->count();
                   $BeanDiseases=Disease::where('category','Bean diseases')->get()->count();
                   $UnclassifiedDiseases=Disease::where('category','Unclassified diseases')->get()->count();
+                  $Male=Administration::where('gender','Male')->get()->count();
+                  $Female=Administration::where('gender','Female')->get()->count();
+                  $Managers=Administration::where('role','manager')->get()->count();
+                  $MaleFarmers=Member::where('gender','Male')->get()->count();
+                  $FemaleFarmers=Member::where('gender','Female')->get()->count();
 
                   $months=[];
                   $monthCount=[];
@@ -323,7 +323,7 @@ class AdministrationController extends Controller
                   }
                   
                   
-                  return view('Customized/Dashboard',['LeafDiseases'=>$LeafDiseases,'RootDiseases'=>$RootDiseases,'BeanDiseases'=>$BeanDiseases,'UnclassifiedDiseases'=>$UnclassifiedDiseases,'ActiveData'=>$ActiveData,'InactiveData'=>$InactiveData,'Diseasemonths'=>$Diseasemonths,
+                  return view('Customized/Dashboard',['MaleFarmers'=>$MaleFarmers,'FemaleFarmers'=>$FemaleFarmers,'Male'=>$Male,'Female'=>$Female,'Managers'=>$Managers,'LeafDiseases'=>$LeafDiseases,'RootDiseases'=>$RootDiseases,'BeanDiseases'=>$BeanDiseases,'UnclassifiedDiseases'=>$UnclassifiedDiseases,'ActiveData'=>$ActiveData,'InactiveData'=>$InactiveData,'Diseasemonths'=>$Diseasemonths,
                   'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths, 'UserMonthCount'=>$UserMonthCount,'months'=>$months,'monthCount'=>$monthCount,
                   'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease,]);
                 }

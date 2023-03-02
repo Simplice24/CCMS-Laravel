@@ -105,11 +105,12 @@
         </div>
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href={{"Home"}}>
+            <a class="nav-link" href="<?=url('Home');?>">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
+          @can('create-administration')
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
@@ -122,6 +123,7 @@
               </ul>
             </div> -->
           </li>
+          @endcan
            <li class="nav-item">
             <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>
@@ -200,7 +202,7 @@
                 <a href="<?=url('viewdiseases');?>" style="text-decoration:none; color:white;">
                   <div class="card-body">
                     <img src="Customized/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3"> {{ __('msg.diseases')}} <i class="fas fa-biohazard "></i>
+                    <h4 class="font-weight-normal mb-3"> {{ __('msg.diseases')}} <i class="fas fa-command "></i>
                     </h4>
                     <h1 class="mb-5">{{$disease}}</h1>
                   </div>
@@ -231,7 +233,7 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{ __('msg.cooperatives')}}</h4>
+                    <h4 class="card-title">{{ __('msg.Statuses of cooperatives')}}</h4>
                     <canvas id="coopSummaryChart" style="height:230px"></canvas>
                   </div>
                 </div>
@@ -264,6 +266,24 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.system users')}}</h4>
+                    <canvas id="UserSummaryChart" style="height:230px"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ __('msg.farmers')}}</h4>
+                    <canvas id="FarmerSummaryChart" style="height:250px"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
@@ -291,7 +311,13 @@ var diseasexValues=@json($Diseasemonths);
 var xValues = ["Operating","Not operating"];
 var yValues = [@json($ActiveData),@json($InactiveData)];
 var classxValues = ["Leaf diseases","Root diseases","Bean diseases","Unclassified"];
-var classyValues=[@json($LeafDiseases),@json($RootDiseases),@json($BeanDiseases),@json($UnclassifiedDiseases)]
+var classyValues=[@json($LeafDiseases),@json($RootDiseases),@json($BeanDiseases),@json($UnclassifiedDiseases)];
+var usersxValues =["Male","Female","Managers"];
+var usersyValues =[@json($Male),@json($Female),@json($Managers)];
+var farmerGenderxValues =["Male","Female"];
+var genderColor=["rgb(41, 128, 185)","rgb(241, 148, 138)","rgb(39, 174, 96)"];
+var statusColor=["rgb(82, 190, 128)","rgb(241, 196, 15)"];
+var farmerGenderyValues =[@json($MaleFarmers),@json($FemaleFarmers)];
 
 
 new Chart("cooperativeChart", {
@@ -319,7 +345,7 @@ new Chart("coopSummaryChart", {
   data: {
     labels: xValues,
     datasets: [{
-      backgroundColor: "rgb(122, 73, 20)",
+      backgroundColor: statusColor,
       data: yValues
     }]
   },
@@ -338,7 +364,7 @@ new Chart("diseaseSummaryChart", {
   data: {
     labels: classxValues,
     datasets: [{
-      backgroundColor: "rgb(122, 73, 20)",
+      backgroundColor: "rgba(237,114,105)",
       data: classyValues
     }]
   },
@@ -352,8 +378,6 @@ new Chart("diseaseSummaryChart", {
     }
   }
 });
-
-
 new Chart("SystemUsersChart", {
   type: "bar",
   data: {
@@ -361,7 +385,7 @@ new Chart("SystemUsersChart", {
     datasets: [
       {
       label:'number of System users',
-      backgroundColor: "rgb(2, 48, 32)",
+      backgroundColor: "rgb(41, 128, 185)",
       data: useryvalues
     }]
   },
@@ -375,7 +399,25 @@ new Chart("SystemUsersChart", {
     }
   }
 });
-
+new Chart("UserSummaryChart", {
+  type: "bar",
+  data: {
+    labels: usersxValues,
+    datasets: [{
+      backgroundColor: genderColor,
+      data: usersyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
 new Chart("farmersChart", {
   type: "bar",
   data: {
@@ -384,6 +426,25 @@ new Chart("farmersChart", {
       label:'number of farmers',
       backgroundColor: "rgb(173, 231, 146)",
       data: MembyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    },
+    scales: {
+      yAxes: [{ticks: {min: 0}}],
+    }
+  }
+});
+new Chart("FarmerSummaryChart", {
+  type: "bar",
+  data: {
+    labels: farmerGenderxValues,
+    datasets: [{
+      backgroundColor: genderColor,
+      data: farmerGenderyValues
     }]
   },
   options: {

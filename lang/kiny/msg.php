@@ -81,5 +81,6 @@ return[
 "Disease category"=>"
 Icyiciro cy'indwara",
 "Unclassified diseases"=>"Indwara zitazwi",
+"Statuses of cooperatives"=>"Imikorere y'amakoperative",
 ]
 ?>
