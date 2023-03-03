@@ -155,6 +155,7 @@ class AdministrationController extends Controller
                   $information=Administration::find($id);
                   return view('ViewAll',['information'=>$information]);
                 }
+                
 
                 public function viewcoop($id){
                   $information=Cooperative::find($id);
