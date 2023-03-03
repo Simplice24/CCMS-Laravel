@@ -169,7 +169,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">{{ __('msg.disease name') }}</h6>
+                      <h6 class="mb-0">{{ __('msg.Disease name') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                       {{$diseaseinfo->disease_name}}
@@ -187,7 +187,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">{{ __('msg.description') }}</h6>
+                      <h6 class="mb-0">{{ __('msg.Description') }}</h6>
                     </div>
                     <div class="col-sm-9 text-dark">
                     {{$diseaseinfo->description}}
@@ -197,7 +197,7 @@
                   
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-success" href={{"DiseaseUpdate/".$diseaseinfo->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{{ __('msg.edit') }}</a>
+                      <a class="btn btn-success" href={{"updateDisease/".$diseaseinfo->id}}><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{{ __('msg.edit') }}</a>
                     </div>
                   </div>
                 </div>

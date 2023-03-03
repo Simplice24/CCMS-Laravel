@@ -57,7 +57,7 @@ Route::get("Farmerprofile/{id}",[AdministrationController::class,'farmerprofilep
 Route::get("Farmerprofile/farmerUpdate/{id}",[AdministrationController::class,'farmerupdatepage']);
 Route::put("updateFarmer/{id}",[AdministrationController::class,'updateFarmer']);
 Route::put("CooperativeUpdate/{id}",[AdministrationController::class,'updateSystemCooperative']);
-Route::get("updateDisease/{id}",[AdministrationController::class,'diseaseupdate']);
+Route::get("diseaseDetails/updateDisease/{id}",[AdministrationController::class,'diseaseupdate']);
 Route::put("updateDis/{id}",[AdministrationController::class,'DisUpdate']);
 Route::get("FarmerView/{id}",[AdministrationController::class,'ViewFarmer']);
 Route::get('Home',[AdministrationController::class,'homedashboard']);
@@ -67,7 +67,7 @@ Route::get("profile/{id}",[AdministrationController::class,'userprofilepage']);
 Route::get("profile/profileUpdate/{id}",[AdministrationController::class,'profileupdatepage']);
 Route::put('updateUser/{id}',[AdministrationController::class,'updateSystemUser']);
 Route::get("forgetpassword",[AdministrationController::class,'forgetpasswordpage']);
-
+Route::get("diseaseDetails/{id}",[AdministrationController::class,'diseasedetailpage']);
 });
 
 

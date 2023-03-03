@@ -268,6 +268,11 @@ class AdministrationController extends Controller
                   return redirect('viewdiseases');
                 }
 
+                public function diseasedetailpage($id){
+                  $diseaseinfo=Disease::find($id);
+                  return view('Customized/Disease-details',['diseaseinfo'=>$diseaseinfo]);
+                }
+
                 public function ViewFarmer($id){
                  $farmerinfo=Member::find($id);
                  return view('ViewFarmer',['farmerinfo'=>$farmerinfo]);
