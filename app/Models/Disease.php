@@ -14,6 +14,7 @@ class Disease extends Model
         'disease_name',
         'category',
         'description',
+        'image',
         
     ];
     public function cooperatives(){

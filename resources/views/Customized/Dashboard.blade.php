@@ -110,7 +110,7 @@
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
-          @can('create-administration')
+        
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
@@ -123,7 +123,7 @@
               </ul>
             </div> -->
           </li>
-          @endcan
+          
            <li class="nav-item">
             <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>

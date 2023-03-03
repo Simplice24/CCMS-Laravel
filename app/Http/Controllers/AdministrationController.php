@@ -115,11 +115,16 @@ class AdministrationController extends Controller
                 }
                 public function addDisease(Request $req){
                      $Disease=new Disease;
+                     $destination_path ='public/images/diseases';
                      $Disease->disease_name=$req->disease;
                      $Disease->category=$req->category;
                      $Disease->description=$req->description;
-                     $Disease->image=$req->image;
+                     $image=$req->file('image');
+                     $image_name=$image->getClientOriginalName();
+                     $path = $req->file('image')->storeAs($destination_path,$image_name);
+                     $Disease->image=$image_name;
                      $Disease->save();
+                      
                      return redirect('viewdiseases');
                 }
 
