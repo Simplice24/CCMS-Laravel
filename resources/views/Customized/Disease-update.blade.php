@@ -149,7 +149,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">{{__('msg.Fill Out All Fields To Update Disease')}}</h4>
-                    <form class="form-sample" action="{{url('updateDis/'.$diseaseinfo->id)}}" method="POST">
+                    <form class="form-sample" action="{{url('updateDis/'.$diseaseinfo->id)}}" method="POST" enctype='multipart/form-data'>
                     @csrf
                     @method('PUT')
                       <p class="card-description">
@@ -192,13 +192,12 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.Image') }}</label>
                             <div class="col-sm-9">
-                            <input type="file" name="image" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder={{ __('msg.Upload Image')}}>
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">{{ __('msg.Upload')}}</button>
-                        </span>
-                      </div>
+                            <div class="input-group col-xs-12">
+                                <!-- <input type="file" class="form-control file-upload-info" disabled placeholder={{ __('msg.Upload Image')}}> -->
+                                <!-- <span class="input-group-append"> -->
+                                  <input type="file" name="image" class="file-upload-browse btn btn-primary">
+                                <!-- </span> -->
+                              </div>
                             </div>
                           </div>
                         </div>

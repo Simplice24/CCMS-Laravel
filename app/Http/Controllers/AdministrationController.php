@@ -259,11 +259,15 @@ class AdministrationController extends Controller
                 }
 
                 public function DisUpdate(Request $req,$id){
+                  $destination_path='public/images/diseases';
                   $input=Disease::find($id);
                   $input->disease_name=$req->input('disease_name');
                   $input->category=$req->input('category');
                   $input->description=$req->input('description');
-                  $input->image=$req->input('image');
+                  $image=$req->file('image');
+                  $image_name=$image->getClientOriginalName();
+                  $path=$req->file('image')->storeAs($destination_path,$image_name);
+                  $input->image=$image_name;
                   $input->update();
                   return redirect('viewdiseases');
                 }
