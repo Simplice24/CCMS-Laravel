@@ -163,23 +163,48 @@
               <div class="card mb-3">
                 <div class="card-body">
                 <form class="forms-sample">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="username" id="exampleInputUsername1" placeholder="Username">
+                <div class="form-group">
+                <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    </div>
                     </div>
                     <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-mail"></i></span>
+                      </div>
                       <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email">
+                      </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group">                  
                       <input type="text" class="form-control" name="phone" id="exampleInputEmail1" placeholder="Phone">
                     </div>
                     <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
                       <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Current password">
+                      </div>
                     </div>
                     <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
                       <input type="password" class="form-control" name="new_current" id="exampleInputPassword1" placeholder="New password">
+                      </div>
                     </div>
                     <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
                       <input type="password" class="form-control" name="confirm_new_password" id="exampleInputConfirmPassword1" placeholder="Confirm new password">
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Save</button>
                   </form>
