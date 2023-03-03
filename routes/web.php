@@ -69,6 +69,7 @@ Route::put('updateUser/{id}',[AdministrationController::class,'updateSystemUser'
 Route::get("forgetpassword",[AdministrationController::class,'forgetpasswordpage']);
 Route::get("diseaseDetails/{id}",[AdministrationController::class,'diseasedetailpage']);
 Route::get('userProfile',[AdministrationController::class,'profilePage']);
+Route::put('userProfileUpdate/{id}',[AdministrationController::class,'userProfileUpdate']);
 });
 
 

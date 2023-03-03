@@ -184,7 +184,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.Description') }}</label>
                             <div class="col-sm-9">
-                            <textarea class="form-control" name="description" rows="4">{{$diseaseinfo->description}}</textarea>
+                            <textarea class="form-control"  name="description" rows="4" value={{$diseaseinfo->description}}>{{$diseaseinfo->description}}</textarea>
                             </div>
                           </div>
                         </div>
@@ -195,7 +195,7 @@
                             <div class="input-group col-xs-12">
                                 <!-- <input type="file" class="form-control file-upload-info" disabled placeholder={{ __('msg.Upload Image')}}> -->
                                 <!-- <span class="input-group-append"> -->
-                                  <input type="file" name="image" class="file-upload-browse btn btn-primary">
+                                  <input type="file" name="image" class="file-upload-browse btn btn-primary" value={{$diseaseinfo->image}}>
                                 <!-- </span> -->
                               </div>
                             </div>

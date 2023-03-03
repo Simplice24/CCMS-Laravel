@@ -162,13 +162,18 @@
             <div class="col-md-8">
               <div class="card mb-3">
                 <div class="card-body">
-                <form class="forms-sample">
+                @if($errors->any())
+                <h4>{{$errors->first()}}</h4>
+                @endif
+                <form class="forms-sample" method="POST" action="{{url('userProfileUpdate/'.$userId)}}">
+                @csrf
+                @method('PUT')
                 <div class="form-group">
                 <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">@</span>
                       </div>
-                      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                      <input type="text" class="form-control" value="{{$userinfo->username}}" name="username" placeholder="Username"  required>
                     </div>
                     </div>
                     <div class="form-group">
@@ -176,18 +181,18 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="icon-mail"></i></span>
                       </div>
-                      <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email">
+                      <input type="email" class="form-control" value="{{$userinfo->email}}" name="email" id="exampleInputEmail1" placeholder="Email" required>
                       </div>
                     </div>
                     <div class="form-group">                  
-                      <input type="text" class="form-control" name="phone" id="exampleInputEmail1" placeholder="Phone">
+                      <input type="text" class="form-control" value="{{$userinfo->phone}}" name="phone" id="exampleInputEmail1" placeholder="Phone" required>
                     </div>
                     <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="icon-lock"></i></span>
                       </div>
-                      <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Current password">
+                      <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Current password" required>
                       </div>
                     </div>
                     <div class="form-group">
@@ -195,7 +200,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="icon-lock"></i></span>
                       </div>
-                      <input type="password" class="form-control" name="new_current" id="exampleInputPassword1" placeholder="New password">
+                      <input type="password" class="form-control" name="new_password" id="exampleInputPassword1" placeholder="New password">
                       </div>
                     </div>
                     <div class="form-group">

@@ -82,5 +82,8 @@ return[
 Icyiciro cy'indwara",
 "Unclassified diseases"=>"Indwara zitazwi",
 "Statuses of cooperatives"=>"Imikorere y'amakoperative",
+"Farmers' gender"=>"Igitsina cyabahinzi",
+"Users' gender"=>"Igitsina cy'abakoresha sisitemu",
+"Diseases classification"=>"Ibyiciro by'indwara",
 ]
 ?>

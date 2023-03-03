@@ -43,6 +43,12 @@ class Administration extends Model implements AuthenticatableLogin
     public function cooperatives(){
         return $this->belongsToMany(Cooperative::class,'cooperative_administrations');
     }
+
+    public function getId()
+        {
+        return $this->id;
+        }
+
     public function members(){
         return $this->belongsToMany(Member::class,'administration_members');
     }

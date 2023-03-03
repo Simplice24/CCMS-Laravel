@@ -271,9 +271,30 @@ class AdministrationController extends Controller
                   $input->update();
                   return redirect('viewdiseases');
                 }
+              
+                public function userProfileUpdate(Request $req,$id){
+                  $input=Administration::find($id);
+                  $input->username=$req->input('username');
+                  $input->email=$req->input('email');
+                  $input->phone=$req->input('phone');
+                  $current_password=$req->input('current_password');
+                  $new_password=$req->input('new_password');
+                  $confirm_password=$req->input('confirm_new_password');
+                  if(Hash::check($current_password, $input->password)){
+                    if($new_password===$confirm_password){
+                      $input->password=Hash::make($new_password);
+                      $input->update();
+                    }else{
+                      return redirect('userProfile');
+                    }
+                  }
+                  return redirect('Home');
+                }
 
                 public function profilePage(){
-                  return view('Customized/User-profile');
+                  $userId = $id = auth()->user()->id;
+                  $userinfo=Administration::find($userId);
+                  return view('Customized/User-profile',['userinfo'=>$userinfo,'userId'=>$userId]);
                 }
 
                 public function diseasedetailpage($id){

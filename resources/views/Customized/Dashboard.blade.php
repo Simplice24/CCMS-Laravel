@@ -241,7 +241,7 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{ __('msg.diseases')}}</h4>
+                    <h4 class="card-title">{{ __('msg.Diseases classification')}}</h4>
                     <canvas id="diseaseSummaryChart" style="height:250px"></canvas>
                   </div>
                 </div>
@@ -270,7 +270,7 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{ __('msg.system users')}}</h4>
+                    <h4 class="card-title">{{ __('msg.Users gender')}}</h4>
                     <canvas id="UserSummaryChart" style="height:230px"></canvas>
                   </div>
                 </div>
@@ -278,7 +278,7 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{ __('msg.farmers')}}</h4>
+                    <h4 class="card-title">{{ __('msg.Farmers gender')}}</h4>
                     <canvas id="FarmerSummaryChart" style="height:250px"></canvas>
                   </div>
                 </div>

@@ -82,6 +82,9 @@
          "Disease category"=>"Diseases category",
          "Unclassified diseases"=>"Unclassified diseases",
          "Statuses of cooperatives"=>"Statuses of cooperatives",
+         "Farmers gender"=>"Farmers' gender",
+         "Users gender"=>"Users' gender",
+         "Diseases classification"=>"Disease classification",
   ]
  
 ?>

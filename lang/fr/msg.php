@@ -87,6 +87,9 @@ nouvel agriculteur",
 "Upload Image"=>"Télécharger une image",
 "Disease category"=>"Catégorie de maladie",
 "Unclassified diseases"=>"Maladies non classée",
-"Statuses of cooperatives"=>"Statut des coopératives"
+"Statuses of cooperatives"=>"Statut des coopératives",
+"Farmers gender"=>"Sexe des agriculteurs",
+"Users gender"=>"Sexe de l'utilisateur",
+"Diseases classification"=>"Classement des maladies",
 ]
 ?>
