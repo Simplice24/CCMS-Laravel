@@ -105,12 +105,12 @@ class AdministrationController extends Controller
                 }
 
                 public function viewfarmers(){
-                  $info=Member::all();
+                  $info=Member::paginate(5);
                   return view('Customized/All-farmers',['info'=>$info]);
                 }
 
                 public function viewdiseases(){
-                  $disease=Disease::all();
+                  $disease=Disease::paginate(5);
                   return view('Customized/All-diseases',['disease'=>$disease]);
                 }
                 public function addDisease(Request $req){
@@ -130,7 +130,7 @@ class AdministrationController extends Controller
 
                 
                 public function viewcooperatives(){
-                  $data=Cooperative::all();
+                  $data=Cooperative::paginate(5);
                   return view('Customized/All-cooperatives',['data'=>$data]);
                 }
 

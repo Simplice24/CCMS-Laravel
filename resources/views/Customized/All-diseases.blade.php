@@ -191,6 +191,9 @@
                          @endforeach
                       </tbody>
                     </table>
+                    <div class="pagination-block">
+                     {{ $disease->links()}}
+                    </div>
                   </div>
                 </div>
               </div>
