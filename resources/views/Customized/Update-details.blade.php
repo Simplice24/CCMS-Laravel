@@ -201,7 +201,7 @@
                             <label class="col-sm-3 col-form-label">{{__('msg.role')}}</label>
                             <div class="col-sm-9">
                               <select class="form-control" style="height:48px;" name="role" required>
-                              <option disable selected>--select role--</option>
+                              <option disable selected>{{$fulldetails->role}}</option>
                               @foreach($roles as $role)
                               <option value="{{ $role->name }}">{{ $role->name}}</option>
                               @endforeach

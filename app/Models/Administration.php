@@ -28,7 +28,8 @@ class Administration extends Model implements AuthenticatableLogin
         'province',
         'district',
         'sector',
-        'cell'
+        'cell',
+        'image'
     ];
 
     protected $hidden = [

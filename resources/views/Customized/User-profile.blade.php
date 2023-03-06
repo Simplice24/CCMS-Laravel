@@ -93,7 +93,6 @@
           {{session('user')}}
           </div>
           <div class="user-designation">
-             
           </div>
         </div>
         <ul class="nav">

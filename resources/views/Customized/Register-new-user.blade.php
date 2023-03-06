@@ -150,7 +150,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">{{ __('msg.Fill Out All Fields To Register New User')}}</h4>
-                    <form class="form-sample" action="registerNewUser" method="POST">
+                    <form class="form-sample" action="registerNewUser" method="POST"  enctype='multipart/form-data'>
                     @csrf
                       <p class="card-description">
                        {{ __('msg.personal info')}}
@@ -256,11 +256,13 @@
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-6">
+                      <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">{{ __('msg.confirm password')}}</label>
+                            <label class="col-sm-3 col-form-label">{{ __('msg.Image') }}</label>
                             <div class="col-sm-9">
-                              <input type="password" class="form-control" name="confirm-password" required />
+                              <div class="input-group col-xs-12">
+                                  <input type="file" name="image" class="file-upload-browse btn btn-primary">
+                              </div>
                             </div>
                           </div>
                         </div>

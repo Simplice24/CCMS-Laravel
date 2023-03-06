@@ -71,6 +71,7 @@ class AdministrationController extends Controller
 
               public function adduser(Request $req){
                 $user=new Administration;
+                $destination_path ='public/images/users';
                 $user->name=$req->name;
                 $user->gender=$req->gender;
                 $user->role=$req->role;
@@ -82,6 +83,10 @@ class AdministrationController extends Controller
                 $user->district=$req->district;
                 $user->sector=$req->sector;
                 $user->cell=$req->cell;
+                $image=$req->file('image');
+                $image_name=$image->getClientOriginalName();
+                $path = $req->file('image')->storeAs($destination_path,$image_name);
+                $user->image=$image_name;
                 if($user->save()){
                   $user->assignRole($user->role);
                 };
