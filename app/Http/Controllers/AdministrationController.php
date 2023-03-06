@@ -27,8 +27,10 @@ class AdministrationController extends Controller
         
 
                 public function viewusers(){
+                  $userId =auth()->user()->id;
+                  $profileImg=Administration::find($userId);
                   $data=Administration::paginate(5);
-                  return view('Customized/All-system-user',['data'=>$data]);
+                  return view('Customized/All-system-user',['data'=>$data,'profileImg'=>$profileImg]);
               }
 
               public function addinguserpage(){
@@ -279,9 +281,14 @@ class AdministrationController extends Controller
               
                 public function userProfileUpdate(Request $req,$id){
                   $input=Administration::find($id);
+                  $destination_path ='public/images/users';
                   $input->username=$req->input('username');
                   $input->email=$req->input('email');
                   $input->phone=$req->input('phone');
+                  $image=$req->file('image');
+                  $image_name=$image->getClientOriginalName();
+                  $path = $req->file('image')->storeAs($destination_path,$image_name);
+                  $input->image=$image_name;
                   $current_password=$req->input('current_password');
                   $new_password=$req->input('new_password');
                   $confirm_password=$req->input('confirm_new_password');
@@ -313,7 +320,8 @@ class AdministrationController extends Controller
                 }
 
                 public function homedashboard(){
-
+                  $userId =auth()->user()->id;
+                  $profileImg=Administration::find($userId);
                   $rows=Administration::count();
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();
@@ -368,7 +376,7 @@ class AdministrationController extends Controller
                   }
                   
                   
-                  return view('Customized/Dashboard',['MaleFarmers'=>$MaleFarmers,'FemaleFarmers'=>$FemaleFarmers,'Male'=>$Male,'Female'=>$Female,'Managers'=>$Managers,'LeafDiseases'=>$LeafDiseases,'RootDiseases'=>$RootDiseases,'BeanDiseases'=>$BeanDiseases,'UnclassifiedDiseases'=>$UnclassifiedDiseases,'ActiveData'=>$ActiveData,'InactiveData'=>$InactiveData,'Diseasemonths'=>$Diseasemonths,
+                  return view('Customized/Dashboard',['profileImg'=>$profileImg,'MaleFarmers'=>$MaleFarmers,'FemaleFarmers'=>$FemaleFarmers,'Male'=>$Male,'Female'=>$Female,'Managers'=>$Managers,'LeafDiseases'=>$LeafDiseases,'RootDiseases'=>$RootDiseases,'BeanDiseases'=>$BeanDiseases,'UnclassifiedDiseases'=>$UnclassifiedDiseases,'ActiveData'=>$ActiveData,'InactiveData'=>$InactiveData,'Diseasemonths'=>$Diseasemonths,
                   'DiseaseMonthCount'=>$DiseaseMonthCount,'Usermonths'=>$Usermonths, 'UserMonthCount'=>$UserMonthCount,'months'=>$months,'monthCount'=>$monthCount,
                   'Memmonths'=>$Memmonths,'MemMonthCount'=>$MemMonthCount,'rows'=>$rows,'farmer'=>$farmer,'cooperative'=>$cooperative,'disease'=>$disease,]);
                 }

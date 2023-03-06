@@ -86,9 +86,9 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="user-profile">
-          <!-- <div class="user-image">
-            <img src="images/faces/face28.png">
-          </div> -->
+          <div class="user-image">
+            
+          </div>
           <div class="user-name">
           {{session('user')}}
           </div>
@@ -153,7 +153,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="" alt="Admin"  width="360x" >
+                  <img  class="rounded-circle" src="{{asset('/storage/images/users/'.$userinfo->image)}}" alt="Admin" width="250" height="350" >
                   </div>
                 </div>
               </div>
@@ -164,7 +164,7 @@
                 @if($errors->any())
                 <h4>{{$errors->first()}}</h4>
                 @endif
-                <form class="forms-sample" method="POST" action="{{url('userProfileUpdate/'.$userId)}}">
+                <form class="forms-sample" method="POST" action="{{url('userProfileUpdate/'.$userId)}}" enctype='multipart/form-data'>
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -181,6 +181,14 @@
                         <span class="input-group-text"><i class="icon-mail"></i></span>
                       </div>
                       <input type="email" class="form-control" value="{{$userinfo->email}}" name="email" id="exampleInputEmail1" placeholder="Email" required>
+                      </div>
+                    </div>
+                    <div class="form-group">   
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-head"></i></span>
+                      </div>               
+                      <input type="file" class="form-control" value="{{$userinfo->image}}" name="image" id="exampleInputEmail1" placeholder="Upload image">
                       </div>
                     </div>
                     <div class="form-group">                  

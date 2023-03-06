@@ -260,9 +260,9 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.Image') }}</label>
                             <div class="col-sm-9">
-                              <div class="input-group col-xs-12">
-                                  <input type="file" name="image" class="file-upload-browse btn btn-primary">
-                              </div>
+                              <!-- <div class="input-group col-xs-12"> -->
+                                  <input type="file" name="image" class="form-control">
+                              <!-- </div> -->
                             </div>
                           </div>
                         </div>
