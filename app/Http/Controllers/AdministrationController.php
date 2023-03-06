@@ -72,6 +72,8 @@ class AdministrationController extends Controller
                }
 
               public function adduser(Request $req){
+                $userId=auth()->user()->id;
+                $profileImg=Administration::find($userId);
                 $user=new Administration;
                 $destination_path ='public/images/users';
                 $user->name=$req->name;
@@ -112,13 +114,17 @@ class AdministrationController extends Controller
                 }
 
                 public function viewfarmers(){
+                  $userId=auth()->user()->id;
+                  $profileImg=Administration::find($userId);
                   $info=Member::paginate(5);
-                  return view('Customized/All-farmers',['info'=>$info]);
+                  return view('Customized/All-farmers',['info'=>$info,'profileImg'=>$profileImg]);
                 }
 
                 public function viewdiseases(){
+                  $userId=auth()->user()->id;
+                  $profileImg=Administration::find($userId);
                   $disease=Disease::paginate(5);
-                  return view('Customized/All-diseases',['disease'=>$disease]);
+                  return view('Customized/All-diseases',['disease'=>$disease,'profileImg'=>$profileImg]);
                 }
                 public function addDisease(Request $req){
                      $Disease=new Disease;
@@ -137,8 +143,10 @@ class AdministrationController extends Controller
 
                 
                 public function viewcooperatives(){
+                  $userId=auth()->user()->id;
+                  $profileImg=Administration::find($userId);
                   $data=Cooperative::paginate(5);
-                  return view('Customized/All-cooperatives',['data'=>$data]);
+                  return view('Customized/All-cooperatives',['data'=>$data,'profileImg'=>$profileImg]);
                 }
 
                 public function userprofilepage($id){
