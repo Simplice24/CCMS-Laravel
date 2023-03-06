@@ -27,7 +27,7 @@ class AdministrationController extends Controller
         
 
                 public function viewusers(){
-                  $data=Administration::all();
+                  $data=Administration::paginate(5);
                   return view('Customized/All-system-user',['data'=>$data]);
               }
 
