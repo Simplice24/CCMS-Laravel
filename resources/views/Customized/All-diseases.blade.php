@@ -69,7 +69,7 @@
               <a class="dropdown-item preview-item" href="<?=url('userProfile');?>">               
                   <i class="icon-head"></i> {{ __('msg.profile') }}
               </a>
-              <a class="dropdown-item preview-item">
+              <a class="dropdown-item preview-item" href="<?=url('logout');?>">
                   <i class="icon-inbox"></i> {{ __('msg.logout') }}
               </a>
             </div>
