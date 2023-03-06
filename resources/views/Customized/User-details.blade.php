@@ -154,7 +154,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <img  class="rounded-circle" src="{{asset('/storage/images/users/'.$details->image)}}" alt="Admin" width="200" >
                     <div class="mt-3">
                       <h4>{{$details->name}}</h4>
                       <h5>{{$details->role}}</h5>
