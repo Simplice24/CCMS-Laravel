@@ -93,7 +93,7 @@
           {{session('user')}}
           </div>
           <div class="user-designation">
-              
+          {{$profileImg->role}} 
           </div>
         </div>
         <ul class="nav">
