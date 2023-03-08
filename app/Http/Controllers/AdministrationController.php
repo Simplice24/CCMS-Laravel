@@ -318,7 +318,7 @@ class AdministrationController extends Controller
                 }
 
                 public function profilePage(){
-                  $userId = $id = auth()->user()->id;
+                  $userId = auth()->user()->id;
                   $userinfo=Administration::find($userId);
                   return view('Customized/User-profile',['userinfo'=>$userinfo,'userId'=>$userId]);
                 }
