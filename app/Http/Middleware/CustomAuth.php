@@ -21,7 +21,7 @@ class CustomAuth
         if(($path=="login" || $path=="/") && (Session::get('user'))){
             return redirect('Home');
         }
-        else if(($path =="registerNewUser" || $path=="registerNewCooperative" || $path=="Home" || $path=="viewsystemuser" || $path=="viewfarmers" || $path=="viewdiseases" ||  $path=="viewcooperatives") && (!Session::get('user')) ){
+        else if(($path =="registerNewUser" || $path=="registerNewDisease" || $path=="registerNewCooperative" || $path=="Home" || $path=="viewsystemuser" || $path=="viewfarmers" || $path=="viewdiseases" ||  $path=="viewcooperatives" ) && (!Session::get('user')) ){
             return redirect('login');
         }
         return $next($request);

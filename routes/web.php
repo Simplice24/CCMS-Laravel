@@ -17,7 +17,7 @@ use App\Http\Controllers\LoginConnection;
 |
 */
 
-//Route::group(['middleware'=>"web"],function(){
+// Route::group(['middleware'=>"web"],function(){
 
 Route::get('locale/{locale}',function($locale){
       Session::put('locale',$locale);
@@ -28,7 +28,7 @@ Route::get('/', function () {
         return view('Customized/index');
     });
   
-Route::group(['middleware'=>"web"],function(){
+Route::group(['middleware'=>["web"]],function(){
 
 Route::get('registerNewUser',[AdministrationController::class,'addinguserpage']); 
 Route::get('registerNewCooperative',[AdministrationController::class,'addingcooperativepage']);  
