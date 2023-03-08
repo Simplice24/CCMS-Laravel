@@ -91,5 +91,13 @@ nouvel agriculteur",
 "Farmers gender"=>"Sexe des agriculteurs",
 "Users gender"=>"Sexe de l'utilisateur",
 "Diseases classification"=>"Classement des maladies",
+"Sign in to continue."=>"Connectez-vous pour continuer.",
+"Email address"=>"Adresse e-mail",
+"Password"=>"Mot de passe",
+"Forgot Password"=>"
+Mot de passe oublié",
+"Your Password"=>"Votre mot de passe",
+"Remember me"=>"Souviens-toi de moi",
+"Log in"=>"Connexion"
 ]
 ?>

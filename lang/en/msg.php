@@ -85,6 +85,13 @@
          "Farmers gender"=>"Farmers' gender",
          "Users gender"=>"Users' gender",
          "Diseases classification"=>"Disease classification",
+         "Sign in to continue."=>"Sign in to continue.",
+         "Email address"=>"Email address",
+         "Password"=>"Password",
+         "Forgot Password"=>"Forgot Password",
+         "Your Password"=>"Your Password",
+         "Remember me"=>"Remember me",
+         "Log in"=>"Log in"
   ]
  
 ?>

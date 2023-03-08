@@ -43,27 +43,27 @@
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <h2 class="font-weight-light">Sign in to continue.</h2>
+              <h2 class="font-weight-light">{{ __('msg.Sign in to continue.')}}</h2>
               <form action="login" method="POST">
                 @csrf
                 <div class="form-group first" >
-                  <label for="username">Email address</label>
+                  <label for="username">{{ __('msg.Email address')}}</label>
                   <input type="email" class="form-control" name="email" placeholder="your-email@gmail.com" id="username">
                 </div>
                 <div class="form-group last mb-3">
-                  <label for="password">Password</label>
+                  <label for="password">{{ __('msg.Password')}}</label>
                   <input type="password" class="form-control" name="password" placeholder="Your Password" id="password">
                 </div>
                 
                 <div class="d-sm-flex mb-5 align-items-center">
-                  <label class="control control--checkbox mb-3 mb-sm-0"><span class="caption">Remember me</span>
+                  <label class="control control--checkbox mb-3 mb-sm-0"><span class="caption">{{ __('msg.Remember me')}}</span>
                     <input type="checkbox" checked="checked"/>
                     <div class="control__indicator"></div>
                   </label>
-                  <span class="ml-auto"><a href="<?=url('forgetpassword');?>" class="forgot-pass">Forgot Password</a></span> 
+                  <span class="ml-auto"><a href="<?=url('forgetpassword');?>" class="forgot-pass">{{ __('msg.Forgot Password')}}</a></span> 
                 </div>
 
-                <input type="submit" value="Log In" class="btn btn-block btn-primary">
+                <input type="submit" value="{{ __('msg.Log in')}}" class="btn btn-block btn-primary">
 
               </form>
             </div>

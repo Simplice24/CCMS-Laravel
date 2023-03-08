@@ -85,5 +85,12 @@ Icyiciro cy'indwara",
 "Farmers' gender"=>"Igitsina cyabahinzi",
 "Users' gender"=>"Igitsina cy'abakoresha sisitemu",
 "Diseases classification"=>"Ibyiciro by'indwara",
+"Sign in to continue."=>"Injira kugirango ukomeze.",
+"Email address"=>"Aderesi imeri",
+"Password"=>"Ijambobanga",
+"Forgot Password"=>"Wibagiwe ijambo ryibanga",
+"Your Password"=>"Ijambobanga ryawe",
+"Remember me"=>"Unyibuke",
+"Log in"=>"Injira"
 ]
 ?>
