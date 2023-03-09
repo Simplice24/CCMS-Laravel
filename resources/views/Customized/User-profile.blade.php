@@ -142,7 +142,7 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper">
+        <!-- <div class="content-wrapper">
           
            <div class="row">
              
@@ -225,8 +225,118 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
               
+        <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+              <img class="rounded-circle mt-5" width="150px" src="{{asset('/storage/images/users/'.$userinfo->image)}}">
+              <span class="font-weight-bold">{{$userinfo->name}}</span>
+              <span class="font-weight-bold">{{$userinfo->email}}</span><br>
+              <span></span>
+              <input type="file" class="form-control" value="{{$userinfo->image}}" name="image" id="exampleInputEmail1" placeholder="Upload image" required>
+              <br>
+              <button class="btn btn-primary profile-button" type="submit">Change profile picture</button>
+            </div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                    
+                <div class="row mt-3">
+                <form class="forms-sample" method="POST" action="{{url('userProfileUpdate/'.$userId)}}" enctype='multipart/form-data'>
+                @csrf
+                @method('PUT')
+                <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                      <span class="input-group-text">@</span>
+                      </div>
+                      <input type="text" class="form-control" value="{{$userinfo->username}}" name="username" placeholder="Username"  required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-mail"></i></span>
+                      </div>
+                      <input type="email" class="form-control" value="{{$userinfo->email}}" name="email" id="exampleInputEmail1" placeholder="Email" required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-call"></i></span>
+                      </div>
+                      <input type="text" class="form-control" value="{{$userinfo->phone}}" name="phone" id="exampleInputEmail1" placeholder="Phone" required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Your password" required>
+                    </div>
+                    </div>
+                    <!-- <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="new_password" id="exampleInputPassword1" placeholder="New password">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="confirm_new_password" id="exampleInputConfirmPassword1" placeholder="Confirm new password">
+                    </div>
+                    </div> -->
+                    <!-- <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-head"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="enter address line 2" value="">
+                    </div>
+                    </div> -->
+                    <!-- <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-head"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="enter email id" value="">
+                    </div>
+                    </div> -->
+
+                </div>
+                <!-- <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                </div> -->
+                <div class="mt-5 text-center">
+                  <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
            </div>
         </div>

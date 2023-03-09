@@ -295,25 +295,23 @@ class AdministrationController extends Controller
               
                 public function userProfileUpdate(Request $req,$id){
                   $input=Administration::find($id);
-                  $destination_path ='public/images/users';
+                  // $destination_path ='public/images/users';
                   $input->username=$req->input('username');
                   $input->email=$req->input('email');
                   $input->phone=$req->input('phone');
-                  $image=$req->file('image');
-                  $image_name=$image->getClientOriginalName();
-                  $path = $req->file('image')->storeAs($destination_path,$image_name);
-                  $input->image=$image_name;
+                  // $image=$req->file('image');
+                  // $image_name=$image->getClientOriginalName();
+                  // $path = $req->file('image')->storeAs($destination_path,$image_name);
+                  // $input->image=$image_name;
                   $current_password=$req->input('current_password');
-                  $new_password=$req->input('new_password');
-                  $confirm_password=$req->input('confirm_new_password');
+                  // $new_password=$req->input('new_password');
+                  // $confirm_password=$req->input('confirm_new_password');
                   if(Hash::check($current_password, $input->password)){
-                    if($new_password===$confirm_password){
-                      $input->password=Hash::make($new_password);
                       $input->update();
                     }else{
                       return redirect('userProfile');
                     }
-                  }
+                  // }
                   return redirect('Home');
                 }
 
