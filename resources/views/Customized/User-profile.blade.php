@@ -286,22 +286,7 @@
                       <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Your password" required>
                     </div>
                     </div>
-                    <!-- <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-lock"></i></span>
-                      </div>
-                      <input type="password" class="form-control" name="new_password" id="exampleInputPassword1" placeholder="New password">
-                    </div>
-                    </div>
-                    <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-lock"></i></span>
-                      </div>
-                      <input type="password" class="form-control" name="confirm_new_password" id="exampleInputConfirmPassword1" placeholder="Confirm new password">
-                    </div>
-                    </div> -->
+                    
                     <!-- <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -331,10 +316,37 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
-                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
-                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+        <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Change password</h4>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Current password" required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="new_password" id="exampleInputPassword1" placeholder="New password">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="confirm_new_password" id="exampleInputConfirmPassword1" placeholder="Confirm new password">
+                    </div>
+                    </div>
+                <div class="mt-5 text-center">
+                  <button class="btn btn-primary profile-button" type="submit">Change password</button>
+                </div>
             </div>
         </div>
     </div>

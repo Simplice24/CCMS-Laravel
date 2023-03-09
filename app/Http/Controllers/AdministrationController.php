@@ -326,6 +326,7 @@ class AdministrationController extends Controller
                   return view('Customized/User-profile',['userinfo'=>$userinfo,'userId'=>$userId]);
                 }
 
+
                 public function diseasedetailpage($id){
                   $diseaseinfo=Disease::find($id);
                   return view('Customized/Disease-details',['diseaseinfo'=>$diseaseinfo]);
