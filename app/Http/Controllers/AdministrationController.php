@@ -93,10 +93,15 @@ class AdministrationController extends Controller
                 $user->district=$req->district;
                 $user->sector=$req->sector;
                 $user->cell=$req->cell;
-                $image=$req->file('image');
+                if($req->hasFile('image')){
+                  $image=$req->file('image');
                 $image_name=$image->getClientOriginalName();
                 $path = $req->file('image')->storeAs($destination_path,$image_name);
                 $user->image=$image_name;
+                }else{
+                  $user->image='userImage.jpg';
+                }
+                
                 if($user->save()){
                   $user->assignRole($user->role);
                 };
