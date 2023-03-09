@@ -144,9 +144,9 @@
       <div class="main-panel">      
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
-                <div class="col-md-3 border-right">
-                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-              <img class="rounded-circle mt-5" width="150px" src="{{asset('/storage/images/users/'.$userinfo->image)}}">
+            <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <img class="rounded-circle mt-5" width="150px" src="{{asset('/storage/images/users/'.$userinfo->image)}}">
               <span class="font-weight-bold">{{$userinfo->name}}</span>
               <span class="font-weight-bold">{{$userinfo->email}}</span><br>
               <span></span>
@@ -157,14 +157,15 @@
               <br>
               <button class="btn btn-primary profile-button" type="submit">Change profile picture</button>
               </form>
-              </div>
+          </div>
         </div>
         <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
-                <div class="row mt-3">
+                <!-- <div class="row mt-3"> -->
                 <form class="forms-sample" method="POST" action="{{url('userProfileUpdate/'.$userId)}}" enctype='multipart/form-data'>
                 @csrf
                 @method('PUT')
@@ -207,11 +208,13 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-4">
-        <div class="p-3 py-5">
+        <div class="col-md-4 ">
+            <div class="p-3 py-5">
+            <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Change password</h4>
+                <h4 class="text-right">Change password</h4>
                 </div>
+                <!-- <div class="row mt-3"> -->
                 <form class="forms-sample" method="POST" action="{{url('userPasswordUpdate/'.$userId)}}" enctype='multipart/form-data'>
                 @csrf
                 @method('PUT')
@@ -239,17 +242,15 @@
                       <input type="password" class="form-control" name="confirm_new_password" id="exampleInputConfirmPassword1" placeholder="Confirm new password">
                     </div>
                     </div>
+                </div>
                 <div class="mt-5 text-center">
-                  <button class="btn btn-primary profile-button" type="submit">Change password</button>
+                <button class="btn btn-primary profile-button" type="submit">Change password</button>
                 </div>
                 </form>
-                </div>
-                </div>
-              </div>
-           </div>
+            </div>
         </div>
+    </div>
       </div>
-
 
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
