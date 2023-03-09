@@ -70,6 +70,7 @@ Route::get("forgetpassword",[AdministrationController::class,'forgetpasswordpage
 Route::get("diseaseDetails/{id}",[AdministrationController::class,'diseasedetailpage']);
 Route::get('userProfile',[AdministrationController::class,'profilePage']);
 Route::put('userProfileUpdate/{id}',[AdministrationController::class,'userProfileUpdate']);
+Route::put('profilePicUpdate/{id}',[AdministrationController::class,'profilePicUpdate']);
 });
 
 

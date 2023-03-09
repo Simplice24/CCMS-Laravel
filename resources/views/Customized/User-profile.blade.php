@@ -235,10 +235,14 @@
               <span class="font-weight-bold">{{$userinfo->name}}</span>
               <span class="font-weight-bold">{{$userinfo->email}}</span><br>
               <span></span>
+              <form class="forms-sample" method="POST" action="{{url('profilePicUpdate/'.$userId)}}" enctype='multipart/form-data'>
+                @csrf
+                @method('PUT')
               <input type="file" class="form-control" value="{{$userinfo->image}}" name="image" id="exampleInputEmail1" placeholder="Upload image" required>
               <br>
               <button class="btn btn-primary profile-button" type="submit">Change profile picture</button>
             </div>
+              </form>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">

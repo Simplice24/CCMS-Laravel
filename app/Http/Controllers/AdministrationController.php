@@ -295,14 +295,9 @@ class AdministrationController extends Controller
               
                 public function userProfileUpdate(Request $req,$id){
                   $input=Administration::find($id);
-                  // $destination_path ='public/images/users';
                   $input->username=$req->input('username');
                   $input->email=$req->input('email');
                   $input->phone=$req->input('phone');
-                  // $image=$req->file('image');
-                  // $image_name=$image->getClientOriginalName();
-                  // $path = $req->file('image')->storeAs($destination_path,$image_name);
-                  // $input->image=$image_name;
                   $current_password=$req->input('current_password');
                   // $new_password=$req->input('new_password');
                   // $confirm_password=$req->input('confirm_new_password');
@@ -313,6 +308,16 @@ class AdministrationController extends Controller
                     }
                   // }
                   return redirect('Home');
+                }
+                public function profilePicUpdate(Request $req,$id){
+                  $input=Administration::find($id);
+                  $destination_path ='public/images/users';
+                  $image=$req->file('image');
+                  $image_name=$image->getClientOriginalName();
+                  $path = $req->file('image')->storeAs($destination_path,$image_name);
+                  $input->image=$image_name;
+                  $input->save();
+                  return redirect('userProfile');
                 }
 
                 public function profilePage(){
