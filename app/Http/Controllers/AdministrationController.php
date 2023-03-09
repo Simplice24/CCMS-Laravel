@@ -299,8 +299,6 @@ class AdministrationController extends Controller
                   $input->email=$req->input('email');
                   $input->phone=$req->input('phone');
                   $current_password=$req->input('current_password');
-                  // $new_password=$req->input('new_password');
-                  // $confirm_password=$req->input('confirm_new_password');
                   if(Hash::check($current_password, $input->password)){
                       $input->update();
                     }else{
@@ -317,6 +315,18 @@ class AdministrationController extends Controller
                   $path = $req->file('image')->storeAs($destination_path,$image_name);
                   $input->image=$image_name;
                   $input->save();
+                  return redirect('userProfile');
+                }
+                public function userPasswordUpdate(Request $req,$id){
+                  $input=Administration::find($id);
+                  $user_password=$req->input('current_password');
+                  $new_password=$req->input('new_password');
+                  $confirm_password=$req->input('confirm_new_password');
+                  if($new_password===$confirm_password && (Hash::check($user_password, $input->password)) ){
+                  $input->password=Hash::make($new_password);
+                  $input->save();
+                  return redirect('Home');
+                  }
                   return redirect('userProfile');
                 }
 

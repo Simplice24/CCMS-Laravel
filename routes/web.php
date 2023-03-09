@@ -71,6 +71,7 @@ Route::get("diseaseDetails/{id}",[AdministrationController::class,'diseasedetail
 Route::get('userProfile',[AdministrationController::class,'profilePage']);
 Route::put('userProfileUpdate/{id}',[AdministrationController::class,'userProfileUpdate']);
 Route::put('profilePicUpdate/{id}',[AdministrationController::class,'profilePicUpdate']);
+Route::put('userPasswordUpdate/{id}',[AdministrationController::class,'userPasswordUpdate']);
 });
 
 

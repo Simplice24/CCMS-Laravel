@@ -320,6 +320,9 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Change password</h4>
                 </div>
+                <form class="forms-sample" method="POST" action="{{url('userPasswordUpdate/'.$userId)}}" enctype='multipart/form-data'>
+                @csrf
+                @method('PUT')
                 <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -347,6 +350,7 @@
                 <div class="mt-5 text-center">
                   <button class="btn btn-primary profile-button" type="submit">Change password</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
