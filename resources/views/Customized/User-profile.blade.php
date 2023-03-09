@@ -141,96 +141,11 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="main-panel">
-        <!-- <div class="content-wrapper">
-          
-           <div class="row">
-             
-           <div class="container">
-           <div class="main-body">
-          <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                  <img  class="rounded-circle" src="{{asset('/storage/images/users/'.$userinfo->image)}}" alt="Admin" width="250" height="350" >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="card mb-3">
-                <div class="card-body">
-                @if($errors->any())
-                <h4>{{$errors->first()}}</h4>
-                @endif
-                <form class="forms-sample" method="POST" action="{{url('userProfileUpdate/'.$userId)}}" enctype='multipart/form-data'>
-                @csrf
-                @method('PUT')
-                <div class="form-group">
-                <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">@</span>
-                      </div>
-                      <input type="text" class="form-control" value="{{$userinfo->username}}" name="username" placeholder="Username"  required>
-                    </div>
-                    </div>
-                    <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-mail"></i></span>
-                      </div>
-                      <input type="email" class="form-control" value="{{$userinfo->email}}" name="email" id="exampleInputEmail1" placeholder="Email" required>
-                      </div>
-                    </div>
-                    <div class="form-group">   
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-head"></i></span>
-                      </div>               
-                      <input type="file" class="form-control" value="{{$userinfo->image}}" name="image" id="exampleInputEmail1" placeholder="Upload image">
-                      </div>
-                    </div>
-                    <div class="form-group">                  
-                      <input type="text" class="form-control" value="{{$userinfo->phone}}" name="phone" id="exampleInputEmail1" placeholder="Phone" required>
-                    </div>
-                    <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-lock"></i></span>
-                      </div>
-                      <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Current password" required>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-lock"></i></span>
-                      </div>
-                      <input type="password" class="form-control" name="new_password" id="exampleInputPassword1" placeholder="New password">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-lock"></i></span>
-                      </div>
-                      <input type="password" class="form-control" name="confirm_new_password" id="exampleInputConfirmPassword1" placeholder="Confirm new password">
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Save</button>
-                  </form>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-              
+      <div class="main-panel">      
         <div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <div class="row">
+                <div class="col-md-3 border-right">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
               <img class="rounded-circle mt-5" width="150px" src="{{asset('/storage/images/users/'.$userinfo->image)}}">
               <span class="font-weight-bold">{{$userinfo->name}}</span>
               <span class="font-weight-bold">{{$userinfo->email}}</span><br>
@@ -241,15 +156,14 @@
               <input type="file" class="form-control" value="{{$userinfo->image}}" name="image" id="exampleInputEmail1" placeholder="Upload image" required>
               <br>
               <button class="btn btn-primary profile-button" type="submit">Change profile picture</button>
-            </div>
               </form>
+              </div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
-                    
                 <div class="row mt-3">
                 <form class="forms-sample" method="POST" action="{{url('userProfileUpdate/'.$userId)}}" enctype='multipart/form-data'>
                 @csrf
@@ -286,29 +200,7 @@
                       <input type="password" class="form-control" name="current_password" id="exampleInputPassword1" placeholder="Your password" required>
                     </div>
                     </div>
-                    
-                    <!-- <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-head"></i></span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="enter address line 2" value="">
-                    </div>
-                    </div> -->
-                    <!-- <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="icon-head"></i></span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="enter email id" value="">
-                    </div>
-                    </div> -->
-
                 </div>
-                <!-- <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                </div> -->
                 <div class="mt-5 text-center">
                   <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
                 </div>
@@ -351,17 +243,14 @@
                   <button class="btn btn-primary profile-button" type="submit">Change password</button>
                 </div>
                 </form>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-
+                </div>
+                </div>
+              </div>
            </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
+      </div>
+
+
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © CCMS 2023</span>
