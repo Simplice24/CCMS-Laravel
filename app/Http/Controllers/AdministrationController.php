@@ -5,7 +5,7 @@ use App\Models\Cooperative;
 use App\Models\Disease;
 use App\Models\Member;
 use App\Models\Provinces;
-use App\Models\districts;
+use App\Models\Districts;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -43,8 +43,9 @@ class AdministrationController extends Controller
 
               public function addinguserpage(){
                   $provinces=Provinces::all();
+                  $districts=Districts::all();
                   $roles=Role::all();
-                  return view('Customized/Register-new-user',['roles'=>$roles,'provinces'=>$provinces]);
+                  return view('Customized/Register-new-user',['districts'=>$districts,'roles'=>$roles,'provinces'=>$provinces]);
               }
               public function addingcooperativepage(){
                 $manager_names=Administration::all()->where('role', 'manager');

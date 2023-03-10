@@ -223,7 +223,12 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.district')}}</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" name="district" required />
+                            <select class="form-control" style="height:46px;" name="district" required>
+                                        <option disable selected>{{ __('msg.--Select District--')}}</option>
+                                        @foreach($districts as $district)
+                                        <option value="{{ $district->districtcode }}">{{ $district->namedistrict}}</option>
+                                        @endforeach
+                              </select>
                             </div>
                           </div>
                         </div>
