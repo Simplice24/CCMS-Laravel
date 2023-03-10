@@ -200,7 +200,12 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">{{ __('msg.Province')}}</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" name="province" required />
+                              <select class="form-control" style="height:46px;" name="province" id="province_id" required>
+                                        <option disable selected>{{ __('msg.--Select Province--')}}</option>
+                                        @foreach($provinces as $province)
+                                        <option value="{{ $province->provincecode }}">{{ $province->provincename}}</option>
+                                        @endforeach
+                              </select>
                               </div>
                             </div>
                           </div>
@@ -285,7 +290,7 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
+ 
   <!-- base:js -->
   <script src="Customized/vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->

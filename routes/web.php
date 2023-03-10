@@ -29,7 +29,6 @@ Route::get('/', function () {
     });
   
 Route::group(['middleware'=>["web"]],function(){
-
 Route::get('registerNewUser',[AdministrationController::class,'addinguserpage']); 
 Route::get('registerNewCooperative',[AdministrationController::class,'addingcooperativepage']);  
 Route::get('registerNewDisease',[AdministrationController::class,'addingdiseasepage']); 
