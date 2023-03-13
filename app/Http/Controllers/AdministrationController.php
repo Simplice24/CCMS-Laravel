@@ -316,6 +316,7 @@ class AdministrationController extends Controller
                   // }
                   return redirect('Home');
                 }
+                
                 public function profilePicUpdate(Request $req,$id){
                   $input=Administration::find($id);
                   $destination_path ='public/images/users';

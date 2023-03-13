@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Models\Car;
 use App\Http\Controllers\AdministrationController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LoginConnection;
 
 /*

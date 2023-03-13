@@ -103,18 +103,14 @@
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
+          @role('SuperAdmin')
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">{{ __('msg.system users') }}</span>
             </a>
-            <!-- <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="<?=url('registerNewUser');?>"> + {{ __('msg.new user') }}</a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('viewsystemuser');?>"> {{ __('msg.all system users') }}</a></li>
-              </ul>
-            </div> -->
           </li>
+          @endrole
            <li class="nav-item">
             <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>
