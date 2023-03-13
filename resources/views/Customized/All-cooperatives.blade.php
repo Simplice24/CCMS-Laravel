@@ -139,8 +139,9 @@
         <div class="row">
             <div class="col-sm-12 mb-4 mb-xl-0">
             <li class="nav-item dropdown d-lg-flex d-none">
-                <a href="<?=url('registerNewCooperative');?>"><button type="button" class="btn btn-info font-weight-bold">+{{__('msg.new cooperative')}}</button></a>
-            </li>
+                <a href="<?=url('registerNewCooperative');?>"><button type="button" class="btn btn-info font-weight-bold" style="margin-right: 20px">+{{__('msg.new cooperative')}}</button></a>
+                <a href="<?=url('generatePDF');?>"><button type="button" class="btn btn-info font-weight-bold" >Epxort PDF</button></a>
+              </li>
             </div>
           </div>
 

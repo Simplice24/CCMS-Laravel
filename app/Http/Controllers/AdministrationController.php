@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Carbon\Carbon;
+use PDF;
 use session;
 
 class AdministrationController extends Controller
@@ -426,6 +427,21 @@ class AdministrationController extends Controller
                  public function Managerviewfarmer(){
                   return view('Manager/ViewMembers');
                  }
+
+                 
+                 public function generatePDF(){
+                  $cooperatives = Cooperative::all();
+  
+        $data = [
+            'title' => 'Report of all cooperatives',
+            'date' => date('m/d/Y'),
+            'users' => $cooperatives
+        ]; 
+            
+        $pdf = PDF::loadView('Customized/myPDF', $cooperatives);
+     
+        return $pdf->download('cooperatives.pdf');
+    }
 
 
 

@@ -72,6 +72,7 @@ Route::get('userProfile',[AdministrationController::class,'profilePage']);
 Route::put('userProfileUpdate/{id}',[AdministrationController::class,'userProfileUpdate']);
 Route::put('profilePicUpdate/{id}',[AdministrationController::class,'profilePicUpdate']);
 Route::put('userPasswordUpdate/{id}',[AdministrationController::class,'userPasswordUpdate']);
+Route::get('generatePDF', [AdministrationController::class, 'generatePDF']);
 });
 
 
