@@ -102,14 +102,12 @@
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
-          @role('SuperAdmin')
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">{{ __('msg.system users') }}</span>
             </a>
           </li>
-          @endrole
            <li class="nav-item">
             <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>

@@ -110,14 +110,12 @@
               <span class="menu-title">{{ __('msg.system users') }}</span>
             </a>
           </li>
-          @endrole
            <li class="nav-item">
             <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>
               <span class="menu-title">{{ __('msg.cooperatives') }}</span>
             </a>
           </li>
-          @endrole
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
               <i class="icon-pie-graph menu-icon"></i>

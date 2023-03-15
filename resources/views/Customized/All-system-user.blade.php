@@ -134,8 +134,6 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-         @auth
-         @role('SuperAdmin')
         <div class="row">
             <div class="col-sm-12 mb-4 mb-xl-0">
             <li class="nav-item dropdown d-lg-flex d-none">
@@ -143,8 +141,6 @@
             </li>
             </div>
           </div>
-          @endrole
-         @endauth
            <div class="row"> 
            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">

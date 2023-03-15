@@ -19,9 +19,8 @@ use session;
 class AdministrationController extends Controller
 {
 
-  public function __construct(){
-         $this->middleware('web');
-      
+ public function __construct(){
+        //  $this->middleware('web');
               // $this->middleware('permission:create-administration', ['only' => ['adduser','updateSystemUser','deleteuser','viewusers']]);
               // $this->middleware('permission:edit-administration | edit-cooperative | edit-disease | edit-member', ['only' => ['updateFarmer','updateSystemUser','updateSystemCooperative','DisUpdate']]);
               // $this->middleware('permission:product-edit', ['only' => ['edit','update']]);

@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CarController;
-use App\Models\Car;
 use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LoginConnection;
@@ -29,29 +27,29 @@ Route::get('/', function () {
         return view('Customized/index');
     });
   
-Route::group(['middleware'=>["web"]],function(){
-Route::get('registerNewUser',[AdministrationController::class,'addinguserpage'])->middleware(['auth','role:SuperAdmin']);
-Route::get('registerNewCooperative',[AdministrationController::class,'addingcooperativepage'])->middleware(['auth','role:SuperAdmin']);  
-Route::get('registerNewDisease',[AdministrationController::class,'addingdiseasepage'])->middleware(['auth','role:SuperAdmin']); 
-Route::get('registerNewFarmer', [AdministrationController::class, 'addingfarmerpage'])->middleware(['auth','role:manager']);
-Route::post('registerNewUser', [AdministrationController::class, 'adduser'])->middleware(['auth','role:SuperAdmin']);
-Route::post('registerNewFarmer',[AdministrationController::class,'addfarmer'])->middleware(['auth','role:manager']);
-Route::get('viewsystemuser',[AdministrationController::class,'viewusers'])->middleware(['auth','role:SuperAdmin']); 
+Route::group(['middleware'=>["auth"]],function(){
+Route::get('registerNewUser',[AdministrationController::class,'addinguserpage']);
+Route::get('registerNewCooperative',[AdministrationController::class,'addingcooperativepage']);  
+Route::get('registerNewDisease',[AdministrationController::class,'addingdiseasepage']); 
+Route::get('registerNewFarmer', [AdministrationController::class, 'addingfarmerpage']);
+Route::post('registerNewUser', [AdministrationController::class, 'adduser']);
+Route::post('registerNewFarmer',[AdministrationController::class,'addfarmer']);
+Route::get('viewsystemuser',[AdministrationController::class,'viewusers']); 
 Route::get('viewfarmers',[AdministrationController::class,'viewfarmers']);
 Route::get('viewdiseases',[AdministrationController::class,'viewdiseases']);
-Route::post('registerNewDisease',[AdministrationController::class, 'addDisease'])->middleware(['auth','role:SuperAdmin']); 
-Route::get('viewcooperatives',[AdministrationController::class, 'viewcooperatives'])->middleware(['auth','role:SuperAdmin']); 
-Route::post('registerNewCooperative',[AdministrationController::class, 'addcooperative'])->middleware(['auth','role:SuperAdmin']); 
+Route::post('registerNewDisease',[AdministrationController::class, 'addDisease']); 
+Route::get('viewcooperatives',[AdministrationController::class, 'viewcooperatives']); 
+Route::post('registerNewCooperative',[AdministrationController::class, 'addcooperative']); 
 Route::get('ViewAll',function(){
     return view('ViewAll');
    });
-Route::get("deleteuser/{id}",[AdministrationController::class,'deleteuser'])->middleware(['auth','role:SuperAdmin']);   
-Route::get("viewuser/{id}",[AdministrationController::class,'viewuser'])->middleware(['auth','role:SuperAdmin']); 
-Route::get('deletecooperative/{id}',[AdministrationController::class,'deletecooperative'])->middleware(['auth','role:SuperAdmin']); 
-Route::get('deletedisease/{id}',[AdministrationController::class,'deletedis'])->middleware(['auth','role:SuperAdmin']); 
-Route::get("update/{id}",[AdministrationController::class,'updateuser'])->middleware(['auth','role:SuperAdmin']); 
-Route::get("viewcooperative/{id}",[AdministrationController::class,'viewcoop'])->middleware(['auth','role:SuperAdmin']); 
-Route::get("updateCooperative/{id}",[AdministrationController::class,'updateCoop'])->middleware(['auth','role:SuperAdmin']); 
+Route::get("deleteuser/{id}",[AdministrationController::class,'deleteuser']);   
+Route::get("viewuser/{id}",[AdministrationController::class,'viewuser']); 
+Route::get('deletecooperative/{id}',[AdministrationController::class,'deletecooperative']); 
+Route::get('deletedisease/{id}',[AdministrationController::class,'deletedis']); 
+Route::get("update/{id}",[AdministrationController::class,'updateuser']); 
+Route::get("viewcooperative/{id}",[AdministrationController::class,'viewcoop']); 
+Route::get("updateCooperative/{id}",[AdministrationController::class,'updateCoop']); 
 Route::get("updateCooperative/CooperativeUpdate/{id}",[AdministrationController::class,'Cooperativeupdatepage']);
 Route::get("Farmerprofile/{id}",[AdministrationController::class,'farmerprofilepage']);
 Route::get("Farmerprofile/farmerUpdate/{id}",[AdministrationController::class,'farmerupdatepage']);
