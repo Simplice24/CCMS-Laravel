@@ -356,8 +356,7 @@ class UserController extends Controller
                  return view('ViewFarmer',['farmerinfo'=>$farmerinfo]);
                 }
 
-                public function homedashboard($id){
-                    dd($id);
+                public function homedashboard(){
                   $userId =auth()->user()->id;
                   $profileImg=User::find($userId);
                   $rows=User::count();
