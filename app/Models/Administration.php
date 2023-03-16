@@ -12,7 +12,6 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableLogin;
 
 class Administration extends Model implements AuthenticatableLogin{
-
     use HasFactory;
     use HasRoles;
     use Authenticatable,HasApiTokens,Notifiable;

@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Cooperative;
 use App\Models\Disease;
@@ -20,14 +22,13 @@ use session;
 class UserController extends Controller
 {
 
- public function __construct(){
-        //  $this->middleware('web');
-              // $this->middleware('permission:create-User', ['only' => ['adduser','updateSystemUser','deleteuser','viewusers']]);
-              // $this->middleware('permission:edit-User | edit-cooperative | edit-disease | edit-member', ['only' => ['updateFarmer','updateSystemUser','updateSystemCooperative','DisUpdate']]);
-              // $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-              // $this->middleware('permission:product-delete', ['only' => ['destroy']]);
-         
-  }
+    function __construct()
+    {
+         $this->middleware('permission:create-administration|create-member|create-disease|create-cooperative', ['only' => ['adduser','addinguserpage','addfarmer','addDisease','addcooperative']]);
+         $this->middleware('permission:product-create', ['only' => ['create','store']]);
+         $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+    }
     
             public function deletecooperative($id){
               Cooperative::destroy($id);
