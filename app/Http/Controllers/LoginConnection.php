@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Administration;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -13,20 +13,19 @@ class LoginConnection extends Controller
   public function login(Request $request)
   {
     $credentials = $request->validate([
-          'email' => 'required|email',
-          'password' => 'required'
-      ]);
+      'email' => ['required', 'email'],
+      'password' => ['required'],
+  ]);
 
-      if (Auth::attempt($credentials)) {
-        $request->session()->put('user',$credentials['email']);
-        
-        return redirect()->intended('Home');
-    }
+  if (Auth::attempt($credentials)) {
+    $request->session()->put('user',$credentials['email']);
 
-    return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
-    ])->onlyInput('email');
+      return redirect()->intended('Home');
   }
 
+  return back()->withErrors([
+      'email' => 'The provided credentials do not match our records.',
+  ])->onlyInput('email');
 
+  }
 }

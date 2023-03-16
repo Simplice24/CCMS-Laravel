@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdministrationController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LoginConnection;
 
@@ -28,49 +28,49 @@ Route::get('/', function () {
     });
   
 Route::group(['middleware'=>["auth"]],function(){
-Route::get('registerNewUser',[AdministrationController::class,'addinguserpage']);
-Route::get('registerNewCooperative',[AdministrationController::class,'addingcooperativepage']);  
-Route::get('registerNewDisease',[AdministrationController::class,'addingdiseasepage']); 
-Route::get('registerNewFarmer', [AdministrationController::class, 'addingfarmerpage']);
-Route::post('registerNewUser', [AdministrationController::class, 'adduser']);
-Route::post('registerNewFarmer',[AdministrationController::class,'addfarmer']);
-Route::get('viewsystemuser',[AdministrationController::class,'viewusers']); 
-Route::get('viewfarmers',[AdministrationController::class,'viewfarmers']);
-Route::get('viewdiseases',[AdministrationController::class,'viewdiseases']);
-Route::post('registerNewDisease',[AdministrationController::class, 'addDisease']); 
-Route::get('viewcooperatives',[AdministrationController::class, 'viewcooperatives']); 
-Route::post('registerNewCooperative',[AdministrationController::class, 'addcooperative']); 
+Route::get('registerNewUser',[UserController::class,'addinguserpage']);
+Route::get('registerNewCooperative',[UserController::class,'addingcooperativepage']);  
+Route::get('registerNewDisease',[UserController::class,'addingdiseasepage']); 
+Route::get('registerNewFarmer', [UserController::class, 'addingfarmerpage']);
+Route::post('registerNewUser', [UserController::class, 'adduser']);
+Route::post('registerNewFarmer',[UserController::class,'addfarmer']);
+Route::get('viewsystemuser',[UserController::class,'viewusers']); 
+Route::get('viewfarmers',[UserController::class,'viewfarmers']);
+Route::get('viewdiseases',[UserController::class,'viewdiseases']);
+Route::post('registerNewDisease',[UserController::class, 'addDisease']); 
+Route::get('viewcooperatives',[UserController::class, 'viewcooperatives']); 
+Route::post('registerNewCooperative',[UserController::class, 'addcooperative']); 
 Route::get('ViewAll',function(){
     return view('ViewAll');
    });
-Route::get("deleteuser/{id}",[AdministrationController::class,'deleteuser']);   
-Route::get("viewuser/{id}",[AdministrationController::class,'viewuser']); 
-Route::get('deletecooperative/{id}',[AdministrationController::class,'deletecooperative']); 
-Route::get('deletedisease/{id}',[AdministrationController::class,'deletedis']); 
-Route::get("update/{id}",[AdministrationController::class,'updateuser']); 
-Route::get("viewcooperative/{id}",[AdministrationController::class,'viewcoop']); 
-Route::get("updateCooperative/{id}",[AdministrationController::class,'updateCoop']); 
-Route::get("updateCooperative/CooperativeUpdate/{id}",[AdministrationController::class,'Cooperativeupdatepage']);
-Route::get("Farmerprofile/{id}",[AdministrationController::class,'farmerprofilepage']);
-Route::get("Farmerprofile/farmerUpdate/{id}",[AdministrationController::class,'farmerupdatepage']);
-Route::put("updateFarmer/{id}",[AdministrationController::class,'updateFarmer']);
-Route::put("CooperativeUpdate/{id}",[AdministrationController::class,'updateSystemCooperative']);
-Route::get("diseaseDetails/updateDisease/{id}",[AdministrationController::class,'diseaseupdate']);
-Route::put("updateDis/{id}",[AdministrationController::class,'DisUpdate']);
-Route::get("FarmerView/{id}",[AdministrationController::class,'ViewFarmer']);
-Route::get('Home',[AdministrationController::class,'homedashboard']);
-Route::get('ManagerHome',[AdministrationController::class,'managerhome']);
-Route::get('Managerviewfarmers',[AdministrationController::class,'Managerviewfarmer']);
-Route::get("profile/{id}",[AdministrationController::class,'userprofilepage']);
-Route::get("profile/profileUpdate/{id}",[AdministrationController::class,'profileupdatepage']);
-Route::put('updateUser/{id}',[AdministrationController::class,'updateSystemUser']);
-Route::get("forgetpassword",[AdministrationController::class,'forgetpasswordpage']);
-Route::get("diseaseDetails/{id}",[AdministrationController::class,'diseasedetailpage']);
-Route::get('userProfile',[AdministrationController::class,'profilePage']);
-Route::put('userProfileUpdate/{id}',[AdministrationController::class,'userProfileUpdate']);
-Route::put('profilePicUpdate/{id}',[AdministrationController::class,'profilePicUpdate']);
-Route::put('userPasswordUpdate/{id}',[AdministrationController::class,'userPasswordUpdate']);
-Route::get('generatePDF', [AdministrationController::class, 'generatePDF']);
+Route::get("deleteuser/{id}",[UserController::class,'deleteuser']);   
+Route::get("viewuser/{id}",[UserController::class,'viewuser']); 
+Route::get('deletecooperative/{id}',[UserController::class,'deletecooperative']); 
+Route::get('deletedisease/{id}',[UserController::class,'deletedis']); 
+Route::get("update/{id}",[UserController::class,'updateuser']); 
+Route::get("viewcooperative/{id}",[UserController::class,'viewcoop']); 
+Route::get("updateCooperative/{id}",[UserController::class,'updateCoop']); 
+Route::get("updateCooperative/CooperativeUpdate/{id}",[UserController::class,'Cooperativeupdatepage']);
+Route::get("Farmerprofile/{id}",[UserController::class,'farmerprofilepage']);
+Route::get("Farmerprofile/farmerUpdate/{id}",[UserController::class,'farmerupdatepage']);
+Route::put("updateFarmer/{id}",[UserController::class,'updateFarmer']);
+Route::put("CooperativeUpdate/{id}",[UserController::class,'updateSystemCooperative']);
+Route::get("diseaseDetails/updateDisease/{id}",[UserController::class,'diseaseupdate']);
+Route::put("updateDis/{id}",[UserController::class,'DisUpdate']);
+Route::get("FarmerView/{id}",[UserController::class,'ViewFarmer']);
+Route::get('Home',[UserController::class,'homedashboard']);
+Route::get('ManagerHome',[UserController::class,'managerhome']);
+Route::get('Managerviewfarmers',[UserController::class,'Managerviewfarmer']);
+Route::get("profile/{id}",[UserController::class,'userprofilepage']);
+Route::get("profile/profileUpdate/{id}",[UserController::class,'profileupdatepage']);
+Route::put('updateUser/{id}',[UserController::class,'updateSystemUser']);
+Route::get("forgetpassword",[UserController::class,'forgetpasswordpage']);
+Route::get("diseaseDetails/{id}",[UserController::class,'diseasedetailpage']);
+Route::get('userProfile',[UserController::class,'profilePage']);
+Route::put('userProfileUpdate/{id}',[UserController::class,'userProfileUpdate']);
+Route::put('profilePicUpdate/{id}',[UserController::class,'profilePicUpdate']);
+Route::put('userPasswordUpdate/{id}',[UserController::class,'userPasswordUpdate']);
+Route::get('generatePDF', [UserController::class, 'generatePDF']);
 });
 
 

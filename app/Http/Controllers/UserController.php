@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-use App\Models\Administration;
+use App\Models\User;
 use App\Models\Cooperative;
 use App\Models\Disease;
 use App\Models\Member;
@@ -17,13 +17,13 @@ use Carbon\Carbon;
 use PDF;
 use session;
 
-class AdministrationController extends Controller
+class UserController extends Controller
 {
 
  public function __construct(){
         //  $this->middleware('web');
-              // $this->middleware('permission:create-administration', ['only' => ['adduser','updateSystemUser','deleteuser','viewusers']]);
-              // $this->middleware('permission:edit-administration | edit-cooperative | edit-disease | edit-member', ['only' => ['updateFarmer','updateSystemUser','updateSystemCooperative','DisUpdate']]);
+              // $this->middleware('permission:create-User', ['only' => ['adduser','updateSystemUser','deleteuser','viewusers']]);
+              // $this->middleware('permission:edit-User | edit-cooperative | edit-disease | edit-member', ['only' => ['updateFarmer','updateSystemUser','updateSystemCooperative','DisUpdate']]);
               // $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
               // $this->middleware('permission:product-delete', ['only' => ['destroy']]);
          
@@ -33,10 +33,10 @@ class AdministrationController extends Controller
               Cooperative::destroy($id);
                return redirect('viewcooperatives');
                 }
-                public function viewusers(Administration $administration){
+                public function viewusers(User $User){
                   $userId =auth()->user()->id;
-                  $profileImg=Administration::find($userId);
-                  $data=Administration::paginate(5);
+                  $profileImg=User::find($userId);
+                  $data=User::paginate(5);
                   return view('Customized/All-system-user',['data'=>$data,'profileImg'=>$profileImg]);
               }
 
@@ -47,7 +47,7 @@ class AdministrationController extends Controller
                   return view('Customized/Register-new-user',['districts'=>$districts,'roles'=>$roles,'provinces'=>$provinces]);    
               }
               public function addingcooperativepage(){
-                $manager_names=Administration::all()->where('role', 'manager');
+                $manager_names=User::all()->where('role', 'manager');
                 return view('Customized/Register-cooperative',['manager_names'=>$manager_names]);
               }
               public function addingfarmerpage(){
@@ -82,8 +82,8 @@ class AdministrationController extends Controller
 
               public function adduser(Request $req){
                 $userId=auth()->user()->id;
-                $profileImg=Administration::find($userId);
-                $user=new Administration;
+                $profileImg=User::find($userId);
+                $user=new User;
                 $destination_path ='public/images/users';
                 $user->name=$req->name;
                 $user->gender=$req->gender;
@@ -129,14 +129,14 @@ class AdministrationController extends Controller
 
                 public function viewfarmers(){
                   $userId=auth()->user()->id;
-                  $profileImg=Administration::find($userId);
+                  $profileImg=User::find($userId);
                   $info=Member::paginate(5);
                   return view('Customized/All-farmers',['info'=>$info,'profileImg'=>$profileImg]);
                 }
 
                 public function viewdiseases(){
                   $userId=auth()->user()->id;
-                  $profileImg=Administration::find($userId);
+                  $profileImg=User::find($userId);
                   $disease=Disease::paginate(5);
                   return view('Customized/All-diseases',['disease'=>$disease,'profileImg'=>$profileImg]);
                 }
@@ -158,30 +158,30 @@ class AdministrationController extends Controller
                 
                 public function viewcooperatives(){
                   $userId=auth()->user()->id;
-                  $profileImg=Administration::find($userId);
+                  $profileImg=User::find($userId);
                   $data=Cooperative::paginate(5);
                   return view('Customized/All-cooperatives',['data'=>$data,'profileImg'=>$profileImg]);
                 }
 
                 public function userprofilepage($id){
-                  $details=Administration::find($id);
+                  $details=User::find($id);
                   return view('Customized/User-details',['details'=>$details]);
                 }
 
                 public function profileupdatepage($id){
-                  $fulldetails=Administration::find($id);
+                  $fulldetails=User::find($id);
                   $roles=Role::all();
                   return view('Customized/Update-details',['fulldetails'=>$fulldetails,'roles'=>$roles]);
                 }
 
                 public function deleteuser($id){
-                  $informations=Administration::find($id);
+                  $informations=User::find($id);
                   $informations->delete();
                   return redirect('viewsystemuser');
                 }
 
                 public function viewuser($id){
-                  $information=Administration::find($id);
+                  $information=User::find($id);
                   return view('ViewAll',['information'=>$information]);
                 }
                 
@@ -208,7 +208,7 @@ class AdministrationController extends Controller
                 }
 
                 public function updateuser($id){
-                  $userinfo=Administration::find($id);
+                  $userinfo=User::find($id);
                   return view('UpdateAll',['userinfo'=> $userinfo]);
                 }
 
@@ -218,7 +218,7 @@ class AdministrationController extends Controller
                 }
                 public function Cooperativeupdatepage($id){
                   $cooperativeinfo=Cooperative::find($id);
-                  $manager_names=Administration::all()->where('role','manager');
+                  $manager_names=User::all()->where('role','manager');
                   return view('Customized/Cooperative-update',['cooperativeinfo'=> $cooperativeinfo,'manager_names'=>$manager_names]);
                 }
 
@@ -229,7 +229,7 @@ class AdministrationController extends Controller
 
 
                 public function updateSystemUser(Request $req,$id){
-                  $input=Administration::find($id);
+                  $input=User::find($id);
                   $input->name=$req->input('name');
                   $input->gender=$req->input('gender');
                   $input->role=$req->input('role');
@@ -302,7 +302,7 @@ class AdministrationController extends Controller
                 }
               
                 public function userProfileUpdate(Request $req,$id){
-                  $input=Administration::find($id);
+                  $input=User::find($id);
                   $input->username=$req->input('username');
                   $input->email=$req->input('email');
                   $input->phone=$req->input('phone');
@@ -317,7 +317,7 @@ class AdministrationController extends Controller
                 }
                 
                 public function profilePicUpdate(Request $req,$id){
-                  $input=Administration::find($id);
+                  $input=User::find($id);
                   $destination_path ='public/images/users';
                   $image=$req->file('image');
                   $image_name=$image->getClientOriginalName();
@@ -327,7 +327,7 @@ class AdministrationController extends Controller
                   return redirect('userProfile');
                 }
                 public function userPasswordUpdate(Request $req,$id){
-                  $input=Administration::find($id);
+                  $input=User::find($id);
                   $user_password=$req->input('current_password');
                   $new_password=$req->input('new_password');
                   $confirm_password=$req->input('confirm_new_password');
@@ -341,7 +341,7 @@ class AdministrationController extends Controller
 
                 public function profilePage(){
                   $userId = auth()->user()->id;
-                  $userinfo=Administration::find($userId);
+                  $userinfo=User::find($userId);
                   return view('Customized/User-profile',['userinfo'=>$userinfo,'userId'=>$userId]);
                 }
 
@@ -356,10 +356,11 @@ class AdministrationController extends Controller
                  return view('ViewFarmer',['farmerinfo'=>$farmerinfo]);
                 }
 
-                public function homedashboard(){
+                public function homedashboard($id){
+                    dd($id);
                   $userId =auth()->user()->id;
-                  $profileImg=Administration::find($userId);
-                  $rows=Administration::count();
+                  $profileImg=User::find($userId);
+                  $rows=User::count();
                   $farmer=Member::count();
                   $cooperative=Cooperative::count();
                   $disease=Disease::count();
@@ -370,7 +371,7 @@ class AdministrationController extends Controller
                   $Memdata=Member::select('id','created_at')->get()->groupBy(function($Memdata){
                     return Carbon::parse($Memdata->created_at)->format('Y-M');
                   });
-                  $Userdata=Administration::select('id','created_at')->get()->groupBy(function($Userdata){
+                  $Userdata=User::select('id','created_at')->get()->groupBy(function($Userdata){
                     return Carbon::parse($Userdata->created_at)->format('Y-M');
                   });
                   $Diseasedata=Disease::select('id','created_at')->get()->groupBy(function($Diseasedata){
@@ -382,9 +383,9 @@ class AdministrationController extends Controller
                   $RootDiseases=Disease::where('category','Root diseases')->get()->count();
                   $BeanDiseases=Disease::where('category','Bean diseases')->get()->count();
                   $UnclassifiedDiseases=Disease::where('category','Unclassified diseases')->get()->count();
-                  $Male=Administration::where('gender','Male')->get()->count();
-                  $Female=Administration::where('gender','Female')->get()->count();
-                  $Managers=Administration::where('role','manager')->get()->count();
+                  $Male=User::where('gender','Male')->get()->count();
+                  $Female=User::where('gender','Female')->get()->count();
+                  $Managers=User::where('role','manager')->get()->count();
                   $MaleFarmers=Member::where('gender','Male')->get()->count();
                   $FemaleFarmers=Member::where('gender','Female')->get()->count();
 

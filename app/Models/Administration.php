@@ -11,12 +11,12 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableLogin;
 
-class Administration extends Model implements AuthenticatableLogin
-{
+class Administration extends Model implements AuthenticatableLogin{
+
     use HasFactory;
     use HasRoles;
     use Authenticatable,HasApiTokens,Notifiable;
-    protected $table='administrations';
+    protected $table='users';
     protected $fillable=[
         'name',
         'gender',
@@ -41,18 +41,4 @@ class Administration extends Model implements AuthenticatableLogin
         'email_verified_at' => 'datetime',
     ];
 
-    public function cooperatives(){
-        return $this->belongsToMany(Cooperative::class,'cooperative_administrations');
-    }
-
-    public function getId()
-        {
-        return $this->id;
-        }
-
-    public function members(){
-        return $this->belongsToMany(Member::class,'administration_members');
-    }
-
-    
 }
