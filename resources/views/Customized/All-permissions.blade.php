@@ -148,7 +148,7 @@
         <div class="row">
             <div class="col-sm-12 mb-4 mb-xl-0">
             <li class="nav-item dropdown d-lg-flex d-none">
-                <a href="<?=url('registerNewUser');?>"><button type="button" class="btn btn-info font-weight-bold">+{{__('msg.new user')}}</button></a>
+                <a href="<?=url('Addnewpermission');?>"><button type="button" class="btn btn-info font-weight-bold">+ new permission</button></a>
             </li>
             </div>
           </div>

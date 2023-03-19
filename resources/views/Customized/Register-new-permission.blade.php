@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-
+<html lang="en">
 <head>
   <!-- Required meta tags --> 
   <meta charset="utf-8">
@@ -65,12 +64,12 @@
               <i class="icon-cog"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">{{ __('msg.settings')}}</p>
+              <p class="mb-0 font-weight-normal float-left dropdown-header">{{ __('msg.settings') }}</p>
               <a class="dropdown-item preview-item" href="<?=url('userProfile');?>">               
-                  <i class="icon-head"></i> {{ __('msg.profile')}}
+                  <i class="icon-head"></i> {{ __('msg.profile') }}
               </a>
               <a class="dropdown-item preview-item" href="<?=url('logout');?>">
-                  <i class="icon-inbox"></i> {{ __('msg.logout')}}
+                  <i class="icon-inbox"></i> {{ __('msg.logout') }}
               </a>
             </div>
           </li>
@@ -93,38 +92,38 @@
           {{session('user')}}
           </div>
           <div class="user-designation">
-          
+             
           </div>
         </div>
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?=url('Home');?>">
+            <a class="nav-link" href={{"Home"}}>
               <i class="icon-box menu-icon"></i>
-              <span class="menu-title">{{ __('msg.dashboard')}}</span>
+              <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewsystemuser');?>">
-              <i class="icon-disc menu-icon"></i>
-              <span class="menu-title">{{ __('msg.system users')}}</span>
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">{{ __('msg.system users') }}</span>
             </a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="<?=url('viewcooperatives');?>">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">{{ __('msg.cooperatives')}}</span>
+              <i class="icon-disc menu-icon"></i>
+              <span class="menu-title">{{ __('msg.cooperatives') }}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
               <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">{{ __('msg.farmers')}}</span>
+              <span class="menu-title">{{ __('msg.farmers') }}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewdiseases');?>">
               <i class="icon-command menu-icon"></i>
-              <span class="menu-title">{{ __('msg.diseases')}}</span>
+              <span class="menu-title">{{ __('msg.diseases') }}</span>
             </a>
           </li>
           <li class="nav-item">
@@ -145,52 +144,25 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <div class="row">
-            <div class="col-sm-12 mb-4 mb-xl-0">
-            <li class="nav-item dropdown d-lg-flex d-none">
-                <a href="<?=url('Addnewrole');?>"><button type="button" class="btn btn-info font-weight-bold">+ new role</button></a>
-            </li>
-            </div>
-          </div>
-           <div class="row"> 
-           <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">System Roles</h4>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>
-                            Role name
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                        @foreach($roles as $i)
-                          <td>
-                            {{$i->name}}
-                          </td>
-                          <td>
-                          <div class="input-group-prepend">
-                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href={{"Roledetails/".$i->id}}><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; Edit</a>
-                          <a class="dropdown-item" href={{"deleterole/".$i->id}}><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Delete</a>
-                      </div>
-                          </td>
-                         </tr>
-                         @endforeach
-                      </tbody>
-                    </table>
-                    <div class="pagination-block">
-                     {{ $roles->links()}}
-                    </div>
+           <div class="row">
+             
+            <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add new permission</h4>
+                    <form class="form-sample" action="storePermission" method="POST"  enctype='multipart/form-data'>
+                    @csrf
+                    <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Permission name</label>
+                            <div class="col-sm-6">
+                              <input type="text" class="form-control" name="name" placeholder="Enter permission name" required/>
+                            </div>
+                          </div>
+                      <button type="submit" class="btn btn-primary mr-2">{{ __('msg.submit')}}</button>
+                    </form>
                   </div>
                 </div>
               </div>
-            </div>
               
               
 
@@ -210,7 +182,7 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
+ 
   <!-- base:js -->
   <script src="Customized/vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->

@@ -29,4 +29,43 @@ class RoleController extends Controller
         $permissions=Permission::paginate(5);
         return view('Customized/All-permissions',['permissions'=>$permissions]);
     }
+
+    public function Addnewrole(){
+        $permission = Permission::get();
+        return view('Customized/Register-new-role',['permission'=>$permission]);
+    }
+
+    public function storeRole(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:roles,name',
+            'permission' => 'required',
+        ]);
+    
+        $role = Role::create(['name' => $request->input('name')]);
+        $role->syncPermissions($request->input('permission'));
+    
+        return redirect('Allroles');
+    }
+
+    public function Addnewpermission(){
+        return view('Customized/Register-new-permission');
+    }
+    public function storePermission(Request $request){
+        $permission=Permission::create(['name' => $request->input('name')]);
+        return redirect('Allpermissions');
+    }
+
+    public function Roledetails($id){
+        $role = Role::find($id);
+        $rolePermissions = Permission::join("role_has_permissions","role_has_permissions.permission_id","=","permissions.id")
+            ->where("role_has_permissions.role_id",$id)
+            ->get();
+        return view('Customized/Role-details',['role'=>$role,'rolePermissions'=>$rolePermissions]);
+    }
+    public function RoleUpdatePage($id){
+        $role = Role::find($id);
+        $permissions = Permission::get();
+        return view('Customized/Role-update',['role'=>$role,'permissions'=>$permissions]);
+    }
 }

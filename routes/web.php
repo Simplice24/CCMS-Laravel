@@ -73,6 +73,12 @@ Route::put('userPasswordUpdate/{id}',[UserController::class,'userPasswordUpdate'
 Route::get('generatePDF', [UserController::class, 'generatePDF']);
 Route::get('Allroles',[RoleController::class, 'showRoles']);
 Route::get('Allpermissions',[RoleController::class, 'showPermissions']);
+Route::get('Addnewrole',[RoleController::class, 'Addnewrole']);
+Route::get('Addnewpermission',[RoleController::class, 'Addnewpermission']);
+Route::post('storeRole',[RoleController::class, 'storeRole']);
+Route::post('storePermission',[RoleController::class, 'storePermission']);
+Route::get('Roledetails/{id}',[RoleController::class,'Roledetails']);
+Route::get('Roledetails/RoleUpdate/{id}',[RoleController::class,'RoleUpdatePage']);
 });
 
 
