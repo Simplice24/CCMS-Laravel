@@ -24,7 +24,7 @@ class UserController extends Controller
 
     function __construct()
     {
-         $this->middleware('permission:create-administration|create-member|create-disease|create-cooperative', ['only' => ['adduser','addinguserpage','addfarmer','addDisease','addcooperative']]);
+        //  $this->middleware('permission:create-administration|create-member|create-disease|create-cooperative', ['only' => ['adduser','addinguserpage','addfarmer','addDisease','addcooperative']]);
          $this->middleware('permission:product-create', ['only' => ['create','store']]);
          $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:product-delete', ['only' => ['destroy']]);
@@ -176,8 +176,7 @@ class UserController extends Controller
                 }
 
                 public function deleteuser($id){
-                  $informations=User::find($id);
-                  $informations->delete();
+                  User::find($id)->delete();
                   return redirect('viewsystemuser');
                 }
 
@@ -193,14 +192,12 @@ class UserController extends Controller
                 }
 
                 public function deleteCoop($id){
-                $cooperative=Cooperative::find($id);
-                $cooperative->delete();
+                Cooperative::find($id)->delete();
                 return redirect('viewcooperatives');
                 }
 
                 public function deletedis($id){
-                 $disease=Disease::find($id);
-                 $disease->delete();
+                 $disease=Disease::find($id)->delete();
                  return redirect('viewdiseases');
                 }
 

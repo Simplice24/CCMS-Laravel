@@ -126,6 +126,19 @@
               <span class="menu-title">{{ __('msg.diseases') }}</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Roles | Permissions</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="<?=url('Allroles')?>"> Roles </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('Allpermissions')?>"> Permissions </a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
       <!-- partial -->

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LoginConnection;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,8 @@ Route::put('userProfileUpdate/{id}',[UserController::class,'userProfileUpdate'])
 Route::put('profilePicUpdate/{id}',[UserController::class,'profilePicUpdate']);
 Route::put('userPasswordUpdate/{id}',[UserController::class,'userPasswordUpdate']);
 Route::get('generatePDF', [UserController::class, 'generatePDF']);
+Route::get('Allroles',[RoleController::class, 'showRoles']);
+Route::get('Allpermissions',[RoleController::class, 'showPermissions']);
 });
 
 
