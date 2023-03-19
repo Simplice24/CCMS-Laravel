@@ -143,8 +143,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?=url('Allroles')?>"> Roles </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?=url('Allpermissions')?>"> Permissions </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('Allroles');?>"> Roles </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?=url('Allpermissions');?>"> Permissions </a></li>
               </ul>
             </div>
           </li>

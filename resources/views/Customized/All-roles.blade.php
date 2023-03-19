@@ -87,13 +87,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="user-profile">
           <div class="user-image">
-            <img src="{{asset('/storage/images/users/'.$profileImg->image)}}">
+            
           </div>
           <div class="user-name">
           {{session('user')}}
           </div>
           <div class="user-designation">
-          {{$profileImg->role}} 
+          
           </div>
         </div>
         <ul class="nav">
@@ -185,7 +185,7 @@
                       </tbody>
                     </table>
                     <div class="pagination-block">
-                     {{ $data->links()}}
+                     {{ $roles->links()}}
                     </div>
                   </div>
                 </div>
