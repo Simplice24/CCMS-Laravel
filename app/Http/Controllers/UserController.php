@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Carbon\Carbon;
 use PDF;
 use session;
@@ -34,7 +35,8 @@ class UserController extends Controller
               Cooperative::destroy($id);
                return redirect('viewcooperatives');
                 }
-                public function viewusers(User $User){
+
+              public function viewusers(User $User){
                   $userId =auth()->user()->id;
                   $profileImg=User::find($userId);
                   $data=User::paginate(5);
@@ -45,12 +47,14 @@ class UserController extends Controller
                   $provinces=Provinces::all();
                   $districts=Districts::all();
                   $roles=Role::all();
-                  return view('Customized/Register-new-user',['districts'=>$districts,'roles'=>$roles,'provinces'=>$provinces]);    
+                  return view('Customized/Register-new-user',['districts'=>$districts,'roles'=>$roles,'provinces'=>$provinces]);         
               }
+
               public function addingcooperativepage(){
                 $manager_names=User::all()->where('role', 'manager');
                 return view('Customized/Register-cooperative',['manager_names'=>$manager_names]);
               }
+
               public function addingfarmerpage(){
                 $cooperatives=Cooperative::all();
                 return view('Customized/Register-new-farmer',['cooperatives'=>$cooperatives]);
@@ -111,7 +115,7 @@ class UserController extends Controller
                 };
                   return redirect('viewsystemuser');
                 }
-
+                
                 public function addcooperative(Request $req){
                   $cooperative=new Cooperative;
                   $cooperative->name=$req->name;

@@ -210,17 +210,12 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">{{ __('msg.Province')}}</label>
-                              <div class="col-sm-9">
-                              <select class="form-control" style="height:46px;" name="province" id="province_id" required>
-                                        <option disable selected>{{ __('msg.--Select Province--')}}</option>
-                                        @foreach($provinces as $province)
-                                        <option value="{{ $province->provincecode }}">{{ $province->provincename}}</option>
-                                        @endforeach
-                              </select>
-                              </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">{{ __('msg.Province')}}</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="province" required />
                             </div>
+                          </div>
                           </div>
                     </div>
                       <div class="row">
@@ -233,15 +228,10 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <div class="form-group row">
+                        <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.district')}}</label>
                             <div class="col-sm-9">
-                            <select class="form-control" style="height:46px;" name="district" required>
-                                        <option disable selected>{{ __('msg.--Select District--')}}</option>
-                                        @foreach($districts as $district)
-                                        <option value="{{ $district->districtcode }}">{{ $district->namedistrict}}</option>
-                                        @endforeach
-                              </select>
+                              <input type="text" class="form-control" name="district" required />
                             </div>
                           </div>
                         </div>
@@ -269,9 +259,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">{{ __('msg.Image') }}</label>
                             <div class="col-sm-9">
-                              <!-- <div class="input-group col-xs-12"> -->
-                                  <input type="file" name="image" class="form-control">
-                              <!-- </div> -->
+                                  <input type="file" name="image" value="userImage.jpg" class="form-control">
                             </div>
                           </div>
                         </div>

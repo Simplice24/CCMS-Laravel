@@ -44,6 +44,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function roles()
+    {
+        return $this->belongsToMany(\Spatie\Permission\Models\Role::class);
+    }
+
     /**
      * The attributes that should be cast.
      *
