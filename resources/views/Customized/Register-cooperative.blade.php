@@ -99,7 +99,7 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href={{"Home"}}>
-              <i class="icon-box menu-icon"></i>
+              <i class="icon-air-play menu-icon"></i>
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>

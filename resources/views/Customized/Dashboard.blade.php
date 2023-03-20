@@ -107,22 +107,26 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="<?=url('Home');?>">
-              <i class="icon-box menu-icon"></i>
+              <i class="icon-air-play menu-icon"></i>
               <span class="menu-title">{{ __('msg.dashboard') }}</span>
             </a>
           </li>
+          
+          
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewsystemuser');?>">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">{{ __('msg.system users') }}</span>
             </a>
           </li>
+          @if (Auth::user()->can('view-cooperative'))
            <li class="nav-item">
             <a class="nav-link" href="<?=url('viewcooperatives');?>">
               <i class="icon-disc menu-icon"></i>
               <span class="menu-title">{{ __('msg.cooperatives') }}</span>
             </a>
           </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link" href="<?=url('viewfarmers');?>">
               <i class="icon-pie-graph menu-icon"></i>

@@ -21,12 +21,12 @@ class RoleController extends Controller
     }
 
     public function showRoles(){
-        $roles=Role::paginate(5);
+        $roles=Role::paginate(7);
         return view('Customized/All-roles',['roles'=>$roles]);
     }
 
     public function showPermissions(){
-        $permissions=Permission::paginate(5);
+        $permissions=Permission::paginate(7);
         return view('Customized/All-permissions',['permissions'=>$permissions]);
     }
 
@@ -82,5 +82,29 @@ class RoleController extends Controller
         $role->syncPermissions($request->input('permission'));
     
         return redirect('Allroles');
+    }
+
+    public function deleterole($id){
+        DB::table("roles")->where('id',$id)->delete();
+        return redirect('Allroles');
+    }
+    public function PermissionUpdatePage($id){
+        $permission=Permission::find($id);
+        return view('Customized/Permission-detail',['permission'=>$permission]);
+    }
+    public function PermissionUpdate($id){
+        $permission=Permission::find($id);
+        return view('Customized/Permission-update',['permission'=>$permission]);
+    }
+
+    public function Updatepermission(Request $request, $id){
+        $permission = Permission::find($id);
+        $permission->name = $request->input('name');
+        $permission->update();
+        return redirect('Allpermissions');
+    }
+    public function deletepermission($id){
+        Permission::find($id)->delete();
+        return redirect('Allpermissions');
     }
 }

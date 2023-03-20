@@ -80,6 +80,11 @@ Route::post('storePermission',[RoleController::class, 'storePermission']);
 Route::get('Roledetails/{id}',[RoleController::class,'Roledetails']);
 Route::get('Roledetails/RoleUpdate/{id}',[RoleController::class,'RoleUpdatePage']);
 Route::put('Roleupdate/{id}',[RoleController::class,'RoleUpdate']);
+Route::get('deleterole/{id}',[RoleController::class,'deleterole']);
+Route::get('editpermission/{id}',[RoleController::class,'PermissionUpdatePage']);
+Route::get('editpermission/permissionUpdate/{id}',[RoleController::class,'PermissionUpdate']);
+Route::put('Permissionupdate/{id}',[RoleController::class,'Updatepermission']);
+Route::get('deletepermission/{id}',[RoleController::class,'deletepermission']);
 });
 
 
