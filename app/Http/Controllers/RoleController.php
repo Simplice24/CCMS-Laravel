@@ -68,4 +68,19 @@ class RoleController extends Controller
         $permissions = Permission::get();
         return view('Customized/Role-update',['role'=>$role,'permissions'=>$permissions]);
     }
+
+    public function RoleUpdate(Request $request, $id){
+        $this->validate($request, [
+            'name' => 'required',
+            'permission' => 'required',
+        ]);
+    
+        $role = Role::find($id);
+        $role->name = $request->input('name');
+        $role->save();
+    
+        $role->syncPermissions($request->input('permission'));
+    
+        return redirect('Allroles');
+    }
 }

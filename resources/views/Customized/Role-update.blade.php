@@ -151,7 +151,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">{{__('msg.Fill Out All Fields To Update System User')}}</h4>
-                    <form class="form-sample" action="" method="POST">
+                    <form class="form-sample" action="{{url('Roleupdate/'.$role->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                       <div class="row">

@@ -79,6 +79,7 @@ Route::post('storeRole',[RoleController::class, 'storeRole']);
 Route::post('storePermission',[RoleController::class, 'storePermission']);
 Route::get('Roledetails/{id}',[RoleController::class,'Roledetails']);
 Route::get('Roledetails/RoleUpdate/{id}',[RoleController::class,'RoleUpdatePage']);
+Route::put('Roleupdate/{id}',[RoleController::class,'RoleUpdate']);
 });
 
 
