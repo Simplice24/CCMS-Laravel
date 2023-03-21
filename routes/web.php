@@ -27,7 +27,7 @@ Route::get('/', function () {
         return view('Customized/index');
     });
   
-Route::group(['middleware'=>["auth"]],function(){
+Route::group(['middleware'=>["web"]],function(){
 Route::get('registerNewUser',[UserController::class,'addinguserpage']);
 Route::get('registerNewCooperative',[UserController::class,'addingcooperativepage']);  
 Route::get('registerNewDisease',[UserController::class,'addingdiseasepage']); 

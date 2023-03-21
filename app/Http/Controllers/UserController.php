@@ -110,9 +110,9 @@ class UserController extends Controller
                   $user->image='userImage.jpg';
                 }
                 
-                if($user->save()){
-                  $user->assignRole($user->role);
-                };
+                $user->save();
+                $user->assignRole($user->role);
+                
                   return redirect('viewsystemuser');
                 }
                 
