@@ -111,7 +111,7 @@ class UserController extends Controller
                 }
                 
                 $user->save();
-                $user->assignRole($user->role);
+                // $user->assignRole($req->input('role'));
                 
                   return redirect('viewsystemuser');
                 }
@@ -201,7 +201,7 @@ class UserController extends Controller
                 }
 
                 public function deletedis($id){
-                 $disease=Disease::find($id)->delete();
+                 Disease::find($id)->delete();
                  return redirect('viewdiseases');
                 }
 
@@ -244,7 +244,7 @@ class UserController extends Controller
                   $input->cell=$req->input('cell');
                   if($input->update()){
                     DB::table('model_has_roles')->where('model_id',$id)->delete();
-                    $input->assignRole($req->role);
+                    $input->assignRole($input->role);
                   };
                   return redirect('viewsystemuser');
                 }
